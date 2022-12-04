@@ -27,6 +27,7 @@ i hope you enjoy! contact me at hotemogirlfriend at gmail dot com ⛧彡
 * 2021 —— [getting a design internship](https://www.youtube.com/watch?v=nLuCj29nsuQ)
 
 ## ＊ resources/writing
+* 2022 —— [philippine.design](https://philippine.design), libraries & archives & publishing ♡
 * 2021 —— ['ex-silicon valley' means nothing.](https://chias.blog/2021/ex-silicon-valley-means-nothing/)
 * 2021 —— [the punishing of the philippines](https://ifyouknewmewouldyoulove.me/punishing/)
 * 2021 —— [mapping the philippine student startup ecosystem](https://developh.notion.site/Mapping-the-Philippine-Student-Startup-Ecosystem-f8a6e0ed223b46febccfddf85d4b5a97)
