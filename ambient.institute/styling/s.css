@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "Times Now";
+  src: url("../TimesNow-LightItalic.woff2") format("woff2"), url("../TimesNow-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Times Now";
+  src: url("../TimesNow-Light.woff2") format("woff2"), url("../TimesNow-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*# sourceMappingURL=s.css.map */
