@@ -1,18 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello!</title>
-    <meta name="description" content="description"/>
-    <meta name="author" content="author" />
-    <meta name="keywords" content="keywords" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="./styling/s.css" type="text/css" />
-  </head>
-  <body>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello!</title>
+  <meta name="description" content="description" />
+  <meta name="author" content="author" />
+  <meta name="keywords" content="keywords" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="stylesheet" href="./styling/s.css" type="text/css" />
+  <link rel="stylesheet" href="./styling/main.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <main>
+
     
-    <main></main>
+    <section id="location" class="block">
+      <div class="wrapper">
+
+      <span type="name">Lobby</span>
+
+      <span type="visitors">There are <span people>2 people here</span></span>
+
+      <span type="time">It's <span time></span></span>
+</div>
+    </section>
+
+    <section id="institute" class="block" active="lobby">
+      <h1>Map</h1>
+      <br><br>
+
+      <div class="institute-map">
+        <!--        <div class="institute-map-wrapper"></div>-->
+        <div class="spacer" style="width: 121px;"></div>
+
+        <div name="library" class="room" style="width: 360px;height: 80px;">
+          <div class="room-content">
+            <span title>Library</span>
+            <span desc>Reading area</span>
+          </div>
+        </div>
+
+        <div class="break"></div>
+
+
+        <div class="spacer" style="width: 70px;"></div>
+        <div class="room" style="width: 50px;  height: 80px; border-top-left-radius: 20px;  border-bottom-left-radius: 20px;"></div>
+
+        <div name="lobby" class="room" style="width: 150px; height: 80px;" active>
+          <div class="room-content">
+            <span title>Lobby</span>
+            <span desc>Welcome to the lobby of Ambient Institute.</span>
+          </div>
+        </div>
+
+        <br>
+        <div name="garden" class="room" style="width: 209px;height: 80px;">
+          <span title>Garden</span>
+        </div>
+
+        <div class="break"></div>
+
+
+      </div>
+
+      <div class="institute-index">
+
+        <div class="wrapper">
+          <a name="lobby"><span class="number">( 1 )</span> Lobby</a>
+          <a name="library"><span class="number">( 2 )</span> Library</a>
+          <a name="garden"><span class="number">( 3 )</span> Garden</a>
+          <a name="garden"><span class="number">( 3 )</span> Garden</a>
+          <a name="garden"><span class="number">( 3 )</span> Garden</a>
+
+        </div>
+      </div>
+    </section>
+
     
-    <script src="//code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
-  </body>
-</html>
+
+  </main>
+
+  <script src="//code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+  <script src="institute.js" type="text/javascript"></script>
+</body></html>
