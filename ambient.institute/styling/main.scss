@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -22,6 +22,11 @@ h1 {
 }
 
 
+$gray-light: rgba(188, 188, 188, 0.15);
+$gray-dark: rgba(70, 70, 70, 0.45);
+$gray-darker: rgba(70, 70, 70, 1);
+$gray: #cccccc;
+
 main {
   padding: 1em;
 
@@ -31,24 +36,79 @@ section.block {
   padding: 1em 0;
 }
 
-section .wrapper{
+section .wrapper {
   width: 100%;
-  padding:0 1em;
-  
+  padding: 0 1em;
+
   display: flex;
   justify-content: space-between;
 }
 
 
-#location{
+#index {
+  border: 1px solid $gray;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .row {
+    padding: 0;
+    margin: .5em 0;
+    width: 100%;
+    font-family: 'Director';
+    font-size: .8rem;
+    margin-bottom: 1em;
+  }
+
+  a {
+    text-decoration: none;
+    color: $gray-dark;
+  }
+
+  .row span[type] {
+    display: inline-block;
+    width: 80px;
+    text-transform: uppercase;
+    font-size: .7rem;
+  }
+
+  .row span[name] {
+    width: 280px;
+    display: inline-block;
+    font-family: "Times Now";
+    font-size: 1.1rem;
+    color: $gray-darker;
+    vertical-align: top;
+  }
+
+  .row span[desc] {
+    display: none;
+  }
+
+  .row span[keywords] {
+    font-size: .7rem;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    padding-left: 1em;
+  }
+
+  .row span[year] {
+    font-size: .7rem;
+    float: right;
+  }
+}
+
+#location {
   position: fixed;
   bottom: 0;
   width: 100%;
   left: 0;
-  
+
   display: flex;
   justify-content: center;
-  background: red;
 }
 
 // ROOM
@@ -72,7 +132,7 @@ section .wrapper{
     }
 
     a {
-      width:170px;
+      width: 170px;
       max-width: 48%;
       padding: .15em .5em;
       text-align: left;
@@ -85,7 +145,7 @@ section .wrapper{
       font-family: "Director";
       font-size: .6rem;
       padding-right: .5em;
-      color:rgba(70, 70, 70, 0.47);
+      color: rgba(70, 70, 70, 0.47);
       letter-spacing: -.75px;
       transform: translateY(-2.5px);
       display: inline-block;
@@ -118,7 +178,7 @@ section .wrapper{
     min-height: 50px;
     margin-left: -1px;
     margin-bottom: -1px;
-    border: 1px solid rgb(212, 212, 212);
+    border: 1px solid $gray;
     background-position: top left;
 
     display: flex;
@@ -129,18 +189,18 @@ section .wrapper{
   }
 
   // special tiles
-  
-//  .room[name='garden']{
-//    background-image: url(../assets/tile-garden.png);
-//    
-//  }
-  
+
+  //  .room[name='garden']{
+  //    background-image: url(../assets/tile-garden.png);
+  //    
+  //  }
+
   // etc
-  
+
   .room:hover {
-    border: 1px solid rgba(70, 70, 70, 0.47);
+    border: $gray-dark;
     background-image: url(../assets/dot.png);
-    background-color: rgba(188, 188, 188, 0.15);
+    background-color: $gray-light;
     cursor: pointer;
 
     span[title] {
@@ -185,7 +245,7 @@ section .wrapper{
   }
 
   .room[active] {
-    background-color: rgba(188, 188, 188, 0.15);
+    background-color: $gray-light;
     z-index: 1;
     background-image: url(../assets/dot.png);
 
