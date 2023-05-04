@@ -26,6 +26,7 @@ $gray-light: rgba(188, 188, 188, 0.15);
 $gray-dark: rgba(70, 70, 70, 0.45);
 $gray-darker: rgba(70, 70, 70, 1);
 $gray: #cccccc;
+$pink: #eb80ff;
 
 main {
   padding: 1em;
@@ -46,13 +47,33 @@ section .wrapper {
 
 
 #index {
-  border: 1px solid $gray;
 
+  // FILTER
+  
+  .filter-wrapper{
+    
+    margin: 0 0 1em 0;
+    
+    a{
+      font-size: 1.25rem;
+      font-family: "Times Now";
+      letter-spacing: -.5px;
+      color: $gray-darker;
+    }
+    
+  }
+  
+  // MAIN
+  
   .wrapper {
     display: flex;
     flex-direction: column;
     padding: 0;
   }
+  
+//  .wrapper:hover > a:not(:hover){
+//    opacity: 0.9;
+//  }
 
   .row {
     padding: 0;
@@ -61,22 +82,22 @@ section .wrapper {
     font-family: 'Director';
     font-size: .8rem;
     margin-bottom: 1em;
+    
+    display: flex;
+    justify-content: space-between;
   }
 
   a {
     text-decoration: none;
     color: $gray-dark;
   }
-
-  .row span[type] {
-    display: inline-block;
-    width: 80px;
-    text-transform: uppercase;
-    font-size: .7rem;
+  
+  a:hover .row span[name]{
+    color: $pink;
   }
 
-  .row span[name] {
-    width: 280px;
+  span[name] {
+    width: 300px;
     display: inline-block;
     font-family: "Times Now";
     font-size: 1.1rem;
@@ -84,20 +105,51 @@ section .wrapper {
     vertical-align: top;
   }
 
-  .row span[desc] {
+  span[desc] {
     display: none;
   }
 
-  .row span[keywords] {
+  span[keywords] {
     font-size: .7rem;
-    letter-spacing: -1px;
+    letter-spacing: -.5px;
     text-transform: uppercase;
-    padding-left: 1em;
+    width: 140px;
+  }
+  
+  span[type] {
+    display: inline-block;
+    width: 80px;
+    text-transform: uppercase;
+    font-size: .7rem;
   }
 
-  .row span[year] {
+
+  span[year] {
     font-size: .7rem;
     float: right;
+  }
+  
+  
+@media only screen and (max-width: 600px) {
+  
+  .row{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  span{ padding: .15em 0;}
+  
+  span[desc]{
+    display: block;
+    font-family: "Times Now";
+  }
+  
+  span[name]{
+    font-size: 1.1rem;
+  }
+  
+  span[name], span[keywords], span[type]{width: auto; max-width: 90%;}
+  
   }
 }
 
@@ -154,11 +206,18 @@ section .wrapper {
   }
 
   .institute-map {
-    display: flex;
+    margin: 0 auto;
+    width: 400px;
+    max-width: 99vw;
+    outline: 1px solid red;
+    
+    display: inline-flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
     align-content: center;
     align-items: center;
+@media only screen and (max-width: 600px) {
+    transform: scale(0.8);
+    }
   }
 
   h1 {
@@ -198,7 +257,7 @@ section .wrapper {
   // etc
 
   .room:hover {
-    border: $gray-dark;
+    border: 1px solid $gray-dark;
     background-image: url(../assets/dot.png);
     background-color: $gray-light;
     cursor: pointer;
@@ -227,17 +286,18 @@ section .wrapper {
 
     span[title] {
       text-transform: uppercase;
-      font-size: .8rem;
+      font-size: .7rem;
       text-align: center;
       letter-spacing: -.5px;
       padding: .5em;
+      color: $gray-darker;
     }
 
     span[desc] {
       display: none;
       width: 100%;
       font-family: "Times Now";
-      font-size: .8rem;
+      font-size: .7rem;
       padding: .5em;
       max-width: 80%;
     }

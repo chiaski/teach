@@ -33,8 +33,14 @@ section .wrapper {
   justify-content: space-between;
 }
 
-#index {
-  border: 1px solid #cccccc;
+#index .filter-wrapper {
+  margin: 0 0 1em 0;
+}
+#index .filter-wrapper a {
+  font-size: 1.25rem;
+  font-family: "Times Now";
+  letter-spacing: -0.5px;
+  color: #464646;
 }
 #index .wrapper {
   display: flex;
@@ -48,37 +54,62 @@ section .wrapper {
   font-family: "Director";
   font-size: 0.8rem;
   margin-bottom: 1em;
+  display: flex;
+  justify-content: space-between;
 }
 #index a {
   text-decoration: none;
   color: rgba(70, 70, 70, 0.45);
 }
-#index .row span[type] {
-  display: inline-block;
-  width: 80px;
-  text-transform: uppercase;
-  font-size: 0.7rem;
+#index a:hover .row span[name] {
+  color: #eb80ff;
 }
-#index .row span[name] {
-  width: 280px;
+#index span[name] {
+  width: 300px;
   display: inline-block;
   font-family: "Times Now";
   font-size: 1.1rem;
   color: #464646;
   vertical-align: top;
 }
-#index .row span[desc] {
+#index span[desc] {
   display: none;
 }
-#index .row span[keywords] {
+#index span[keywords] {
   font-size: 0.7rem;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
   text-transform: uppercase;
-  padding-left: 1em;
+  width: 140px;
 }
-#index .row span[year] {
+#index span[type] {
+  display: inline-block;
+  width: 80px;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+#index span[year] {
   font-size: 0.7rem;
   float: right;
+}
+@media only screen and (max-width: 600px) {
+  #index .row {
+    display: flex;
+    flex-direction: column;
+  }
+  #index span {
+    padding: 0.15em 0;
+  }
+  #index span[desc] {
+    display: block;
+    font-family: "Times Now";
+  }
+  #index span[name] {
+    font-size: 1.1rem;
+  }
+  #index span[name], #index span[keywords], #index span[type] {
+    width: auto;
+    max-width: 90%;
+  }
 }
 
 #location {
@@ -123,11 +154,19 @@ section .wrapper {
   display: inline-block;
 }
 #institute .institute-map {
-  display: flex;
+  margin: 0 auto;
+  width: 400px;
+  max-width: 99vw;
+  outline: 1px solid red;
+  display: inline-flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
   align-content: center;
   align-items: center;
+}
+@media only screen and (max-width: 600px) {
+  #institute .institute-map {
+    transform: scale(0.8);
+  }
 }
 #institute h1 {
   width: 100%;
@@ -151,7 +190,7 @@ section .wrapper {
   align-items: center;
 }
 #institute .room:hover {
-  border: rgba(70, 70, 70, 0.45);
+  border: 1px solid rgba(70, 70, 70, 0.45);
   background-image: url(../assets/dot.png);
   background-color: rgba(188, 188, 188, 0.15);
   cursor: pointer;
@@ -172,16 +211,17 @@ section .wrapper {
 }
 #institute .room span[title] {
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   text-align: center;
   letter-spacing: -0.5px;
   padding: 0.5em;
+  color: #464646;
 }
 #institute .room span[desc] {
   display: none;
   width: 100%;
   font-family: "Times Now";
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   padding: 0.5em;
   max-width: 80%;
 }
