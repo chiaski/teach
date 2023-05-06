@@ -1,48 +1,154 @@
-* {
-  box-sizing: border-box;
-}
+// FONT SIZES
+
+$font-heading: 1.15rem;
+$font-body: .8rem;
+$font-details: .65rem;
+$font-small: .5rem;
 
 body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 
-h1 {
-  font-family: 'Director';
-  font-weight: normal;
-  text-transform: uppercase;
-  font-size: 1.4rem;
-  margin: 0 auto;
-  text-align: center;
-
-  color: #555555;
-}
-
+// COLORS
 
 $gray-light: rgba(188, 188, 188, 0.15);
 $gray-dark: rgba(70, 70, 70, 0.45);
 $gray-darker: rgba(70, 70, 70, 1);
 $gray: #cccccc;
+
 $pink: #eb80ff;
+$white: #ffffff;
+
+h1 {
+  font-family: 'Director';
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: $font-heading;
+  margin: .5em auto;
+  text-align: center;
+
+  color: $gray-darker;
+}
+
+h2{
+  font-family: "Times Now";
+  color: $gray-darker;
+  font-size: $font-heading;
+}
+
+h3{
+  font-family: 'Director';
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: $font-small;
+  margin: .5em auto;
+  text-align: center;
+
+  color: $gray-dark;
+}
+
+p, blockquote{
+  font-family: "Times Now";
+  color: $gray-darker;
+  font-size: $font-body;
+  line-height: 120%;
+  width: 450px;
+  max-width: 90%;
+  margin: 1em auto;
+}
+
+a{
+  text-decoration: none;
+  color: $pink;
+}
+
+blockquote{
+}
 
 main {
-  padding: 1em;
-
+  box-sizing: border-box;
+  width: calc(100% - 2em);
+  margin: 1em;
+  padding-top: 2em;
+//  background: rgba(255, 255, 0, 0.13);
 }
 
 section.block {
-  padding: 1em 0;
+  box-sizing: border-box;
+  padding: 0;
 }
 
 section .wrapper {
   width: 100%;
-  padding: 0 1em;
+  padding: 0;
 
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+}
+
+#navi{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 32px;
+  font-family: "Times Now";
+  padding: 1em;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9178824972) 28%, rgba(255, 255, 255, 0) 100%);
+  z-index: 9;
+  
+  .wrapper{flex-direction: row;}
+  
+  .colors{
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    a{
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 1px solid #ccc;
+    }
+  }
+  
+  a{text-decoration: none;}
+  
+  a.link{
+    cursor: pointer;
+    margin: 0 -3px;
+    color: $gray-darker;
+  }
+  a.link span::before{ content: "(";  opacity: 0; color: $gray;}
+  a.link span::after{ content: ")"; opacity: 0; color: $gray;}
+  
+  a:hover span::after, a:hover span::before{ opacity: 1; }
+  
+  a:hover span[hidden]{ display: block;}
+  a:hover span[location]{ display: none;}
+  
+}
+
+
+#heading, .reg{
+  
+  p{
+    text-align: center;
+  }
+@media only screen and (max-width: 600px) {
+  p{
+//    text-align: left;
+//    margin-left: 0;
+  }
+  }
+  
 }
 
 
@@ -53,12 +159,15 @@ section .wrapper {
   .filter-wrapper{
     
     margin: 0 0 1em 0;
+    text-align: center;
     
     a{
       font-size: 1.25rem;
       font-family: "Times Now";
       letter-spacing: -.5px;
       color: $gray-darker;
+      
+      cursor: pointer;
     }
     
   }
@@ -69,6 +178,8 @@ section .wrapper {
     display: flex;
     flex-direction: column;
     padding: 0;
+    margin: 0 auto;
+    max-width: 1100px;
   }
   
 //  .wrapper:hover > a:not(:hover){
@@ -80,7 +191,7 @@ section .wrapper {
     margin: .5em 0;
     width: 100%;
     font-family: 'Director';
-    font-size: .8rem;
+    font-size: $font-body;
     margin-bottom: 1em;
     
     display: flex;
@@ -110,7 +221,7 @@ section .wrapper {
   }
 
   span[keywords] {
-    font-size: .7rem;
+    font-size: $font-details;
     letter-spacing: -.5px;
     text-transform: uppercase;
     width: 140px;
@@ -120,12 +231,19 @@ section .wrapper {
     display: inline-block;
     width: 80px;
     text-transform: uppercase;
-    font-size: .7rem;
+    font-size:  $font-details;
+  }
+
+  span[by] {
+    display: inline-block;
+    width: 140px;
+    text-transform: uppercase;
+    font-size:  $font-details;
   }
 
 
   span[year] {
-    font-size: .7rem;
+    font-size:  $font-details;
     float: right;
   }
   
@@ -161,44 +279,61 @@ section .wrapper {
 
   display: flex;
   justify-content: center;
+  display: none;
 }
 
+
 // ROOM
-#institute {
+#map {
 
-  border: 1px solid #ccc;
-
+  box-sizing: border-box;
+//  border: 1px solid #ccc;
+//  background: rgba(255, 255, 0, 0.13);
+  
   font-family: "Director";
-
   text-align: center;
+  
+
 
   .institute-index {
 
-    padding: 3em 0 2em 0;
+    max-width: 480px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 2em 0;
 
-    .wrapper {
-      max-width: 80%;
+    .w {
       display: flex;
+      flex-direction: column;
       flex-wrap: wrap;
+      justify-content: center;
+      align-content: start;
       margin: 0 auto;
+      height: 80px;
     }
 
     a {
-      width: 170px;
-      max-width: 48%;
-      padding: .15em .5em;
+      width: 160px;
+      max-width: 50%;
+      padding: .15em 1em;
       text-align: left;
       font-family: "Times Now";
       font-size: 1rem;
       cursor: pointer;
+      color: $gray-darker;
     }
+    
+  a span::before{ content: "( ";  opacity: 0; color: $gray;}
+  a span::after{ content: " )"; opacity: 0; color: $gray;}
+  
+  a:hover span::after, a:hover span::before{ opacity: 1; }
 
     span.number {
       font-family: "Director";
-      font-size: .6rem;
+      font-size: .4rem;
       padding-right: .5em;
       color: rgba(70, 70, 70, 0.47);
-      letter-spacing: -.75px;
+      letter-spacing: -1.5px;
       transform: translateY(-2.5px);
       display: inline-block;
     }
@@ -206,17 +341,18 @@ section .wrapper {
   }
 
   .institute-map {
+    padding: 1em 0;
     margin: 0 auto;
-    width: 400px;
-    max-width: 99vw;
-    outline: 1px solid red;
+    width: 350px;
     
     display: inline-flex;
     flex-wrap: wrap;
     align-content: center;
     align-items: center;
 @media only screen and (max-width: 600px) {
-    transform: scale(0.8);
+  max-width: 100vw;
+    transform: scale(0.9);
+    margin-left: 0;
     }
   }
 
@@ -234,7 +370,7 @@ section .wrapper {
   }
 
   .room {
-    min-height: 50px;
+    min-height: 40px;
     margin-left: -1px;
     margin-bottom: -1px;
     border: 1px solid $gray;
@@ -286,18 +422,20 @@ section .wrapper {
 
     span[title] {
       text-transform: uppercase;
-      font-size: .7rem;
+      font-size: $font-details;
       text-align: center;
       letter-spacing: -.5px;
       padding: .5em;
       color: $gray-darker;
+      max-width: 95%;
+      margin: 0 auto;
     }
 
     span[desc] {
       display: none;
       width: 100%;
       font-family: "Times Now";
-      font-size: .7rem;
+      font-size:  $font-details;
       padding: .5em;
       max-width: 80%;
     }
@@ -311,4 +449,31 @@ section .wrapper {
 
   }
 
+}
+
+
+#map.popup{
+}
+
+.popup{
+  position: fixed;
+  top: 0;left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  background: $white;
+  
+  display: none;
+  
+  .wrapper{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  
 }
