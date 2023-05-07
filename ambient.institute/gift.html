@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gift Shop</title>
+  <meta name="description" content="description" />
+  <meta name="author" content="author" />
+  <meta name="keywords" content="keywords" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="stylesheet" href="./styling/s.css" type="text/css" />
+  <link rel="stylesheet" href="./styling/main.css" type="text/css" />
+  <link rel="stylesheet" href="./styling/room.css" type="text/css" />
+</head>
+
+<body>
+  <main>
+
+    <audio id="audio_sfx"></audio>
+    
+    <section id="caption" class="block">
+      <div class="wrapper">
+        <a class="link" href="library.html" title="To the Library">&LongLeftArrow;</a>
+        
+        <div class="central">
+        <a class="link" act="lights">Lights out</a>
+        </div>
+        
+        <a class="link" href="garden.html" title="To the Green House">&LongRightArrow;</a>
+        
+      </div>
+    </section>
+    
+    <div id="lights" lights="on"></div>
+    
+    
+    <section id="navi" class="block">
+    <div class="wrapper">
+    
+      <div class="-left">
+        
+      <a class="link" href="index.html" home><span location>Gift Shop</span><span hidden>Ambient Institute</span></a>
+      
+        <span weather>Sunny</span>
+        
+      </div>
+      
+
+      <a class="link" map>
+        <span location>Map</span>
+        <span hidden>Navigate</span>
+      </a>      
+    </div>
+    </section>
+    
+    <br><br>
+
+    <section id="heading" class="block">
+
+      <h1 name>Gift Shop</h1>
+
+      <p desc>A bell chimes to welcome your entrance to the well-lit gift shop, where all the walls of the web attend to you. Physical and digital artifacts & souvenirs are documented here, made tenderly from the halls of Ambient Institute & with other loved ones and collaborators.</p>
+      
+      <p>You can <a href="https://patreon.com/hotemogf">become a Patron</a> to receive the first announcements of new gifts.</p>
+      
+      <div class="actions">
+      
+      </div>
+
+    </section>
+    
+    <section id="shop" class="block room">
+      <div class="outside">
+        <div class="gifts">
+        
+        
+        </div>
+      </div>
+    </section>
+
+    <hr>
+
+    <section id="map" class="block" active="library">
+      
+      
+    </section>
+
+
+    <section id="map" class="popup block">
+      <div class="wrapper">
+      <h1>Map</h1>
+        
+      <p desc>
+        The halls are filled with soft voices and small histories. The wind chimes. It is as if everything is where it was meant to be.</p>
+      <div class="wrapper-map"></div>
+        </div>
+    </section>
+    
+    
+    
+  </main>
+
+  <script src="//code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+  <script src="institute.js" type="text/javascript"></script>
+  <script src="gift.js" type="text/javascript"></script>
+  
+      <script type="text/javascript">$('#map').load('map-src.html');
+        </script>
+</body>
+
+</html>

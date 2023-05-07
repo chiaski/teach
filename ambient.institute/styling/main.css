@@ -68,7 +68,6 @@ main {
   width: calc(100% - 2em);
   margin: 1em;
   padding-top: 2em;
-  padding-bottom: 5vh;
 }
 
 section.block {
@@ -190,9 +189,21 @@ section .wrapper {
   box-sizing: border-box;
   background: linear-gradient(180deg, white 25%, rgba(255, 255, 255, 0) 100%);
   z-index: 9;
+  color: #464646;
+  font-size: 0.8rem;
+}
+#navi a {
+  color: #464646;
 }
 #navi .wrapper {
   flex-direction: row;
+}
+#navi span[weather] {
+  display: block;
+}
+#navi .-left {
+  min-width: 150px;
+  width: 20%;
 }
 #navi .colors {
   position: fixed;
@@ -205,13 +216,9 @@ section .wrapper {
   height: 16px;
   border: 1px solid #ccc;
 }
-#navi a {
-  text-decoration: none;
-}
 #navi a.link {
   cursor: pointer;
-  margin: 0 -3px;
-  color: #464646;
+  margin: 0 -4px;
 }
 #navi a.link span::before {
   content: "(";
@@ -227,7 +234,7 @@ section .wrapper {
   opacity: 1;
 }
 #navi a:hover span[hidden] {
-  display: block;
+  display: inline;
 }
 #navi a:hover span[location] {
   display: none;

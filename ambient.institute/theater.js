@@ -1,5 +1,7 @@
 var tag = document.createElement('script');
 
+let firstClick = false;
+
 tag.src = "https://www.youtube.com/iframe_api";
 
 var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -61,7 +63,6 @@ $(document).ready(function () {
   });
 
 
-
   $(".films").on("mouseover", ".card", function () {
 
     if (!$(this).is("[url]")) return;
@@ -71,14 +72,12 @@ $(document).ready(function () {
 
     $(".yt-title").html(txt);
     $("#player")
-      .css("filter", "blur(5px)")
-      .css("opacity", 0.1);
+      .css("opacity", 0);
 
 
   }).on("mouseout", function () {
 
     $("#player")
-      .css("filter", "blur(0)")
       .css("opacity", 1);
     
 
@@ -86,6 +85,11 @@ $(document).ready(function () {
   
   $(".films").on("click", ".card", function(){
     
+    
+    if(!firstClick){
+      $("#player").fadeIn();
+      firstClick = true;
+    }
     if (!$(this).is("[url]")) return;
 
     let n = $(this).attr("url");
@@ -95,8 +99,6 @@ $(document).ready(function () {
     $("#player")
       .css("filter", "blur(0)")
       .css("opacity", 1);
-    
-    
   });
   
   

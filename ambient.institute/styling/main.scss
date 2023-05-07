@@ -88,7 +88,6 @@ main {
   width: calc(100% - 2em);
   margin: 1em;
   padding-top: 2em;
-  padding-bottom: 5vh;
 //  background: rgba(255, 255, 0, 0.13);
 }
 
@@ -236,7 +235,25 @@ section .wrapper {
   background: linear-gradient(180deg, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
   z-index: 9;
   
+    color: $gray-darker;
+    font-size: $font-body;
+  
+  a{
+    color: $gray-darker;
+    
+  }
+  
   .wrapper{flex-direction: row;}
+  
+  // extra
+  span[weather]{
+    display: block;
+  }
+  
+  .-left{
+    min-width: 150px;
+    width: 20%;
+  }
   
   .colors{
     position: fixed;
@@ -251,19 +268,17 @@ section .wrapper {
     }
   }
   
-  a{text-decoration: none;}
   
   a.link{
     cursor: pointer;
-    margin: 0 -3px;
-    color: $gray-darker;
+    margin: 0 -4px;
   }
   a.link span::before{ content: "(";  opacity: 0; color: $gray;}
   a.link span::after{ content: ")"; opacity: 0; color: $gray;}
   
   a:hover span::after, a:hover span::before{ opacity: 1; }
   
-  a:hover span[hidden]{ display: block;}
+  a:hover span[hidden]{ display: inline;}
   a:hover span[location]{ display: none;}
   
 }
