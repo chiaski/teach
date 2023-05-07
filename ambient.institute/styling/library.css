@@ -2,7 +2,7 @@
   width: 100%;
   overflow-x: scroll;
   overflow-y: hidden;
-  height: 125px;
+  height: 145px;
   padding: 0.5em;
   margin: 0 auto 1em auto;
   margin-right: 1em;
@@ -14,18 +14,18 @@
 }
 .library span[book] {
   display: inline-block;
-  width: 28px;
-  height: 110px;
+  width: 32px;
+  height: 130px;
   border: 1px solid #ccc;
   margin: -0.75px;
+  cursor: pointer;
 }
 .library span[book] span[b] {
   font-family: "Director";
-  font-size: 0.55rem;
+  font-size: 0.65rem;
   letter-spacing: -1px;
   color: rgba(70, 70, 70, 0.45);
   margin: 0.5em 0.25em;
-  transform: translateX(2px);
   display: inline-block;
   writing-mode: vertical-rl;
   text-orientation: mixed;
@@ -34,6 +34,9 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.library span[book]:hover {
+  background: rgba(204, 204, 204, 0.14);
 }
 
 #index {
@@ -70,6 +73,9 @@
 }
 #index a {
   text-decoration: none;
+}
+#index a[hide] {
+  opacity: 0.3;
 }
 #index a:hover .row span[name] {
   color: #eb80ff;
@@ -127,7 +133,9 @@
   #index span[name] {
     font-size: 1.1rem;
   }
-  #index span[name], #index span[keywords], #index span[type] {
+  #index span[name],
+#index span[keywords],
+#index span[type] {
     width: auto;
     max-width: 90%;
   }

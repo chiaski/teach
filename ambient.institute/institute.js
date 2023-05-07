@@ -12,18 +12,21 @@ function pick(arr) {
 }
 
 
-console.log("hi");
+
+
+////////////////////////////////////
+
+
+
 
 $("a[map]").click(function(){
   $("#map.popup-small").fadeToggle();
 });
 
 
-
 $("#tile-map .index a").on("mouseover", function(){
   
   if( !$(this).is("[name]") ) return;
-  
   let n = $(this).attr("name");
   
   console.log(n);

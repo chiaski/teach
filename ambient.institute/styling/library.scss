@@ -18,52 +18,57 @@ $white: #ffffff;
 
 // LIBRARY
 
-  
-  .library{
-    width: 100%;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    height: 125px;
-    
-    padding: .5em;
-    margin: 0 auto 1em auto;
-    margin-right: 1em;
-    border: 1px solid #ccc;
-    
-    .w{
-      white-space: nowrap;
-      text-align: center;
-    }
-    
-    span[book]{
-      display: inline-block;
-      width: 28px;
-      height: 110px;
-      border: 1px solid #ccc;
-      margin: -.75px;
-      
-      span[b]{
-        font-family: "Director";
-        font-size: .55rem;
-        letter-spacing: -1px;
-        color: $gray-dark;
-        margin: .5em .25em;
-        transform: translateX(2px);
-        display: inline-block;
-        writing-mode: vertical-rl;text-orientation: mixed;
-        
-        text-align: left;
-        
-        height: 90%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-    }
-    
+
+.library {
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  height: 145px;
+
+  padding: .5em;
+  margin: 0 auto 1em auto;
+  margin-right: 1em;
+  border: 1px solid #ccc;
+
+  .w {
+    white-space: nowrap;
+    text-align: center;
   }
-  
-  
+
+  span[book] {
+    display: inline-block;
+    width: 32px;
+    height: 130px;
+    border: 1px solid #ccc;
+    margin: -.75px;
+    cursor: pointer;
+
+    span[b] {
+      font-family: "Director";
+      font-size: $font-details;
+      letter-spacing: -1px;
+      color: $gray-dark;
+      margin: .5em .25em;
+      display: inline-block;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+
+      text-align: left;
+
+      height: 90%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  span[book]:hover {
+    background: rgba(204, 204, 204, 0.14);
+  }
+
+}
+
+
 
 
 #index {
@@ -71,26 +76,26 @@ $white: #ffffff;
   // FILTER
   display: flex;
   flex-direction: column;
-  
-  .filter-wrapper{
-    
+
+  .filter-wrapper {
+
     margin: 0 0 1em 0;
     text-align: center;
-    
-    a{
+
+    a {
       font-size: 1.25rem;
       font-family: "Times Now";
       letter-spacing: -.5px;
       color: $gray-darker;
-      
+
       cursor: pointer;
     }
-    
+
   }
-  
-  
+
+
   // MAIN
-  
+
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -98,10 +103,10 @@ $white: #ffffff;
     margin: 0 auto;
     max-width: 1100px;
   }
-  
-//  .wrapper:hover > a:not(:hover){
-//    opacity: 0.9;
-//  }
+
+  //  .wrapper:hover > a:not(:hover){
+  //    opacity: 0.9;
+  //  }
 
   .row {
     padding: 0;
@@ -110,7 +115,7 @@ $white: #ffffff;
     font-family: 'Director';
     font-size: $font-body;
     margin-bottom: 1em;
-    
+
     display: flex;
     justify-content: space-between;
   }
@@ -119,7 +124,11 @@ $white: #ffffff;
     text-decoration: none;
   }
   
-  a:hover .row span[name]{
+  a[hide]{
+    opacity: 0.3;
+  }
+
+  a:hover .row span[name] {
     color: $pink;
   }
 
@@ -142,52 +151,59 @@ $white: #ffffff;
     text-transform: uppercase;
     width: 140px;
   }
-  
+
   span[type] {
     display: inline-block;
     width: 80px;
     text-transform: uppercase;
-    font-size:  $font-details;
+    font-size: $font-details;
   }
 
   span[by] {
     display: inline-block;
     width: 140px;
     text-transform: uppercase;
-    font-size:  $font-details;
+    font-size: $font-details;
   }
 
 
   span[year] {
-    font-size:  $font-details;
+    font-size: $font-details;
     float: right;
   }
-  
-@media only screen and (max-width: 800px) {
-  span[keywords]{
-    display: none;
+
+  @media only screen and (max-width: 800px) {
+    span[keywords] {
+      display: none;
     }
   }
-  
-@media only screen and (max-width: 600px) {
-  
-  .row{
-    display: flex;
-    flex-direction: column;
-  }
-  
-  span{ padding: .15em 0;}
-  
-  span[desc]{
-    display: block;
-    font-family: "Times Now";
-  }
-  
-  span[name]{
-    font-size: 1.1rem;
-  }
-  
-  span[name], span[keywords], span[type]{width: auto; max-width: 90%;}
-  
+
+  @media only screen and (max-width: 600px) {
+
+    .row {
+      display: flex;
+      flex-direction: column;
+    }
+
+    span {
+      padding: .15em 0;
+    }
+
+    span[desc] {
+      display: block;
+      font-family: "Times Now";
+    }
+
+    span[name] {
+      font-size: 1.1rem;
+    }
+
+    span[name],
+    span[keywords],
+    span[type] {
+      width: auto;
+      max-width: 90%;
+    }
+
   }
 }

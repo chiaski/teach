@@ -1,3 +1,13 @@
+$.fn.randomize = function(selector){
+    (selector ? this.find(selector) : this).parent().each(function(){
+        $(this).children(selector).sort(function(){
+            return Math.random() - 0.5;
+        }).detach().appendTo(this);
+    });
+
+    return this;
+};
+
 let filterActive = "grid";
     
 function randInt(min, max) { // min and max included 
@@ -9,7 +19,6 @@ $(document).ready(function () {
 
   // change filter
   
-  
   $("#garden .filter a").click(function(){
     
     $("#garden .filter a").removeAttr("active");
@@ -19,7 +28,6 @@ $(document).ready(function () {
     
     if(filterActive == "grid"){
       $("#garden .outside").css("height", "auto");
-      
       
       $("#garden .flower").each(function(){
         $(this)
@@ -38,7 +46,6 @@ $(document).ready(function () {
            .css("transform", "scale(" + (randInt(90,100) * 0.01) + ")")
           .css("left", randInt(0,70) + "%")
           .css("top", randInt(5,90) +  "%");
-//          .css("top", randInt(50,100) + (i* 110) + "px");
       });
     }
     
@@ -48,7 +55,6 @@ $(document).ready(function () {
   $.getJSON("https://opensheet.elk.sh/1duW1V3VfMU92-zHApZnCZvpSNy9wyM79kFk95zrxJ18/Garden", function (data) {
 
     data.forEach(function (row, i) {
-      
       
       $(`<a href="` + row.link +`" target="_blank" link>
         <div class="flower"><div class="wrapper">
@@ -71,7 +77,6 @@ $(document).ready(function () {
 
     data.forEach(function (row, i) {
       
-      
       $(`<a href="` + row.link +`" target="_blank" link>
         <div class="flower"><div class="wrapper">
           <span name>` + row.say +`</span>
@@ -88,6 +93,27 @@ $(document).ready(function () {
       });
 
   })
+  
+  
+  $("#caption").on("click", "a[act='shuffle']", function(){
+
+    if(filterActive == "grid"){
+     $("#garden .flowers a").randomize();
+    }
+    
+    if(filterActive == "free"){
+      
+      $("#garden .flower").each(function(i){
+        $(this)
+          .addClass("free")
+           .css("transform", "scale(" + (randInt(90,100) * 0.01) + ")")
+          .css("left", randInt(0,70) + "%")
+          .css("top", randInt(5,90) +  "%");
+      });
+      
+    }
+    
+  });
   
   
 });

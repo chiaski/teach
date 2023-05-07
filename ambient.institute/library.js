@@ -1,6 +1,32 @@
 
 
 $(document).ready(function () {
+  
+  $(".filter-wrapper").on("click", "a", function(){
+    
+  if( !$(this).is("[type]") ) return;
+  
+    let n = $(this).attr("type");
+    
+    $(".filter-wrapper a").attr("hide", "");
+    $(this).removeAttr("hide");
+    
+    if( n == "all"){
+       $("#index[library] .wrapper a").removeAttr("hide");
+      return;
+    }
+    
+    $("#index[library] .wrapper a").attr("hide", "");
+    
+    $("#index[library] .wrapper a").each(function(){
+      if( $(this).find("span[type]").html() == n ){
+        $(this).removeAttr("hide");
+      }
+    });
+    
+//    $("#index span[type]").html();
+    
+  });
 
   $.getJSON("https://opensheet.elk.sh/1duW1V3VfMU92-zHApZnCZvpSNy9wyM79kFk95zrxJ18/Library", function (data) {
 
