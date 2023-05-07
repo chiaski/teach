@@ -5,6 +5,17 @@ $font-body: .8rem;
 $font-details: .65rem;
 $font-small: .5rem;
 
+// COLORS
+
+$gray-light: rgba(188, 188, 188, 0.15);
+$gray-dark: rgba(70, 70, 70, 0.45);
+$gray-darker: rgba(70, 70, 70, 1);
+$gray: #cccccc;
+
+$pink: #eb80ff;
+$pink-lighter: rgba(235, 128, 255, 0.2);
+$white: #ffffff;
+
 body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -14,15 +25,6 @@ body {
 }
 
 
-// COLORS
-
-$gray-light: rgba(188, 188, 188, 0.15);
-$gray-dark: rgba(70, 70, 70, 0.45);
-$gray-darker: rgba(70, 70, 70, 1);
-$gray: #cccccc;
-
-$pink: #eb80ff;
-$white: #ffffff;
 
 h1 {
   font-family: 'Director';
@@ -52,6 +54,17 @@ h3{
   color: $gray-dark;
 }
 
+hr{
+  background: $gray;
+  width: 100%;
+  height: 1px;
+  border: 0;
+  margin: 5vh 0;
+}
+
+hr[large]{ margin: 10vh 0; }
+hr[hide]{ background: 0; }
+
 p, blockquote{
   font-family: "Times Now";
   color: $gray-darker;
@@ -64,7 +77,7 @@ p, blockquote{
 
 a{
   text-decoration: none;
-  color: $pink;
+    color: $gray-dark;
 }
 
 blockquote{
@@ -75,6 +88,7 @@ main {
   width: calc(100% - 2em);
   margin: 1em;
   padding-top: 2em;
+  padding-bottom: 5vh;
 //  background: rgba(255, 255, 0, 0.13);
 }
 
@@ -92,6 +106,124 @@ section .wrapper {
   justify-content: space-between;
 }
 
+// GENERAL
+
+.list{
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1100px;
+  }
+  
+//  .wrapper:hover > a:not(:hover){
+//    opacity: 0.9;
+//  }
+
+  .row {
+    padding: 0;
+    margin: .5em 0;
+    width: 100%;
+    font-family: 'Director';
+    font-size: $font-body;
+    margin-bottom: 1em;
+    border-bottom: 1px solid $gray;
+    
+    display: flex;
+    justify-content: space-between;
+  }
+
+  a {
+    text-decoration: none;
+    color: $gray-dark;
+    cursor: pointer;
+  }
+  
+  a:hover .row span[name]{
+    color: $pink;
+  }
+
+  span[name] {
+    width: 300px;
+    display: inline-block;
+    font-family: "Times Now";
+    font-size: 1rem;
+    color: $gray-darker;
+    vertical-align: top;
+  }
+
+  span[task] {
+    width: 300px;
+    display: inline-block;
+    font-family: "Director";
+    font-size: $font-body;
+    color: $gray-dark;
+    letter-spacing: -.5px;
+    vertical-align: top;
+  }
+
+  span[desc] {
+    display: none;
+  }
+
+  span[keywords] {
+    font-size: $font-details;
+    letter-spacing: -.5px;
+    text-transform: uppercase;
+    width: 140px;
+  }
+  
+  span[type] {
+    display: inline-block;
+    width: 80px;
+    text-transform: uppercase;
+    font-size:  $font-details;
+  }
+
+  span[by] {
+    display: inline-block;
+    width: 140px;
+    text-transform: uppercase;
+    font-size:  $font-details;
+  }
+
+
+  span[year] {
+    font-size:  $font-details;
+    float: right;
+  }
+}
+
+// BARS
+
+#caption{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 24px;
+  font-family: "Times Now";
+  padding: 0 1em;
+  box-sizing: border-box;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
+  z-index: 9;
+  
+  .wrapper{flex-direction: row;}
+  
+  a{
+    cursor: pointer;
+    color: $gray-darker;
+  }
+  
+  p{
+    padding: .5em;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
 #navi{
   position: fixed;
   top: 0;
@@ -101,7 +233,7 @@ section .wrapper {
   font-family: "Times Now";
   padding: 1em;
   box-sizing: border-box;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9178824972) 28%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
   z-index: 9;
   
   .wrapper{flex-direction: row;}
@@ -152,124 +284,8 @@ section .wrapper {
 }
 
 
-#index {
-
-  // FILTER
-  
-  .filter-wrapper{
-    
-    margin: 0 0 1em 0;
-    text-align: center;
-    
-    a{
-      font-size: 1.25rem;
-      font-family: "Times Now";
-      letter-spacing: -.5px;
-      color: $gray-darker;
-      
-      cursor: pointer;
-    }
-    
-  }
-  
-  // MAIN
-  
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin: 0 auto;
-    max-width: 1100px;
-  }
-  
-//  .wrapper:hover > a:not(:hover){
-//    opacity: 0.9;
-//  }
-
-  .row {
-    padding: 0;
-    margin: .5em 0;
-    width: 100%;
-    font-family: 'Director';
-    font-size: $font-body;
-    margin-bottom: 1em;
-    
-    display: flex;
-    justify-content: space-between;
-  }
-
-  a {
-    text-decoration: none;
-    color: $gray-dark;
-  }
-  
-  a:hover .row span[name]{
-    color: $pink;
-  }
-
-  span[name] {
-    width: 300px;
-    display: inline-block;
-    font-family: "Times Now";
-    font-size: 1.1rem;
-    color: $gray-darker;
-    vertical-align: top;
-  }
-
-  span[desc] {
-    display: none;
-  }
-
-  span[keywords] {
-    font-size: $font-details;
-    letter-spacing: -.5px;
-    text-transform: uppercase;
-    width: 140px;
-  }
-  
-  span[type] {
-    display: inline-block;
-    width: 80px;
-    text-transform: uppercase;
-    font-size:  $font-details;
-  }
-
-  span[by] {
-    display: inline-block;
-    width: 140px;
-    text-transform: uppercase;
-    font-size:  $font-details;
-  }
 
 
-  span[year] {
-    font-size:  $font-details;
-    float: right;
-  }
-  
-  
-@media only screen and (max-width: 600px) {
-  
-  .row{
-    display: flex;
-    flex-direction: column;
-  }
-  
-  span{ padding: .15em 0;}
-  
-  span[desc]{
-    display: block;
-    font-family: "Times Now";
-  }
-  
-  span[name]{
-    font-size: 1.1rem;
-  }
-  
-  span[name], span[keywords], span[type]{width: auto; max-width: 90%;}
-  
-  }
-}
 
 #location {
   position: fixed;
@@ -296,7 +312,6 @@ section .wrapper {
 
 
   .institute-index {
-
     max-width: 480px;
     width: 90%;
     margin: 0 auto;
@@ -395,8 +410,9 @@ section .wrapper {
   .room:hover {
     border: 1px solid $gray-dark;
     background-image: url(../assets/dot.png);
-    background-color: $gray-light;
+    background-color: rgba(204, 204, 204, 0.21);
     cursor: pointer;
+    color: $gray-darker;
 
     span[title] {
       display: none;
@@ -443,7 +459,7 @@ section .wrapper {
   }
 
   .room[active] {
-    background-color: $gray-light;
+    background-color: rgba(204, 204, 204, 0.21);
     z-index: 1;
     background-image: url(../assets/dot.png);
 
@@ -477,3 +493,67 @@ section .wrapper {
   }
   
 }
+
+
+#map.popup-small{
+  position: fixed;
+  top: 0;right: 0;
+  width: 100%;
+  max-width: 370px;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+//  background: $white;
+  background: linear-gradient(-90deg, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 0) 100%);
+  
+  
+  display: none;
+  
+  .wrapper{
+    margin-top: 100px;
+//    top: 50%;
+//    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .wrapper-map{
+    margin-top: -2em;
+  }
+  
+  .institute-map{
+    transform: scale(0.5);
+    height: 120px;
+    padding: 0;
+    
+@media only screen and (max-width: 600px) {
+    transform: scale(0.5) !important;
+    }
+  }
+  
+  .institute-index{
+    max-width: 250px;
+    width: 95% !important;
+    
+    .w{
+      width: 100%;
+      height: 120px;
+    }
+    
+    .w a{
+      padding: .25em .1em;
+      margin: 0 !important;
+      max-width: none;
+      width: 125px; 
+      display: inline-block;
+      vertical-align: top;
+    }
+    
+  }
+  
+}
+
+
+

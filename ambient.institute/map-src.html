@@ -1,0 +1,137 @@
+
+
+
+      <div class="institute-map">
+        <!--        <div class="institute-map-wrapper"></div>-->
+        <div class="spacer" style="width: 127px;"></div>
+        <div name="observatory" class="room" style="width: 150px;height: 70px; border-top-left-radius: 70px; border-top-right-radius: 70px;">
+          <div class="room-content">
+            <span title>Observatory</span>
+            <span desc>A humble lookout</span>
+          </div>
+        </div>
+
+
+        <div class="break"></div>
+
+        <div class="spacer" style="width: 19px;"></div>
+        <div proper="library" name="library" class="room" style="width: 258px;height: 70px;">
+          <div class="room-content">
+            <span title>Library</span>
+            <span desc>Walls filled with talks, workshops, and other resources</span>
+          </div>
+        </div>
+        <div proper="wip" name="atelier" class="room" style="width: 75px;height: 70px;">
+          <div class="room-content">
+            <span title>Atelier</span>
+            <span desc>A small workshop</span>
+          </div>
+        </div>
+
+        <div class="break"></div>
+
+        <div class="room" style="width: 20px;  height: 70px; border-top-left-radius: 20px;  border-bottom-left-radius: 20px;"></div>
+
+        <a href="index.html"><div name="foyer" class="room" style="width: 90px; height: 70px;">
+          <div class="room-content">
+            <span title>Foyer</span>
+            <span desc>Welcome to the lobby of Ambient Institute.</span>
+          </div>
+        </div></a>
+        <div class="spacer" style="width: 10px;"></div>
+
+        <div name="garden" class="room" style="width: 149px;height: 40px; border-radius: 120px;">
+          <span title>Green House</span>
+          <span desc>A selection of flowers and fauna.</span>
+        </div>
+        <div class="spacer" style="width: 10px;"></div>
+
+        <div name="bar" class="room" style="width: 75px;height: 70px;">
+          <div class="room-content">
+            <span title>Bar</span>
+            <span desc>Grab a drink</span>
+          </div>
+        </div>
+
+
+        <div class="break"></div>
+
+
+        <div class="spacer" style="width: 19px;"></div>
+
+        <div name="theater" class="room" style="width: 184px;height: 70px;">
+          <div class="room-content">
+            <span title>Theater</span>
+            <span desc>Rewinding</span>
+          </div>
+        </div>
+        <div name="gift" class="room" style="width: 75px;height: 70px;">
+          <div class="room-content">
+            <span title>Gift Shop</span>
+            <span desc>Trinkets for picking</span>
+          </div>
+        </div>
+
+        <div name="sound" class="room" style="width: 75px;height: 70px;">
+          <div class="room-content">
+            <span title>Sound Room</span>
+            <span desc>Listening zone</span>
+          </div>
+        </div>
+
+      </div>
+      
+      <div class="institute-index">
+        <div class="w">
+          <a name="foyer"><span class="number">1</span> Foyer</a>
+          <a name="library"><span class="number">2</span> Library</a>
+          <a name="theater"><span class="number">3</span> Theater</a>
+          <a name="garden"><span class="number">4</span> Green House</a>
+          <a name="observatory"><span class="number">5</span> Observatory</a>
+          <a name="atelier"><span class="number">6</span> Atelier</a>
+          <a name="bar"><span class="number">7</span> Bar</a>
+          <a name="sound"><span class="number">8</span> Sound Room</a>
+          <a name="gift"><span class="number">9</span> Gift Shop</a>
+        </div>
+      </div>
+
+  <script src="jquery-3.6.0.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+$(".institute-index").on("mouseover", "a", function(){
+  
+  if( !$(this).is("[name]") ) return;
+  
+  let n = $(this).attr("name");
+  
+  console.log(n);
+  
+  $(".institute-map .room").removeAttr("active");
+  $(".institute-map .room[name='" + n +"']").attr("active", "");
+  
+  
+}).on("mouseout", function(){
+  
+  let n = $(".institute-map").attr("active");
+  
+  $(".institute-map .room").removeAttr("active");
+  $(".institute-map .room[name='" + n +"']").attr("active", "");
+  
+});
+  
+  
+$(".institute-index").on("click", "a", function(){
+  if( !$(this).is("[name]") ) return;
+  let n = $(this).attr("name");
+  window.location.href = n + ".html";
+});
+  
+$(".institute-map").on("click", ".room", function(){
+  if( !$(this).is("[name]") ) return;
+  let n = $(this).attr("name");
+  window.location.href = n + ".html";
+});
+
+  
+</script>

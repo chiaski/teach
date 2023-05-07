@@ -3,18 +3,29 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello!</title>
+  <title>Library</title>
   <meta name="description" content="description" />
   <meta name="author" content="author" />
   <meta name="keywords" content="keywords" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <link rel="stylesheet" href="./styling/s.css" type="text/css" />
   <link rel="stylesheet" href="./styling/main.css" type="text/css" />
+  <link rel="stylesheet" href="./styling/library.css" type="text/css" />
 </head>
 
 <body>
   <main>
 
+    <section id="caption" class="block">
+      <div class="wrapper">
+        <a class="link" href="index.html" title="To the Foyer">&LongLeftArrow;</a>
+        <p></p>
+        <a class="link" href="theater.html" title="To the Theater">&LongRightArrow;</a>
+        
+      </div>
+    </section>
+    
+    
     <section id="navi" class="block">
     <div class="wrapper">
     
@@ -27,18 +38,26 @@
       </a>      
     </div>
     </section>
-    
 
     <section id="heading" class="block">
 
-      <h1 name>Library</h1>
+      <h1 class="title">Library</h1>
+      <p desc>Even the The walls are lined with a breadth of talks, workshops, resources, and other gatherings to reference. </p>
 
-      <p desc>A collection of talks, workshops, resources, and other gatherings to reference.</p>
-
+    </section>
+    
+    
+    <section id="index" class="block" library>
+      
+      <div class="library">
+        <div class="w">
+      </div>
+      </div>
     </section>
 
 
     <section id="index" class="block" library>
+      
       <div class="wrapper">
         <br>
 
@@ -55,7 +74,28 @@
       </div>
     </section>
     
-    <br>
+    <hr hide>
+
+    <section id="heading" class="block">
+
+      <h1 name>References</h1>
+
+      <p desc>A rundown book contains a list of influences loved, lingering, and lost.</p>
+
+    </section>
+
+  
+    <section id="index" class="block" references>
+      <div class="wrapper">
+        
+        <br>
+
+      </div>
+    </section>
+    
+
+    <hr>
+    
     
     <section class="block reg">
       <p desc>A note left at the main desk reads:<br><br>
@@ -66,33 +106,12 @@
       
     </section>
     
-    <br><br>
-
-    <section id="heading" class="block">
-
-      <h1 name>References</h1>
-
-      <p desc>A rundown book contains a list of influences loved, lingering, and lost.</p>
-
-    </section>
-    
-
-    <section id="index" class="block" references>
-      <div class="wrapper">
-        
-        <br>
-
-      </div>
-    </section>
-    
-    <br><br><br><br><br><br>
-
+    <hr>
 
     <section id="map" class="block" active="library">
       
       
     </section>
-
 
 
     <section id="map" class="popup block">
@@ -113,7 +132,7 @@
   <script src="institute.js" type="text/javascript"></script>
   <script src="library.js" type="text/javascript"></script>
   
-      <script type="text/javascript">$('#map').load('map.html');
+      <script type="text/javascript">$('#map').load('map-src.html');
         </script>
 </body>
 

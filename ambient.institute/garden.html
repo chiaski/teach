@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Garden</title>
+  <meta name="description" content="description" />
+  <meta name="author" content="author" />
+  <meta name="keywords" content="keywords" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="stylesheet" href="./styling/s.css" type="text/css" />
+  <link rel="stylesheet" href="./styling/room.css" type="text/css" />
+  <link rel="stylesheet" href="./styling/main.css" type="text/css" />
+
+  <style type="text/css">
+    main {
+      min-height: 100vh;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <main>
+
+    <section id="caption" class="block">
+      <div class="wrapper">
+        <a class="link" href="theater.html" title="To the Theater">&LongLeftArrow;</a>
+        <p></p>
+        <a class="link" href="observatory.html" title="To the Observatory">&LongRightArrow;</a>
+        
+      </div>
+    </section>
+
+    <section id="navi" class="block">
+      <div class="wrapper">
+
+        <a class="link" href="index.html" home><span location>Garden</span><span hidden>Ambient Institute</span></a>
+
+        <a class="link" map>
+          <span location>Map</span>
+          <span hidden>Navigate</span>
+        </a>
+      </div>
+    </section>
+    
+<!-- GREEN HOUSE -->
+    
+
+    <section id="heading" class="block">
+
+      <h1 name>Green House</h1>
+
+      <p desc>Flowers bloom with words and testimonials. Their essence is forever preserved here, where time cannot encroach on or take them. A collection of press, mentions, and kindness to remember—thank you.</p>
+
+      <p>You can <a href="https://forms.gle/ZcS9i7NxX4SapELQ6" target="_window" onclick="window.open('https://forms.gle/ZcS9i7NxX4SapELQ6', 'plant', 'width=700,height=400,left=200, top=200')">plant a seed if you'd like</a>, please be kind.</p>
+      <br>
+
+    </section>
+
+    <section class="block room" id="garden">
+
+      <div class="outside">
+        <div class="filter">
+        <a class="link" name="grid" active><span>Grid</span></a>
+        <a class="link" name="free"><span>Free</span></a>
+        </div>
+
+        <div class="flowers"></div>
+      </div>
+
+
+      <div class="wrapper">
+
+      </div>
+    </section>
+
+    
+  </main>
+
+  <script src="jquery-3.6.0.min.js" type="text/javascript"></script>
+  <script src="jqueryui.min.js" type="text/javascript"></script>
+  
+  
+  <script src="garden.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+//    $('#map ').load('map-src.html');
+
+  </script>
+
+
+  <script type="text/javascript">
+    $("#map .wrapper").on("mouseover", "a", function() {
+
+      if (!$(this).is("[name]")) return;
+
+      let n = $(this).attr("name");
+
+      console.log(n);
+
+      $(".institute-map .room").removeAttr("active");
+      $(".institute-map .room[name='" + n + "']").attr("active", "");
+
+
+    }).on("mouseout", function() {
+
+      let n = $("#map").attr("active");
+
+      $(".institute-map .room").removeAttr("active");
+      $(".institute-map .room[name='" + n + "']").attr("active", "");
+
+    });
+
+
+    $("#map .wrapper").on("click", "a", function() {
+      if (!$(this).is("[name]")) return;
+      let n = $(this).attr("name");
+      window.location.href = n + ".html";
+    });
+
+    $("#map .institute-map").on("click", ".room", function() {
+      if (!$(this).is("[name]")) return;
+      let n = $(this).attr("name");
+      window.location.href = n + ".html";
+    });
+
+  </script>
+
+</body>
+
+</html>

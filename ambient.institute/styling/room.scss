@@ -1,15 +1,199 @@
+// FONT SIZES
 
+$font-heading: 1.15rem;
+$font-body: .8rem;
+$font-details: .65rem;
+$font-small: .5rem;
+
+// COLORS
 
 $gray-light: rgba(188, 188, 188, 0.15);
 $gray-dark: rgba(70, 70, 70, 0.45);
 $gray-darker: rgba(70, 70, 70, 1);
 $gray: #cccccc;
 
+$pink: #eb80ff;
+$pink-lighter: rgba(235, 128, 255, 0.2);
+$white: #ffffff;
+
 // FOYER
+
+.room{
+  
+  .outside{
+    position: relative;
+//    border: 1px solid #ccc;
+    width: 100%;
+    height: 90%;
+    margin: 0 auto;
+    
+    font-family: "Director";
+    white-space: pre-wrap;
+    color: $gray;
+    padding: 1em;
+    
+  }
+  
+}
+
+#theater{
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 90vh;
+  
+  .outside{
+    position: relative;
+    min-height: 440px;
+    margin-top: -100px;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  span[curtain]{
+    position: absolute;
+    height: 240px;
+    width: 140px;
+    top: 0;
+    left: 0;
+//    left: 50%;
+//    transform: translateX(-50%);
+    margin: 0;
+    background-image: url(../assets/curtain.png);
+    background-size: contain;
+    z-index: 100;
+  }
+  
+  span[curtain][right]{
+    left: auto;
+    right: 0;
+    transform: scaleX(-100%);
+  }
+  
+  .yt-wrapper{
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 550px;
+    height: 300px;
+    margin: 1em auto;
+    padding: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+    object-fit: cover;
+    z-index: 99;
+    overflow: hidden;
+  }
+  
+  .yt-wrapper{
+
+    .yt-title{
+     position: absolute;
+      font-family: "Director";
+      font-size: $font-body;
+      text-transform: uppercase;
+      z-index: 2;
+      top: 50%;
+      width: 100%;
+      text-align: center;
+      mix-blend-mode: exclusion;
+    }
+    
+  }
+  
+  
+    #player{
+      padding: 0;
+      margin: 0;
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+    }
+
+  
+  // film strip
+  
+  .films{
+    position: absolute;
+    top: 340px;
+    left: 0;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 80px;
+    padding: 0 .25em;
+    margin: 1em auto;
+//    border: 1px solid #ccc;
+    
+    .w{
+      height: 80px;
+      white-space: nowrap;
+      text-align: center;
+    }
+    
+    .w{
+      
+      .card{
+        display: inline-block;
+        width: 80px;
+        padding: .2em 0;
+        text-align: center;
+      }
+      
+      span[card]{
+        font-size: 2.5em;
+      }
+      
+      span[name]{
+        display: none;
+      }
+      
+      span:not([active]){
+        opacity: 0.3;
+      }
+      
+      
+      span:hover{
+        opacity: 0.8;
+        cursor: pointer;
+      }
+   
+    }
+  }
+}
+#lights{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+//  background:#1a1a1a;
+  z-index: 10;
+  mix-blend-mode: exclusion;
+  pointer-events: none;
+}
+
+#lights[lights='on']{
+}
+
+*[lights='off']{
+  color: #ffffff !important;
+}
+
+body[lights='off']{
+  background:#1a1a1a;
+}
+#navi[lights='off']{
+  background: linear-gradient(180deg, rgba(26, 26, 26, 1) 25%, rgba(26, 26, 26, 0) 100%);
+}
+#caption[lights='off']{
+  background: linear-gradient(0deg, rgba(26, 26, 26, 1) 25%, rgba(26, 26, 26, 0) 100%);
+}
 
 #foyer{
   
-  height: 600px;
+  height: 550px;
   min-height: 70vh;
   
   .outside{
@@ -25,6 +209,21 @@ $gray: #cccccc;
     padding: 1em;
   }
   
+  .window{
+    border: 1px solid #ccc;
+    position: absolute;
+    width: 70px;
+    height: 120px;
+    
+    background-image: url(../assets/clouds.png);
+    background-position: center;
+  }
+  
+  .window:hover{
+    opacity: 0.6;
+    cursor: pointer;
+  }
+  
   .door{
     position: absolute;
     left: 50%;
@@ -36,12 +235,134 @@ $gray: #cccccc;
     height: 200px;
     border-top-left-radius: 90px;
     border-top-right-radius: 90px;
+    background:rgba(255, 255, 255, 1);
   }
   
   .door:hover{
-    background: $gray-light;
+//    background: rgba(255, 255, 255, 0.6);
     cursor: pointer;
   }
   
+  
+}
+
+#garden{
+  
+  a{
+    color: #000;
+  }
+  
+  .outside{
+    position: relative;
+    padding: .5em 1em;
+    min-height: 300px;
+    width: 100%;
+  }
+  
+  .flowers{
+    margin: 0;
+    margin-top: -1em;
+    padding: 0;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .filter{
+    width: 100%;
+    padding:0;
+    display: flex;
+    justify-content: center;
+    
+    a{
+      font-size: $font-body;
+      color: $gray-darker;
+      cursor: pointer;
+    }
+    
+    
+  a.link span::before{ content: "(";  opacity: 0; color: $gray;}
+  a.link span::after{ content: ")"; opacity: 0; color: $gray;}
+  
+  a:hover span::after, a:hover span::before{ opacity: 1; }
+    
+    a[active] span::after, a[active] span::before{ opacity: 1; }
+    
+  }
+  
+  
+  .flower{
+    display: inline-block;
+    width: 160px;
+    height: 190px;
+    background-image: url(../assets/flower-large.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: -1.5em 0;
+//    background: red;
+
+    .wrapper{
+      margin-top: -1em;
+      max-height: 150px;
+      padding: 1em;
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+    
+  }
+  
+  .flower.free{
+    position: absolute;
+  }
+  
+  .flower:hover{
+    background-image: url(../assets/flower-large-bg.png);
+  }
+  
+  
+  .flower span[name]{
+    font-size: .95rem;
+    font-family: "Times Now";
+  }
+  
+  .flower span[year]{
+    font-size: $font-small;
+    margin: .15em auto;
+    padding: .25em;
+    color: $gray-dark;
+  }
+  
+  
+  .flower span[year]::before{ content: "( ";  opacity: 0; color: $gray;}
+  .flower span[year]::after{ content: " )"; opacity: 0; color: $gray;}
+  
+  .flower:hover span[year]::after, a:hover span::before{ opacity: 1; }
+  .flower:hover span[year]::after, .flower:hover span[year]::before{ opacity: 1; }
+  
+@media only screen and (max-width: 600px) {
+  
+  .outside{
+    justify-content: center;
+    padding: 0;
+  }
+  
+  .flower{
+    width: 175px;
+  height: 190px;
+    
+    .wrapper{
+      margin-top: 0;
+    }
+  }
+  
+    }
   
 }

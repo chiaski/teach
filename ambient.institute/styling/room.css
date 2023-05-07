@@ -1,5 +1,141 @@
+.room .outside {
+  position: relative;
+  width: 100%;
+  height: 90%;
+  margin: 0 auto;
+  font-family: "Director";
+  white-space: pre-wrap;
+  color: #cccccc;
+  padding: 1em;
+}
+
+#theater {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 90vh;
+}
+#theater .outside {
+  position: relative;
+  min-height: 440px;
+  margin-top: -100px;
+  width: 100%;
+  max-width: 600px;
+}
+#theater span[curtain] {
+  position: absolute;
+  height: 240px;
+  width: 140px;
+  top: 0;
+  left: 0;
+  margin: 0;
+  background-image: url(../assets/curtain.png);
+  background-size: contain;
+  z-index: 100;
+}
+#theater span[curtain][right] {
+  left: auto;
+  right: 0;
+  transform: scaleX(-100%);
+}
+#theater .yt-wrapper {
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 550px;
+  height: 300px;
+  margin: 1em auto;
+  padding: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10px;
+  object-fit: cover;
+  z-index: 99;
+  overflow: hidden;
+}
+#theater .yt-wrapper .yt-title {
+  position: absolute;
+  font-family: "Director";
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  z-index: 2;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  mix-blend-mode: exclusion;
+}
+#theater #player {
+  padding: 0;
+  margin: 0;
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+#theater .films {
+  position: absolute;
+  top: 340px;
+  left: 0;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  height: 80px;
+  padding: 0 0.25em;
+  margin: 1em auto;
+}
+#theater .films .w {
+  height: 80px;
+  white-space: nowrap;
+  text-align: center;
+}
+#theater .films .w .card {
+  display: inline-block;
+  width: 80px;
+  padding: 0.2em 0;
+  text-align: center;
+}
+#theater .films .w span[card] {
+  font-size: 2.5em;
+}
+#theater .films .w span[name] {
+  display: none;
+}
+#theater .films .w span:not([active]) {
+  opacity: 0.3;
+}
+#theater .films .w span:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+#lights {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  mix-blend-mode: exclusion;
+  pointer-events: none;
+}
+
+*[lights=off] {
+  color: #ffffff !important;
+}
+
+body[lights=off] {
+  background: #1a1a1a;
+}
+
+#navi[lights=off] {
+  background: linear-gradient(180deg, #1a1a1a 25%, rgba(26, 26, 26, 0) 100%);
+}
+
+#caption[lights=off] {
+  background: linear-gradient(0deg, #1a1a1a 25%, rgba(26, 26, 26, 0) 100%);
+}
+
 #foyer {
-  height: 600px;
+  height: 550px;
   min-height: 70vh;
 }
 #foyer .outside {
@@ -13,6 +149,18 @@
   color: #cccccc;
   padding: 1em;
 }
+#foyer .window {
+  border: 1px solid #ccc;
+  position: absolute;
+  width: 70px;
+  height: 120px;
+  background-image: url(../assets/clouds.png);
+  background-position: center;
+}
+#foyer .window:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
 #foyer .door {
   position: absolute;
   left: 50%;
@@ -24,10 +172,121 @@
   height: 200px;
   border-top-left-radius: 90px;
   border-top-right-radius: 90px;
+  background: white;
 }
 #foyer .door:hover {
-  background: rgba(188, 188, 188, 0.15);
   cursor: pointer;
+}
+
+#garden a {
+  color: #000;
+}
+#garden .outside {
+  position: relative;
+  padding: 0.5em 1em;
+  min-height: 300px;
+  width: 100%;
+}
+#garden .flowers {
+  margin: 0;
+  margin-top: -1em;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#garden .filter {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+#garden .filter a {
+  font-size: 0.8rem;
+  color: #464646;
+  cursor: pointer;
+}
+#garden .filter a.link span::before {
+  content: "(";
+  opacity: 0;
+  color: #cccccc;
+}
+#garden .filter a.link span::after {
+  content: ")";
+  opacity: 0;
+  color: #cccccc;
+}
+#garden .filter a:hover span::after, #garden .filter a:hover span::before {
+  opacity: 1;
+}
+#garden .filter a[active] span::after, #garden .filter a[active] span::before {
+  opacity: 1;
+}
+#garden .flower {
+  display: inline-block;
+  width: 160px;
+  height: 190px;
+  background-image: url(../assets/flower-large.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: -1.5em 0;
+}
+#garden .flower .wrapper {
+  margin-top: -1em;
+  max-height: 150px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+#garden .flower.free {
+  position: absolute;
+}
+#garden .flower:hover {
+  background-image: url(../assets/flower-large-bg.png);
+}
+#garden .flower span[name] {
+  font-size: 0.95rem;
+  font-family: "Times Now";
+}
+#garden .flower span[year] {
+  font-size: 0.5rem;
+  margin: 0.15em auto;
+  padding: 0.25em;
+  color: rgba(70, 70, 70, 0.45);
+}
+#garden .flower span[year]::before {
+  content: "( ";
+  opacity: 0;
+  color: #cccccc;
+}
+#garden .flower span[year]::after {
+  content: " )";
+  opacity: 0;
+  color: #cccccc;
+}
+#garden .flower:hover span[year]::after, #garden a:hover span::before {
+  opacity: 1;
+}
+#garden .flower:hover span[year]::after, #garden .flower:hover span[year]::before {
+  opacity: 1;
+}
+@media only screen and (max-width: 600px) {
+  #garden .outside {
+    justify-content: center;
+    padding: 0;
+  }
+  #garden .flower {
+    width: 175px;
+    height: 190px;
+  }
+  #garden .flower .wrapper {
+    margin-top: 0;
+  }
 }
 
 /*# sourceMappingURL=room.css.map */

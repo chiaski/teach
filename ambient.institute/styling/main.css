@@ -32,6 +32,22 @@ h3 {
   color: rgba(70, 70, 70, 0.45);
 }
 
+hr {
+  background: #cccccc;
+  width: 100%;
+  height: 1px;
+  border: 0;
+  margin: 5vh 0;
+}
+
+hr[large] {
+  margin: 10vh 0;
+}
+
+hr[hide] {
+  background: 0;
+}
+
 p, blockquote {
   font-family: "Times Now";
   color: #464646;
@@ -44,7 +60,7 @@ p, blockquote {
 
 a {
   text-decoration: none;
-  color: #eb80ff;
+  color: rgba(70, 70, 70, 0.45);
 }
 
 main {
@@ -52,6 +68,7 @@ main {
   width: calc(100% - 2em);
   margin: 1em;
   padding-top: 2em;
+  padding-bottom: 5vh;
 }
 
 section.block {
@@ -67,6 +84,101 @@ section .wrapper {
   justify-content: space-between;
 }
 
+.list .wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+.list .row {
+  padding: 0;
+  margin: 0.5em 0;
+  width: 100%;
+  font-family: "Director";
+  font-size: 0.8rem;
+  margin-bottom: 1em;
+  border-bottom: 1px solid #cccccc;
+  display: flex;
+  justify-content: space-between;
+}
+.list a {
+  text-decoration: none;
+  color: rgba(70, 70, 70, 0.45);
+  cursor: pointer;
+}
+.list a:hover .row span[name] {
+  color: #eb80ff;
+}
+.list span[name] {
+  width: 300px;
+  display: inline-block;
+  font-family: "Times Now";
+  font-size: 1rem;
+  color: #464646;
+  vertical-align: top;
+}
+.list span[task] {
+  width: 300px;
+  display: inline-block;
+  font-family: "Director";
+  font-size: 0.8rem;
+  color: rgba(70, 70, 70, 0.45);
+  letter-spacing: -0.5px;
+  vertical-align: top;
+}
+.list span[desc] {
+  display: none;
+}
+.list span[keywords] {
+  font-size: 0.65rem;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  width: 140px;
+}
+.list span[type] {
+  display: inline-block;
+  width: 80px;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+}
+.list span[by] {
+  display: inline-block;
+  width: 140px;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+}
+.list span[year] {
+  font-size: 0.65rem;
+  float: right;
+}
+
+#caption {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 24px;
+  font-family: "Times Now";
+  padding: 0 1em;
+  box-sizing: border-box;
+  background: linear-gradient(0deg, white 25%, rgba(255, 255, 255, 0) 100%);
+  z-index: 9;
+}
+#caption .wrapper {
+  flex-direction: row;
+}
+#caption a {
+  cursor: pointer;
+  color: #464646;
+}
+#caption p {
+  padding: 0.5em;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+}
+
 #navi {
   position: fixed;
   top: 0;
@@ -76,7 +188,7 @@ section .wrapper {
   font-family: "Times Now";
   padding: 1em;
   box-sizing: border-box;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9178824972) 28%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(180deg, white 25%, rgba(255, 255, 255, 0) 100%);
   z-index: 9;
 }
 #navi .wrapper {
@@ -124,95 +236,6 @@ section .wrapper {
 #heading p, .reg p {
   text-align: center;
 }
-#index .filter-wrapper {
-  margin: 0 0 1em 0;
-  text-align: center;
-}
-#index .filter-wrapper a {
-  font-size: 1.25rem;
-  font-family: "Times Now";
-  letter-spacing: -0.5px;
-  color: #464646;
-  cursor: pointer;
-}
-#index .wrapper {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  margin: 0 auto;
-  max-width: 1100px;
-}
-#index .row {
-  padding: 0;
-  margin: 0.5em 0;
-  width: 100%;
-  font-family: "Director";
-  font-size: 0.8rem;
-  margin-bottom: 1em;
-  display: flex;
-  justify-content: space-between;
-}
-#index a {
-  text-decoration: none;
-  color: rgba(70, 70, 70, 0.45);
-}
-#index a:hover .row span[name] {
-  color: #eb80ff;
-}
-#index span[name] {
-  width: 300px;
-  display: inline-block;
-  font-family: "Times Now";
-  font-size: 1.1rem;
-  color: #464646;
-  vertical-align: top;
-}
-#index span[desc] {
-  display: none;
-}
-#index span[keywords] {
-  font-size: 0.65rem;
-  letter-spacing: -0.5px;
-  text-transform: uppercase;
-  width: 140px;
-}
-#index span[type] {
-  display: inline-block;
-  width: 80px;
-  text-transform: uppercase;
-  font-size: 0.65rem;
-}
-#index span[by] {
-  display: inline-block;
-  width: 140px;
-  text-transform: uppercase;
-  font-size: 0.65rem;
-}
-#index span[year] {
-  font-size: 0.65rem;
-  float: right;
-}
-@media only screen and (max-width: 600px) {
-  #index .row {
-    display: flex;
-    flex-direction: column;
-  }
-  #index span {
-    padding: 0.15em 0;
-  }
-  #index span[desc] {
-    display: block;
-    font-family: "Times Now";
-  }
-  #index span[name] {
-    font-size: 1.1rem;
-  }
-  #index span[name], #index span[keywords], #index span[type] {
-    width: auto;
-    max-width: 90%;
-  }
-}
-
 #location {
   position: fixed;
   bottom: 0;
@@ -315,8 +338,9 @@ section .wrapper {
 #map .room:hover {
   border: 1px solid rgba(70, 70, 70, 0.45);
   background-image: url(../assets/dot.png);
-  background-color: rgba(188, 188, 188, 0.15);
+  background-color: rgba(204, 204, 204, 0.21);
   cursor: pointer;
+  color: #464646;
 }
 #map .room:hover span[title] {
   display: none;
@@ -351,7 +375,7 @@ section .wrapper {
   max-width: 80%;
 }
 #map .room[active] {
-  background-color: rgba(188, 188, 188, 0.15);
+  background-color: rgba(204, 204, 204, 0.21);
   z-index: 1;
   background-image: url(../assets/dot.png);
 }
@@ -375,6 +399,55 @@ section .wrapper {
   display: flex;
   flex-direction: column;
   text-align: center;
+}
+
+#map.popup-small {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 370px;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background: linear-gradient(-90deg, white 80%, rgba(255, 255, 255, 0) 100%);
+  display: none;
+}
+#map.popup-small .wrapper {
+  margin-top: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+#map.popup-small .wrapper-map {
+  margin-top: -2em;
+}
+#map.popup-small .institute-map {
+  transform: scale(0.5);
+  height: 120px;
+  padding: 0;
+}
+@media only screen and (max-width: 600px) {
+  #map.popup-small .institute-map {
+    transform: scale(0.5) !important;
+  }
+}
+#map.popup-small .institute-index {
+  max-width: 250px;
+  width: 95% !important;
+}
+#map.popup-small .institute-index .w {
+  width: 100%;
+  height: 120px;
+}
+#map.popup-small .institute-index .w a {
+  padding: 0.25em 0.1em;
+  margin: 0 !important;
+  max-width: none;
+  width: 125px;
+  display: inline-block;
+  vertical-align: top;
 }
 
 /*# sourceMappingURL=main.css.map */

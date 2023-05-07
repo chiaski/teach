@@ -19,6 +19,11 @@ $(document).ready(function () {
         </a>`)
         .appendTo("#index[library] .wrapper");
       
+      $(`<span book>
+          <span b>` + row.name +`</span>
+        </span book>`)
+        .appendTo("#index[library] .library .w");
+      
     })
 
   })

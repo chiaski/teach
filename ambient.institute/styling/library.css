@@ -1,0 +1,136 @@
+.library {
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  height: 125px;
+  padding: 0.5em;
+  margin: 0 auto 1em auto;
+  margin-right: 1em;
+  border: 1px solid #ccc;
+}
+.library .w {
+  white-space: nowrap;
+  text-align: center;
+}
+.library span[book] {
+  display: inline-block;
+  width: 28px;
+  height: 110px;
+  border: 1px solid #ccc;
+  margin: -0.75px;
+}
+.library span[book] span[b] {
+  font-family: "Director";
+  font-size: 0.55rem;
+  letter-spacing: -1px;
+  color: rgba(70, 70, 70, 0.45);
+  margin: 0.5em 0.25em;
+  transform: translateX(2px);
+  display: inline-block;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  text-align: left;
+  height: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#index {
+  display: flex;
+  flex-direction: column;
+}
+#index .filter-wrapper {
+  margin: 0 0 1em 0;
+  text-align: center;
+}
+#index .filter-wrapper a {
+  font-size: 1.25rem;
+  font-family: "Times Now";
+  letter-spacing: -0.5px;
+  color: #464646;
+  cursor: pointer;
+}
+#index .wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+#index .row {
+  padding: 0;
+  margin: 0.5em 0;
+  width: 100%;
+  font-family: "Director";
+  font-size: 0.8rem;
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: space-between;
+}
+#index a {
+  text-decoration: none;
+}
+#index a:hover .row span[name] {
+  color: #eb80ff;
+}
+#index span[name] {
+  width: 300px;
+  display: inline-block;
+  font-family: "Times Now";
+  font-size: 1.1rem;
+  color: #464646;
+  vertical-align: top;
+}
+#index span[desc] {
+  display: none;
+}
+#index span[keywords] {
+  font-size: 0.65rem;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  width: 140px;
+}
+#index span[type] {
+  display: inline-block;
+  width: 80px;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+}
+#index span[by] {
+  display: inline-block;
+  width: 140px;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+}
+#index span[year] {
+  font-size: 0.65rem;
+  float: right;
+}
+@media only screen and (max-width: 800px) {
+  #index span[keywords] {
+    display: none;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #index .row {
+    display: flex;
+    flex-direction: column;
+  }
+  #index span {
+    padding: 0.15em 0;
+  }
+  #index span[desc] {
+    display: block;
+    font-family: "Times Now";
+  }
+  #index span[name] {
+    font-size: 1.1rem;
+  }
+  #index span[name], #index span[keywords], #index span[type] {
+    width: auto;
+    max-width: 90%;
+  }
+}
+
+/*# sourceMappingURL=library.css.map */

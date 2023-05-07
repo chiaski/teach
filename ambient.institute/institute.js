@@ -1,7 +1,21 @@
+
+function randInt(min, max) { // min and max included 
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+function chance(prob) {
+  return !!prob && Math.random() <= prob;
+}
+
+function pick(arr) {
+  return arr[(Math.random() * arr.length) | 0]
+}
+
+
 console.log("hi");
 
 $("a[map]").click(function(){
-  $("#map.popup").fadeToggle();
+  $("#map.popup-small").fadeToggle();
 });
 
 
@@ -40,6 +54,13 @@ $(document).ready(function () {
   
   
   // FOYER: OUTSIDE
-  $("#foyer .outside")
+  
+  $("#foyer .outside .window").each(function(i){
+    
+    $(this)
+      .css("left", randInt(3,80) + "%")
+      .css("top", randInt(20,200) + "px");
+    
+  });
   
 });
