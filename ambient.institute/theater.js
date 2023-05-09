@@ -102,19 +102,19 @@ $(document).ready(function () {
   });
   
   
-  $("#caption").on("click", "a[act='lights']", function(){
+  $("#theater").on("click", "a[act='lights']", function(){
     
     let on = $("#lights").attr("lights");
     
     if(on == "on"){
-      $("a, p, body, #navi, #caption, .room, span, h1").attr("lights", "off");
+      $("a, p, body, #navi, #caption, .room, span, h1, #caption-wrapper").attr("lights", "off");
       $("a[act='lights']").html("Lights on");
       $("#lights").attr("lights", "off");
     }
     
     if(on == "off"){
       
-      $("a, p, body, #navi, #caption, .room, span, h1").removeAttr("lights");
+      $("a, p, body, #navi, #caption, .room, span, h1, #caption-wrapper").removeAttr("lights");
       $("a[act='lights']").html("Lights out");
       $("#lights").attr("lights", "on");
       

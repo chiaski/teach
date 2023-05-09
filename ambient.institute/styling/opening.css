@@ -1,4 +1,3 @@
-@charset "UTF-8";
 #bg {
   position: fixed;
   z-index: -9;
@@ -7,6 +6,7 @@
   left: 0;
   top: 0;
   object-fit: cover;
+  transform: scaleX(-1);
 }
 
 .screenwipe {
@@ -36,7 +36,8 @@
     width: 120%;
   }
 }
-#navi, #caption {
+#navi,
+#caption {
   background: 0;
 }
 
@@ -45,26 +46,14 @@
   min-height: 100px;
   line-height: 120%;
 }
-
-#caption-wrapper {
+#captions #caption-wrapper {
   color: #f2f6f8;
-  text-shadow: -1.25px -1.25px 4px #9cbde8, 0 -1.25px 4px #9cbde8, 1.25px -1.25px 4px #9cbde8, 1.25px 0 4px #9cbde8, 1.25px 1.25px 4px #9cbde8, 0 1.25px 4px #9cbde8, -1.25px 1.25px 4px #9cbde8, -1.25px 0 4px #9cbde8;
   font-size: calc(12px + 1vw);
-}
-
-#caption-wrapper::before {
-  content: "✿ ";
-  display: inline;
-}
-
-#caption-wrapper::after {
-  content: " ✿";
-  display: inline;
 }
 
 .typed-cursor {
   color: #fff;
-  text-shadow: -1.25px -1.25px 4px #9cbde8, 0 -1.25px 4px #9cbde8, 1.25px -1.25px 4px #9cbde8, 1.25px 0 4px #9cbde8, 1.25px 1.25px 4px #9cbde8, 0 1.25px 4px #9cbde8, -1.25px 1.25px 4px #9cbde8, -1.25px 0 4px #9cbde8;
+  text-shadow: -1.25px -1.25px 4px #a8c0e0, 0 -1.25px 4px #a8c0e0, 1.25px -1.25px 4px #a8c0e0, 1.25px 0 4px #a8c0e0, 1.25px 1.25px 4px #a8c0e0, 0 1.25px 4px #a8c0e0, -1.25px 1.25px 4px #a8c0e0, -1.25px 0 4px #a8c0e0;
 }
 
 #news {
@@ -83,6 +72,7 @@
   top: 25%;
   height: 40%;
   width: 100%;
+  display: none;
 }
 #enter .door {
   position: absolute;

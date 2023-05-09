@@ -27,13 +27,13 @@
     <section id="caption" class="block">
       <div class="wrapper">
         <a class="link" href="theater.html" title="To the Theater">&LongLeftArrow;</a>
-        
+
         <div class="central">
-        <a class="link" act="shuffle">Blow on flowers</a>
+          <a class="link" act="shuffle">Blow on flowers</a>
         </div>
-        
+
         <a class="link" href="observatory.html" title="To the Observatory">&LongRightArrow;</a>
-        
+
       </div>
     </section>
 
@@ -44,7 +44,7 @@
           <span location>Map</span>
           <span hidden>Navigate</span>
         </a>
-        
+
         <a class="link" href="index.html" home title><span location>Green House</span><span hidden>Ambient Institute</span></a>
 
         <a class="link" map>
@@ -53,9 +53,9 @@
         </a>
       </div>
     </section>
-    
-<!-- GREEN HOUSE -->
-    
+
+    <!-- GREEN HOUSE -->
+
 
     <section id="heading" class="block">
 
@@ -66,18 +66,18 @@
       <p>You can <a href="https://forms.gle/ZcS9i7NxX4SapELQ6" target="_window" onclick="window.open('https://forms.gle/ZcS9i7NxX4SapELQ6', 'plant', 'width=700,height=400,left=200, top=200')">plant a seed if you'd like</a>, please be kind.</p>
       <br>
 
-      
+
     </section>
 
     <section class="block room" id="garden">
 
-        <div class="filter">
+      <div class="filter">
         <a class="link" name="grid" active><span>Grid</span></a>
-          &nbsp;
+        &nbsp;
         <a class="link" name="free"><span>Free</span></a>
-        </div>
+      </div>
 
-      
+
       <div class="outside">
         <div class="flowers"></div>
       </div>
@@ -88,31 +88,29 @@
       </div>
     </section>
 
-    
+
     <hr>
 
     <section id="map" class="block" active="library">
-      
-      
+
+
     </section>
-    
+
   </main>
 
   <script src="jquery-3.6.0.min.js" type="text/javascript"></script>
   <script src="jqueryui.min.js" type="text/javascript"></script>
-  
-  
+
+
   <script src="garden.js" type="text/javascript"></script>
 
   <script type="text/javascript">
-  localStorage.setItem("visited.garden", true);        
-        $('#map').load('map-src.html');
-
+    localStorage.setItem("visited.garden", true);
+    $('#map').load('map-src.html');
   </script>
 
 
   <script type="text/javascript">
-    
     $("#map .wrapper").on("mouseover", "a", function() {
 
       if (!$(this).is("[name]")) return;

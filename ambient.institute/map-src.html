@@ -29,7 +29,7 @@
 
         <div class="room" style="width: 20px;  height: 70px; border-top-left-radius: 20px;  border-bottom-left-radius: 20px;"></div>
 
-        <a href="index.html"><div name="foyer" class="room" style="width: 90px; height: 70px;">
+        <a href="foyer.html"><div name="foyer" class="room" style="width: 90px; height: 70px;">
           <div class="room-content">
             <span title>Foyer</span>
             <span desc>Welcome to the lobby of Ambient Institute.</span>
@@ -134,6 +134,7 @@ $(".institute-map").on("click", ".room", function(){
 $(document).ready(function () {
   
   // VISITED MAP?
+  if(localStorage.getItem("visited.foyer") === null) $("*[name='foyer'] span[title]").html("???");
   if(localStorage.getItem("visited.library") === null) $("*[name='library'] span[title]").html("???");
   if(localStorage.getItem("visited.garden") === null) $("*[name='garden'] span[title]").html("???");
   if(localStorage.getItem("visited.observatory") === null) $("*[name='observatory'] span[title]").html("???");

@@ -14,17 +14,31 @@
 </head>
 
 <body>
-  <main>
+  <main area>
 
     <section id="caption" class="block">
       <div class="wrapper">
-        <a class="link" href="library.html" title="To the Library">&LongLeftArrow;</a>
+<!--        <a class="link" href="library.html" title="To the Library">&LongLeftArrow;</a>-->
         
         <div class="central">
-        <a class="link" act="lights">Lights out</a>
+          
+          <div id="captions">
+            
+            <!-- TEXT HERE -->
+            <div id="caption-text">
+              <span>A breeze comes<br>The world stills</span>
+              <span>What is ambience but the now?</span>
+              <span>A bell chimes for you</span>
+              <span>The wind whispers</span>
+            </div>
+            
+            <div class="w">
+            <div id="caption-wrapper"></div>
+              </div>
+          </div>
         </div>
         
-        <a class="link" href="garden.html" title="To the Green House">&LongRightArrow;</a>
+<!--        <a class="link" href="garden.html" title="To the Green House">&LongRightArrow;</a>-->
         
       </div>
     </section>
@@ -36,7 +50,9 @@
         <span curtain></span>
         <span curtain right></span>
         
-        <div class="yt-wrapper"><div id="player"></div>
+        <div class="yt-wrapper">
+        <a class="link" act="lights">Lights out</a>
+          <div id="player"></div>
           <div class="yt-title">Click a card to play</div>
         </div>
         
@@ -102,10 +118,24 @@
   </main>
 
   <script src="//code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  
   <script src="institute.js" type="text/javascript"></script>
   <script src="theater.js" type="text/javascript"></script>
   
-      <script type="text/javascript">$('#map').load('map-src.html');
+      <script type="text/javascript">
+        $('#map').load('map-src.html');
+        
+    var typed = new Typed('#caption-wrapper', {
+    stringsElement: '#caption-text',
+      typeSpeed: 38,
+      loop: true,
+      shuffle: true,
+      backDelay: 1500,
+      fadeOut: true,
+      cursorChar: ' '
+    });
+        
         </script>
 </body>
 

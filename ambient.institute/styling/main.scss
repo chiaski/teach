@@ -205,10 +205,10 @@ section .wrapper {
 
 #captions {
   position: absolute;
-  bottom: 1em;
+  bottom: .5em;
   left: 50%;
   transform: translateX(-50%);
-  height: 40px;
+  height: 32px;
 //  background: red;
   text-align: center;
   width: 80%;
@@ -222,34 +222,33 @@ section .wrapper {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none; 
-  .w{
+  
+  #caption-text{ display: none; }
+
+    #caption-wrapper {
+    //  background: yellow;
+      height: auto;
+      display: inline;
+      letter-spacing: .5px;
+      font-family: "Director";
+      font-size: $font-details;
+      text-transform: uppercase;
+      color: $gray-darker;
+    }
+
+  #caption-wrapper::before {
+    content: "✿ ";
+    display: inline;
+  }
+
+  #caption-wrapper::after {
+    content: " ✿";
+    display: inline;
   }
   
 }
 
-#caption-wrapper {
-//  background: yellow;
-  height: auto;
-  display: inline;
-  letter-spacing: .5px;
-  font-family: "Director";
-  font-size: $font-details;
-  text-transform: uppercase;
-  color: $gray-darker;
-  
-  text-shadow:
-    -1px -1px 0 aliceblue,
-     0   -1px 0 aliceblue,
-     1px -1px 0 aliceblue,
-     1px  0   0 aliceblue,
-     1px  1px 0 aliceblue,
-     0    1px 0 aliceblue,
-    -1px  1px 0 aliceblue,
-    -1px  0   0 aliceblue;
-}
-
 // BARS
-
 
 #caption {
   position: fixed;
@@ -258,11 +257,10 @@ section .wrapper {
   width: 100%;
   min-height: 24px;
   font-family: "Times Now";
-  padding: 1.5em 1em;
+  padding: 1em;
   box-sizing: border-box;
   background: linear-gradient(0deg, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
-  z-index: 9;
-
+//  background: red;
 
   .wrapper {
     flex-direction: row;
@@ -288,7 +286,7 @@ section .wrapper {
   width: 100%;
   min-height: 32px;
   font-family: "Times Now";
-  padding: 1.5em 1em;
+  padding: 1em 1.5em;
   box-sizing: border-box;
   background: linear-gradient(180deg, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
   z-index: 9;

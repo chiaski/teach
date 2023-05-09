@@ -16,7 +16,18 @@ $pink: #eb80ff;
 $pink-lighter: rgba(235, 128, 255, 0.2);
 $white: #ffffff;
 
-// FOYER
+
+// GENERAL
+
+
+main[area]{
+  border: 1px solid #ccc;
+  margin-top: 35px;
+  height: calc(100vh - 80px);
+  overflow-y: scroll;
+  padding: 1em;
+}
+
 
 .room {
 
@@ -35,6 +46,11 @@ $white: #ffffff;
 
   }
 }
+
+a[act]{
+cursor: pointer;
+}
+// FOYER
 
 #atelier{
   .outside{
@@ -325,13 +341,26 @@ $white: #ffffff;
   flex-direction: column;
   justify-content: center;
   min-height: 90vh;
+  text-align: center;
 
   .outside {
     position: relative;
     min-height: 450px;
-    margin-top: -100px;
+    margin-top: -50px;
     width: 100%;
     max-width: 600px;
+  }
+  
+  
+  a.link{
+    position: absolute;
+    padding: 0; margin: 0 auto;
+    width: 100%;
+    display: block;
+    
+    text-transform: uppercase;
+    top: -40px;
+    font-size: $font-body;
   }
 
   span[curtain] {
@@ -367,7 +396,7 @@ $white: #ffffff;
     top: 10px;
     object-fit: cover;
     z-index: 99;
-    overflow: hidden;
+//    overflow: hidden;
 
     background-image: url(../assets/clouds.png);
     background-position: center;
