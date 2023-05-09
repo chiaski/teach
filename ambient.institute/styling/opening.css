@@ -1,0 +1,110 @@
+@charset "UTF-8";
+#bg {
+  position: fixed;
+  z-index: -9;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+}
+
+.screenwipe {
+  z-index: 9999;
+  position: absolute;
+  top: -10%;
+  height: 120%;
+  width: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(10px);
+  background: #fff;
+  animation: wipe 2.5s ease-in-out 0.2s forwards reverse;
+}
+
+@keyframes wipe {
+  0% {
+    width: 0px;
+  }
+  5% {
+    width: 0px;
+  }
+  15% {
+    width: 80px;
+  }
+  100% {
+    width: 120%;
+  }
+}
+#navi, #caption {
+  background: 0;
+}
+
+#captions {
+  height: 10vh;
+  min-height: 100px;
+  line-height: 120%;
+}
+
+#caption-wrapper {
+  color: #f2f6f8;
+  text-shadow: -1.25px -1.25px 4px #9cbde8, 0 -1.25px 4px #9cbde8, 1.25px -1.25px 4px #9cbde8, 1.25px 0 4px #9cbde8, 1.25px 1.25px 4px #9cbde8, 0 1.25px 4px #9cbde8, -1.25px 1.25px 4px #9cbde8, -1.25px 0 4px #9cbde8;
+  font-size: calc(12px + 1vw);
+}
+
+#caption-wrapper::before {
+  content: "✿ ";
+  display: inline;
+}
+
+#caption-wrapper::after {
+  content: " ✿";
+  display: inline;
+}
+
+.typed-cursor {
+  color: #fff;
+  text-shadow: -1.25px -1.25px 4px #9cbde8, 0 -1.25px 4px #9cbde8, 1.25px -1.25px 4px #9cbde8, 1.25px 0 4px #9cbde8, 1.25px 1.25px 4px #9cbde8, 0 1.25px 4px #9cbde8, -1.25px 1.25px 4px #9cbde8, -1.25px 0 4px #9cbde8;
+}
+
+#news {
+  position: absolute;
+  left: 0;
+  padding: 1em;
+  width: 100%;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+#enter {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  top: 25%;
+  height: 40%;
+  width: 100%;
+}
+#enter .door {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -1px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+  width: 130px;
+  height: 200px;
+  border-top-left-radius: 90px;
+  border-top-right-radius: 90px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+#enter .door span {
+  text-transform: uppercase;
+  font-family: "Director";
+  color: #ccc;
+}
+
+/*# sourceMappingURL=opening.css.map */

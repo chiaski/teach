@@ -211,12 +211,17 @@ section .wrapper {
   height: 40px;
 //  background: red;
   text-align: center;
+  width: 80%;
   max-width: 600px;
-  line-height: 80%;
+  line-height: 90%;
   
   display: flex;
   flex-direction: column;
   justify-content: center;
+  
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
   .w{
   }
   
@@ -226,7 +231,7 @@ section .wrapper {
 //  background: yellow;
   height: auto;
   display: inline;
-  letter-spacing: -.25px;
+  letter-spacing: .5px;
   font-family: "Director";
   font-size: $font-details;
   text-transform: uppercase;
@@ -440,20 +445,20 @@ section .wrapper {
       color: $gray-darker;
     }
 
-    a span::before {
+    a span.number::before {
       content: "( ";
       opacity: 0;
       color: $gray;
     }
 
-    a span::after {
+    a  span.number::after {
       content: " )";
       opacity: 0;
       color: $gray;
     }
 
-    a:hover span::after,
-    a:hover span::before {
+    a:hover  span.number::after,
+    a:hover  span.number::before {
       opacity: 1;
     }
 
@@ -465,6 +470,10 @@ section .wrapper {
       letter-spacing: -1.5px;
       transform: translateY(-2.5px);
       display: inline-block;
+    }
+    
+    span[title]{
+      margin-left: 0;
     }
 
   }

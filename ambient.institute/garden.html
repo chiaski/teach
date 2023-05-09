@@ -89,6 +89,13 @@
     </section>
 
     
+    <hr>
+
+    <section id="map" class="block" active="library">
+      
+      
+    </section>
+    
   </main>
 
   <script src="jquery-3.6.0.min.js" type="text/javascript"></script>
@@ -98,12 +105,14 @@
   <script src="garden.js" type="text/javascript"></script>
 
   <script type="text/javascript">
-//    $('#map ').load('map-src.html');
+  localStorage.setItem("visited.garden", true);        
+        $('#map').load('map-src.html');
 
   </script>
 
 
   <script type="text/javascript">
+    
     $("#map .wrapper").on("mouseover", "a", function() {
 
       if (!$(this).is("[name]")) return;

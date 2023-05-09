@@ -160,16 +160,20 @@ section .wrapper {
   transform: translateX(-50%);
   height: 40px;
   text-align: center;
+  width: 80%;
   max-width: 600px;
-  line-height: 80%;
+  line-height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 #caption-wrapper {
   height: auto;
   display: inline;
-  letter-spacing: -0.25px;
+  letter-spacing: 0.5px;
   font-family: "Director";
   font-size: 0.65rem;
   text-transform: uppercase;
@@ -320,18 +324,18 @@ section .wrapper {
   cursor: pointer;
   color: #464646;
 }
-#map .institute-index a span::before {
+#map .institute-index a span.number::before {
   content: "( ";
   opacity: 0;
   color: #cccccc;
 }
-#map .institute-index a span::after {
+#map .institute-index a span.number::after {
   content: " )";
   opacity: 0;
   color: #cccccc;
 }
-#map .institute-index a:hover span::after,
-#map .institute-index a:hover span::before {
+#map .institute-index a:hover span.number::after,
+#map .institute-index a:hover span.number::before {
   opacity: 1;
 }
 #map .institute-index span.number {
@@ -342,6 +346,9 @@ section .wrapper {
   letter-spacing: -1.5px;
   transform: translateY(-2.5px);
   display: inline-block;
+}
+#map .institute-index span[title] {
+  margin-left: 0;
 }
 #map .institute-map {
   padding: 1em 0;

@@ -134,7 +134,12 @@
   <script src="institute.js" type="text/javascript"></script>
   <script src="library.js" type="text/javascript"></script>
   
-      <script type="text/javascript">$('#map').load('map-src.html');
+      <script type="text/javascript">
+  localStorage.setItem("visited.library", true);
+        
+        $('#map').load('map-src.html');
+        
+        
         </script>
 </body>
 

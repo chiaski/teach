@@ -1,7 +1,4 @@
-
-
-
-      <div class="institute-map">
+ <div class="institute-map">
         <!--        <div class="institute-map-wrapper"></div>-->
         <div class="spacer" style="width: 127px;"></div>
         <div name="observatory" class="room" style="width: 150px;height: 70px; border-top-left-radius: 70px; border-top-right-radius: 70px;">
@@ -83,15 +80,15 @@
       
       <div class="institute-index">
         <div class="w">
-          <a name="foyer"><span class="number">1</span> Foyer</a>
-          <a name="library"><span class="number">2</span> Library</a>
-          <a name="theater"><span class="number">3</span> Theater</a>
-          <a name="garden"><span class="number">4</span> Green House</a>
-          <a name="observatory"><span class="number">5</span> Observatory</a>
-          <a name="atelier"><span class="number">6</span> Atelier</a>
-          <a name="bar"><span class="number">7</span> Bar</a>
-          <a name="sound"><span class="number">8</span> Sound Room</a>
-          <a name="gift"><span class="number">9</span> Gift Shop</a>
+          <a name="foyer"><span class="number">1</span> <span title>Foyer</span></a>
+          <a name="library"><span class="number">2</span> <span title>Library</span></a>
+          <a name="theater"><span class="number">3</span> <span title>Theater</span></a>
+          <a name="garden"><span class="number">4</span> <span title>Green House</span></a>
+          <a name="observatory"><span class="number">5</span> <span title>Observatory</span></a>
+          <a name="atelier"><span class="number">6</span> <span title>Atelier</span></a>
+          <a name="bar"><span class="number">7</span> <span title>Bar</span></a>
+          <a name="sound"><span class="number">8</span> <span title>Sound Room</span></a>
+          <a name="gift"><span class="number">9</span> <span title>Gift Shop</span></a>
         </div>
       </div>
 
@@ -131,6 +128,21 @@ $(".institute-map").on("click", ".room", function(){
   if( !$(this).is("[name]") ) return;
   let n = $(this).attr("name");
   window.location.href = n + ".html";
+});
+  
+  
+$(document).ready(function () {
+  
+  // VISITED MAP?
+  if(localStorage.getItem("visited.library") === null) $("*[name='library'] span[title]").html("???");
+  if(localStorage.getItem("visited.garden") === null) $("*[name='garden'] span[title]").html("???");
+  if(localStorage.getItem("visited.observatory") === null) $("*[name='observatory'] span[title]").html("???");
+  if(localStorage.getItem("visited.bar") === null) $("*[name='bar'] span[title]").html("???");
+  if(localStorage.getItem("visited.atelier") === null) $("*[name='atelier'] span[title]").html("???");
+  if(localStorage.getItem("visited.theater") === null) $("*[name='theater'] span[title]").html("???");
+  if(localStorage.getItem("visited.sound") === null) $("*[name='sound'] span[title]").html("???");
+  if(localStorage.getItem("visited.gift") === null) $("*[name='gift'] span[title]").html("???");
+  
 });
 
   

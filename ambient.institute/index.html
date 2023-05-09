@@ -2,48 +2,40 @@
 <html lang="en">
   <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello!</title>
+  <title>Ambient Institute</title>
   <meta name="description" content="description" />
   <meta name="author" content="author" />
   <meta name="keywords" content="keywords" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <link rel="stylesheet" href="./styling/s.css" type="text/css" />
   <link rel="stylesheet" href="./styling/main.css" type="text/css" />
-  <link rel="stylesheet" href="./styling/room.css" type="text/css" />
+  <link rel="stylesheet" href="./styling/opening.css" type="text/css" />
 </head>
 
 <body>
   <main>
 
+<!--    <div class="screenwipe"></div>-->
+    <div id="bg">
+    <video loop muted autoplay>
+  <source src="opening/min-altcloud.mp4" type="video/mp4">
+</video>
+    </div>
+    
     <!--   BARS    -->
     
-<!--
-    <section id="navi" class="block">
-    <div class="wrapper">
-    
-      <a class="link" href="index.html" home><span location>Foyer</span><span hidden>Ambient Institute</span></a>
-      
-
-      <a class="link" map>
-        <span location>Map</span>
-        <span hidden>Navigate</span>
-      </a>      
-    </div>
-    </section>
-    
--->
     <section id="navi" class="block">
       <div class="wrapper">
 
         <a class="link" map>
-          <span location>Map</span>
+          <span location> </span>
           <span hidden>Navigate</span>
         </a>
         
-        <a class="link" href="index.html" home title><span location>Foyer</span><span hidden>Ambient Institute</span></a>
+        <a class="link" href="index.html" home title><span location>Welcome</span><span hidden>Ambient Institute</span></a>
 
         <a class="link" map>
-          <span location>Map</span>
+          <span location> </span>
           <span hidden>Navigate</span>
         </a>
       </div>
@@ -59,9 +51,10 @@
             
             <!-- TEXT HERE -->
             <div id="caption-text">
-              <span>A tender breeze comes.<br>The world stills.</span>
+              <span>A breeze comes.<br>The world stills.</span>
               <span>What is ambience but the now?</span>
-              <span>A bell chimes, signalling your entrance.</span>
+              <span>A bell chimes for you.</span>
+              <span>The wind whispers.</span>
             </div>
             
             <div class="w">
@@ -77,51 +70,26 @@
     
     <!--    MAIN   -->
     
-    <section class="block" id="foyer">
-      
-      <div class="outside">
-        <div class="door"></div>
-        <div class="window"></div>
-        <div class="window"></div>
-        <div class="window"></div>
-
-        
-      </div>
-      
-      
-      <div class="wrapper">
-        
-<p desc>The Ambient Institute serves the internet as a sanctuary where the possibilities of poetics, environments, and love are realized on the web.</p>
-      
-      <p desc>It offers a grounds towards learning, reflection, and gathering around ambience stewarded by <a href="https://chia.design" target="_blank">Chia Amisola</a>. The Institute serves as a space collecting their works and influences centered around loving and being on the web.</p>
-      </div>
-      
-    </section>
     
-
-      
-<!--      <h1>Welcome to the Ambient Institute</h1>-->
-<!--
-        
-<p desc>The Ambient Institute serves the internet as a sanctuary where the possibilities of poetics, environments, and love are realized on the web.</p>
-      
-      <p desc>It offers a grounds towards learning, reflection, and gathering around ambience stewarded by <a href="https://chia.design" target="_blank">Chia Amisola</a>. The Institute serves as a space collecting their works and influences centered around loving and being on the web.</p>
-      
--->
-<!--
-  <h2>Latest</h2>
-  <div class="list">
+    <div id="news">
+      <div class="w">
+        <div class="--news">Testing testing testing something <a href="#">another link</a>
+          <span date>5.23</span>
+        </div>
+        <div class="--news">Testing testing testing something <a href="#">another link</a>
+          <span date>5.23</span>
+        </div>
+      </div>
+    </div>
     
-    <a target="_blank"><div class="row">
-      <span task>Library stocked</span>  
-      <span year>5.2023</span>  
-    </div></a>
-    <a target="_blank"><div class="row">
-      <span task>Library stocked</span>  
-      <span year>5.2023</span>  
-    </div></a>
-  </div>
--->
+    <div id="enter">
+    
+      <div class="door">
+        <span>Enter</span>
+        </div>
+      
+    </div>
+
         
     <section id="map" class="block popup-small">
       <div class="wrapper">
@@ -140,6 +108,7 @@
   <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
   <script src="institute.js" type="text/javascript"></script>
+  <script src="opening.js" type="text/javascript"></script>
   
       <script type="text/javascript">
         
@@ -147,11 +116,12 @@
         
     var typed = new Typed('#caption-wrapper', {
     stringsElement: '#caption-text',
-      typeSpeed: 28,
+      typeSpeed: 38,
       loop: true,
       shuffle: true,
       backDelay: 1500,
-      fadeOut: true
+      fadeOut: true,
+      cursorChar: ' '
     });
         
         </script>
