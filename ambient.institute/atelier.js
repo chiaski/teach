@@ -32,9 +32,13 @@ $(document).ready(function () {
           <span release>` + row.release +`</span>
         </div></div>
         </a>`);
-        
       
     $(item).appendTo("#atelier .notes");
+      
+      $(`<a>
+          <span name>` + row.name +`</span>
+        </a>`)
+        .appendTo("#atelier .notes-list");
       
     })
 

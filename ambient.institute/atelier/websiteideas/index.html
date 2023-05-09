@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>An Idea Generator (For a Website)</title>
+  <meta property="og:image" content="ideas.jpg">
+</head>
+
+<body>
+  <main>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <section id="two">
+      <style type="text/css">
+        
+        #ideas{
+          display: flex;
+          flex-wrap: wrap;
+        }
+        
+        span[idea]{
+          display: inline-block;
+          padding: .25em;
+        }
+        
+      </style>
+      
+      <script type="text/javascript">
+        function getIdea() {
+
+          var numElements = $('.idea').length;
+          var randomNum = Math.floor(Math.random() * numElements);
+          $("button").prop("disabled", true);
+
+          var t = 0;
+          var repeat = setInterval(function() {
+            randomNum = Math.floor(Math.random() * numElements);
+            $('.idea').css("background", "none");
+            $('.idea:nth-child(' + randomNum + ')').css("background", "skyblue");
+            t += 1;
+
+            if (t == 5) {
+              clearInterval(repeat)
+              $("button").prop("disabled", false);
+            }
+          }, 300);
+
+          console.log("!");
+        }
+      </script>
+
+
+      <div id="ideas">
+        <span idea>A website for the beginning of the world</span>
+        <span idea>A website where you can make a wish</span>
+        <span idea>A website that you can rewrite</span>
+        <span idea>A website that feels analog</span>
+        <span idea>A website where you perform a ritual</span>
+        <span idea>A website that is a single image</span>
+        <span idea>A website with no concept</span>
+        <span idea>A website that feels illegal</span>
+        <span idea>A website that hosts banned materials</span>
+        <span idea>A website playing you music from a boombox</span>
+        <span idea>A website that's only a concept</span>
+        <span idea>A website that feels like a B movie</span>
+        <span idea>A website that keeps growing</span>
+        <span idea>A website that keeps freezing</span>
+        <span idea>A website with a timer</span>
+        <span idea>A website that's running out of time</span>
+        <span idea>A website with a traffic jam</span>
+        <span idea>A website that feels like a walkable city</span>
+        <span idea>A website that other people are walking over</span>
+        <span idea>A website that loops</span>
+        <span idea>A website that forgets you</span>
+        <span idea>A website about your last dream</span>
+        <span idea>A website wishlist</span>
+        <span idea>A website with links to other websites</span>
+        <span idea>A website to distract you for three minutes</span>
+        <span idea>A website with your personal announcements</span>
+        <span idea>A website that you need to make smaller</span>
+        <span idea>A website wikipedia</span>
+        <span idea>A website that's a platformer</span>
+        <span idea>A website that you need to highlight to read</span>
+        <span idea>A website that feels like a campfire</span>
+        <span idea>A website that you can adjust the temperature of</span>
+        <span idea>A website where you can smell the zaza</span>
+        <span idea>A website that's a screensaver</span>
+        <span idea>A website that you can destroy</span>
+        <span idea>A website that you can forgive</span>
+        <span idea>A website that you can swim in</span>
+        <span idea>A website default</span>
+        <span idea>A website where you can meet up with a friend</span>
+        <span idea>A website you can only visit once</span>
+        <span idea>A website with no touching</span>
+        <span idea>A website made for just one friend</span>
+        <span idea>A website that's a conversation</span>
+        <span idea>A website that doesn't know what you're doing</span>
+        <span idea>A website with a short story from your childhood</span>
+        <span idea>A website in the middle of the sea</span>
+        <span idea>A website that is a mirror</span>
+        <span idea>A website that is a fire you need to put out</span>
+        <span idea>A website with a cart, where you don't buy anything</span>
+        <span idea>A website to help you forget</span>
+        <span idea>A website rave</span>
+        <span idea>A website in a non-English language</span>
+        <span idea>A website beyond your screen</span>
+        <span idea>A website that is an event</span>
+        <span idea>A website that is the territory</span>
+        <span idea>A website that is handwritten</span>
+        <span idea>A website that is a party</span>
+        <span idea>A website that is your ideal shelf</span>
+        <span idea>A website that doesn't feel like a website</span>
+        <span idea>A website that's just ASCII characters</span>
+        <span idea>A website that feels like an infinite room</span>
+        <span idea>A website that presents a new idea of space</span>
+        <span idea>A website warning you</span>
+        <span idea>A website that pulls you closer</span>
+        <span idea>A website that's a prayer</span>
+        <span idea>A website that erases itself</span>
+        <span idea>A website that needs two people to open</span>
+        <span idea>A website where you are</span>
+        <span idea>A website only accessible from another website</span>
+        <span idea>A website that repeats after you</span>
+        <span idea>A website that doesn't do what you want to do</span>
+        <span idea>A website only for people who don't know you</span>
+        <span idea>A website that sings you a lullaby</span>
+        <span idea>A website that builds itself</span>
+        <span idea>A website that plays you a song</span>
+        <span idea>A website that you can only visit during certain hours</span>
+        <span idea>A website to look away at</span>
+        <span idea>A website with its own time zone</span>
+        <span idea>A website that has a closing time</span>
+        <span idea>A website that ends after you visit</span>
+        <span idea>A website that's a conversation</span>
+        <span idea>A website that you can't see</span>
+        <span idea>A website that you have to wake up</span>
+        <span idea>A website without fear</span>
+        <span idea>A website that only you can finish</span>
+        <span idea>A website that changes itself</span>
+        <span idea>A website that doesn't finish loading</span>
+        <span idea>A website without no secrets</span>
+        <span idea>A website that is only partially predictable</span>
+        <span idea>A website with lots of nests</span>
+        <span idea>A website that keeps a promise</span>
+        <span idea>A website that needs to be translated</span>
+        <span idea>A website that must be magnified</span>
+        <span idea>A website that can only fit in your hands</span>
+        <span idea>A website arranged thoughtfully</span>
+        <span idea>A website closing in on you</span>
+        <span idea>A website that needs to be recharged</span>
+        <span idea>A website that feels like an imaginary friend</span>
+        <span idea>A website that feels like a magnet</span>
+        <span idea>A website that celebrates</span>
+        <span idea>A website that holds other websites</span>
+        <span idea>A website about your weirdest dream</span>
+        <span idea>A website that hosts a hurricane</span>
+        <span idea>A website where you never have to apologize</span>
+        <span idea>A website that's really difficult to explain</span>
+        <span idea>A website that you can only visit once a month</span>
+        <span idea>A website for the end of the world</span>
+        <span idea>A website with a pet</span>
+        <span idea>A website fidget spinner</span>
+        <span idea>A website that is ambient</span>
+        <span idea>A website that needs to be unlocked</span>
+        <span idea>A website that feels like the YouTube comments section</span>
+        <span idea>A website that you keep scrolling through</span>
+        <span idea>A website where you can download something new</span>
+        <span idea>A website that speaks to everyone but you</span>
+        <span idea>A website that's an interview</span>
+        <span idea>A website that only makes use of sound</span>
+        <span idea>A website that you can bribe</span>
+        <span idea>A website that keeps a secret</span>
+        <span idea>A website that you have to knock on</span>
+        <span idea>A website that never loads</span>
+        <span idea>A website that feels like a book</span>
+        <span idea>A website that you can scroll through forever</span>
+        <span idea>A website that acts as your personal notebook</span>
+        <span idea>A website with at least 10 pages</span>
+        <span idea>A website that you read by its &lt;title></span>
+        <span idea>A website that you need to shake</span>
+        <span idea>A website that wants</span>
+        <span idea>A website that you had to be there for</span>
+        <span idea>A website that never waits</span>
+      </div>
+
+
+    </section>
+  </main>
+
+
+</body></html>

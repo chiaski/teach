@@ -48,7 +48,8 @@ hr[hide] {
   background: 0;
 }
 
-p, blockquote {
+p,
+blockquote {
   font-family: "Times Now";
   color: #464646;
   font-size: 0.8rem;
@@ -152,6 +153,30 @@ section .wrapper {
   float: right;
 }
 
+#captions {
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 40px;
+  text-align: center;
+  max-width: 600px;
+  line-height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#caption-wrapper {
+  height: auto;
+  display: inline;
+  letter-spacing: -0.25px;
+  font-family: "Director";
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: #464646;
+  text-shadow: -1px -1px 0 aliceblue, 0 -1px 0 aliceblue, 1px -1px 0 aliceblue, 1px 0 0 aliceblue, 1px 1px 0 aliceblue, 0 1px 0 aliceblue, -1px 1px 0 aliceblue, -1px 0 0 aliceblue;
+}
+
 #caption {
   position: fixed;
   bottom: 0;
@@ -159,7 +184,7 @@ section .wrapper {
   width: 100%;
   min-height: 24px;
   font-family: "Times Now";
-  padding: 0 1em;
+  padding: 1.5em 1em;
   box-sizing: border-box;
   background: linear-gradient(0deg, white 25%, rgba(255, 255, 255, 0) 100%);
   z-index: 9;
@@ -185,7 +210,7 @@ section .wrapper {
   width: 100%;
   min-height: 32px;
   font-family: "Times Now";
-  padding: 1em;
+  padding: 1.5em 1em;
   box-sizing: border-box;
   background: linear-gradient(180deg, white 25%, rgba(255, 255, 255, 0) 100%);
   z-index: 9;
@@ -194,6 +219,16 @@ section .wrapper {
 }
 #navi a {
   color: #464646;
+}
+#navi a[title] {
+  position: absolute;
+  width: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-family: "Director";
+  text-transform: uppercase;
+  font-size: 0.65rem;
 }
 #navi .wrapper {
   flex-direction: row;
@@ -230,7 +265,8 @@ section .wrapper {
   opacity: 0;
   color: #cccccc;
 }
-#navi a:hover span::after, #navi a:hover span::before {
+#navi a:hover span::after,
+#navi a:hover span::before {
   opacity: 1;
 }
 #navi a:hover span[hidden] {
@@ -240,7 +276,8 @@ section .wrapper {
   display: none;
 }
 
-#heading p, .reg p {
+#heading p,
+.reg p {
   text-align: center;
 }
 #location {
@@ -293,7 +330,8 @@ section .wrapper {
   opacity: 0;
   color: #cccccc;
 }
-#map .institute-index a:hover span::after, #map .institute-index a:hover span::before {
+#map .institute-index a:hover span::after,
+#map .institute-index a:hover span::before {
   opacity: 1;
 }
 #map .institute-index span.number {

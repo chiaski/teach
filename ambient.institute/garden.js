@@ -27,9 +27,11 @@ $(document).ready(function () {
     filterActive = $(this).attr("name");
     
     if(filterActive == "grid"){
-      $("#garden .outside").css("height", "auto");
       
-      $("#garden .flower").each(function(){
+      $("#garden .outside").removeClass("free");
+      $("#garden .flowers").removeClass("free");
+      
+      $("#garden .flowers a").each(function(){
         $(this)
           .removeClass("free");
       });
@@ -37,10 +39,10 @@ $(document).ready(function () {
     }
     
     if(filterActive == "free"){
-//      
-      $("#garden .outside").css("height", "140vh");
+      $("#garden .outside").addClass("free");
+      $("#garden .flowers").addClass("free");
       
-      $("#garden .flower").each(function(i){
+      $("#garden a[flower]").each(function(i){
         $(this)
           .addClass("free")
            .css("transform", "scale(" + (randInt(90,100) * 0.01) + ")")
@@ -56,11 +58,15 @@ $(document).ready(function () {
 
     data.forEach(function (row, i) {
       
-      $(`<a href="` + row.link +`" target="_blank" link>
-        <div class="flower"><div class="wrapper">
+      let stemHeight = randInt(30,200);
+      
+      $(`<a href="` + row.link +`" target="_blank" flower>
+        <div class="flower" style="margin-bottom:` + (stemHeight * 0) +`px"><div class="wrapper">
           <span name>` + row.flower +`</span>
           <span year>` + row.year +`</span>
-        </div></div>
+        </div>
+        </div>
+        <span stem style="height:` + stemHeight +`px">
         </a>`)
         .appendTo("#garden .flowers");
       
@@ -68,7 +74,7 @@ $(document).ready(function () {
     
       $("#garden .flower").each(function(){
         $(this)
-          .css("transform", "scale(" + (randInt(80,100) * 0.01) + ")")
+          .css("transform", "scale(" + (randInt(80,100) * 0.01) + ")");
       });
 
   })
@@ -77,11 +83,13 @@ $(document).ready(function () {
 
     data.forEach(function (row, i) {
       
-      $(`<a href="` + row.link +`" target="_blank" link>
+      $(`<a href="` + row.link +`" target="_blank" flower>
         <div class="flower"><div class="wrapper">
           <span name>` + row.say +`</span>
           <span year>2023</span>
-        </div></div>
+        </div>
+        </div>
+        <span stem style="height:` + randInt(10,60) +`px">
         </a>`)
         .prependTo("#garden .flowers");
       

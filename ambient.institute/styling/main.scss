@@ -37,13 +37,13 @@ h1 {
   color: $gray-darker;
 }
 
-h2{
+h2 {
   font-family: "Times Now";
   color: $gray-darker;
   font-size: $font-heading;
 }
 
-h3{
+h3 {
   font-family: 'Director';
   font-weight: normal;
   text-transform: uppercase;
@@ -54,7 +54,7 @@ h3{
   color: $gray-dark;
 }
 
-hr{
+hr {
   background: $gray;
   width: 100%;
   height: 1px;
@@ -62,10 +62,16 @@ hr{
   margin: 5vh 0;
 }
 
-hr[large]{ margin: 10vh 0; }
-hr[hide]{ background: 0; }
+hr[large] {
+  margin: 10vh 0;
+}
 
-p, blockquote{
+hr[hide] {
+  background: 0;
+}
+
+p,
+blockquote {
   font-family: "Times Now";
   color: $gray-darker;
   font-size: $font-body;
@@ -75,20 +81,19 @@ p, blockquote{
   margin: 1em auto;
 }
 
-a{
+a {
   text-decoration: none;
-    color: $gray-dark;
+  color: $gray-dark;
 }
 
-blockquote{
-}
+blockquote {}
 
 main {
   box-sizing: border-box;
   width: calc(100% - 2em);
   margin: 1em;
   padding-top: 2em;
-//  background: rgba(255, 255, 0, 0.13);
+  //  background: rgba(255, 255, 0, 0.13);
 }
 
 section.block {
@@ -107,7 +112,7 @@ section .wrapper {
 
 // GENERAL
 
-.list{
+.list {
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -115,10 +120,10 @@ section .wrapper {
     margin: 0 auto;
     max-width: 1100px;
   }
-  
-//  .wrapper:hover > a:not(:hover){
-//    opacity: 0.9;
-//  }
+
+  //  .wrapper:hover > a:not(:hover){
+  //    opacity: 0.9;
+  //  }
 
   .row {
     padding: 0;
@@ -128,7 +133,7 @@ section .wrapper {
     font-size: $font-body;
     margin-bottom: 1em;
     border-bottom: 1px solid $gray;
-    
+
     display: flex;
     justify-content: space-between;
   }
@@ -138,8 +143,8 @@ section .wrapper {
     color: $gray-dark;
     cursor: pointer;
   }
-  
-  a:hover .row span[name]{
+
+  a:hover .row span[name] {
     color: $pink;
   }
 
@@ -172,50 +177,98 @@ section .wrapper {
     text-transform: uppercase;
     width: 140px;
   }
-  
+
   span[type] {
     display: inline-block;
     width: 80px;
     text-transform: uppercase;
-    font-size:  $font-details;
+    font-size: $font-details;
   }
 
   span[by] {
     display: inline-block;
     width: 140px;
     text-transform: uppercase;
-    font-size:  $font-details;
+    font-size: $font-details;
   }
 
 
   span[year] {
-    font-size:  $font-details;
+    font-size: $font-details;
     float: right;
   }
 }
 
+
+// CAPTIONS
+
+
+#captions {
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 40px;
+//  background: red;
+  text-align: center;
+  max-width: 600px;
+  line-height: 80%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .w{
+  }
+  
+}
+
+#caption-wrapper {
+//  background: yellow;
+  height: auto;
+  display: inline;
+  letter-spacing: -.25px;
+  font-family: "Director";
+  font-size: $font-details;
+  text-transform: uppercase;
+  color: $gray-darker;
+  
+  text-shadow:
+    -1px -1px 0 aliceblue,
+     0   -1px 0 aliceblue,
+     1px -1px 0 aliceblue,
+     1px  0   0 aliceblue,
+     1px  1px 0 aliceblue,
+     0    1px 0 aliceblue,
+    -1px  1px 0 aliceblue,
+    -1px  0   0 aliceblue;
+}
+
 // BARS
 
-#caption{
+
+#caption {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   min-height: 24px;
   font-family: "Times Now";
-  padding: 0 1em;
+  padding: 1.5em 1em;
   box-sizing: border-box;
   background: linear-gradient(0deg, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
   z-index: 9;
-  
-  .wrapper{flex-direction: row;}
-  
-  a{
+
+
+  .wrapper {
+    flex-direction: row;
+  }
+
+  a {
     cursor: pointer;
     color: $gray-darker;
   }
-  
-  p{
+
+  p {
     padding: .5em;
     width: 100%;
     max-width: 100%;
@@ -223,79 +276,113 @@ section .wrapper {
   }
 }
 
-#navi{
+#navi {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   min-height: 32px;
   font-family: "Times Now";
-  padding: 1em;
+  padding: 1.5em 1em;
   box-sizing: border-box;
   background: linear-gradient(180deg, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
   z-index: 9;
-  
+
+  color: $gray-darker;
+  font-size: $font-body;
+
+  a {
     color: $gray-darker;
-    font-size: $font-body;
-  
-  a{
-    color: $gray-darker;
-    
   }
-  
-  .wrapper{flex-direction: row;}
-  
+
+  a[title] {
+    position: absolute;
+    //    background: red;
+    width: 140px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-family: "Director";
+    text-transform: uppercase;
+    font-size: $font-details;
+  }
+
+
+  .wrapper {
+    flex-direction: row;
+  }
+
   // extra
-  span[weather]{
+  span[weather] {
     display: block;
   }
-  
-  .-left{
+
+  .-left {
     min-width: 150px;
     width: 20%;
   }
-  
-  .colors{
+
+  .colors {
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
-    
-    a{
+
+    a {
       display: inline-block;
       width: 16px;
       height: 16px;
       border: 1px solid #ccc;
     }
   }
-  
-  
-  a.link{
+
+
+  a.link {
     cursor: pointer;
     margin: 0 -4px;
   }
-  a.link span::before{ content: "(";  opacity: 0; color: $gray;}
-  a.link span::after{ content: ")"; opacity: 0; color: $gray;}
-  
-  a:hover span::after, a:hover span::before{ opacity: 1; }
-  
-  a:hover span[hidden]{ display: inline;}
-  a:hover span[location]{ display: none;}
-  
+
+  a.link span::before {
+    content: "(";
+    opacity: 0;
+    color: $gray;
+  }
+
+  a.link span::after {
+    content: ")";
+    opacity: 0;
+    color: $gray;
+  }
+
+  a:hover span::after,
+  a:hover span::before {
+    opacity: 1;
+  }
+
+  a:hover span[hidden] {
+    display: inline;
+  }
+
+  a:hover span[location] {
+    display: none;
+  }
+
 }
 
 
-#heading, .reg{
-  
-  p{
+#heading,
+.reg {
+
+  p {
     text-align: center;
   }
-@media only screen and (max-width: 600px) {
-  p{
-//    text-align: left;
-//    margin-left: 0;
+
+  @media only screen and (max-width: 600px) {
+    p {
+      //    text-align: left;
+      //    margin-left: 0;
+    }
   }
-  }
-  
+
 }
 
 
@@ -318,12 +405,12 @@ section .wrapper {
 #map {
 
   box-sizing: border-box;
-//  border: 1px solid #ccc;
-//  background: rgba(255, 255, 0, 0.13);
-  
+  //  border: 1px solid #ccc;
+  //  background: rgba(255, 255, 0, 0.13);
+
   font-family: "Director";
   text-align: center;
-  
+
 
 
   .institute-index {
@@ -352,11 +439,23 @@ section .wrapper {
       cursor: pointer;
       color: $gray-darker;
     }
-    
-  a span::before{ content: "( ";  opacity: 0; color: $gray;}
-  a span::after{ content: " )"; opacity: 0; color: $gray;}
-  
-  a:hover span::after, a:hover span::before{ opacity: 1; }
+
+    a span::before {
+      content: "( ";
+      opacity: 0;
+      color: $gray;
+    }
+
+    a span::after {
+      content: " )";
+      opacity: 0;
+      color: $gray;
+    }
+
+    a:hover span::after,
+    a:hover span::before {
+      opacity: 1;
+    }
 
     span.number {
       font-family: "Director";
@@ -374,15 +473,16 @@ section .wrapper {
     padding: 1em 0;
     margin: 0 auto;
     width: 350px;
-    
+
     display: inline-flex;
     flex-wrap: wrap;
     align-content: center;
     align-items: center;
-@media only screen and (max-width: 600px) {
-  max-width: 100vw;
-    transform: scale(0.9);
-    margin-left: 0;
+
+    @media only screen and (max-width: 600px) {
+      max-width: 100vw;
+      transform: scale(0.9);
+      margin-left: 0;
     }
   }
 
@@ -466,7 +566,7 @@ section .wrapper {
       display: none;
       width: 100%;
       font-family: "Times Now";
-      font-size:  $font-details;
+      font-size: $font-details;
       padding: .5em;
       max-width: 80%;
     }
@@ -483,20 +583,20 @@ section .wrapper {
 }
 
 
-#map.popup{
-}
+#map.popup {}
 
-.popup{
+.popup {
   position: fixed;
-  top: 0;left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   overflow-y: scroll;
   background: $white;
-  
+
   display: none;
-  
-  .wrapper{
+
+  .wrapper {
     position: absolute;
     top: 50%;
     left: 0;
@@ -506,69 +606,67 @@ section .wrapper {
     flex-direction: column;
     text-align: center;
   }
-  
+
 }
 
 
-#map.popup-small{
+#map.popup-small {
   position: fixed;
-  top: 0;right: 0;
+  top: 0;
+  right: 0;
   width: 100%;
   max-width: 370px;
   height: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
-//  background: $white;
+  //  background: $white;
   background: linear-gradient(-90deg, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 0) 100%);
-  
-  
+
+
   display: none;
-  
-  .wrapper{
+
+  .wrapper {
     margin-top: 100px;
-//    top: 50%;
-//    left: 0;
+    //    top: 50%;
+    //    left: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
     text-align: center;
   }
-  
-  .wrapper-map{
+
+  .wrapper-map {
     margin-top: -2em;
   }
-  
-  .institute-map{
+
+  .institute-map {
     transform: scale(0.5);
     height: 120px;
     padding: 0;
-    
-@media only screen and (max-width: 600px) {
-    transform: scale(0.5) !important;
+
+    @media only screen and (max-width: 600px) {
+      transform: scale(0.5) !important;
     }
   }
-  
-  .institute-index{
+
+  .institute-index {
     max-width: 250px;
     width: 95% !important;
-    
-    .w{
+
+    .w {
       width: 100%;
       height: 120px;
     }
-    
-    .w a{
+
+    .w a {
       padding: .25em .1em;
       margin: 0 !important;
       max-width: none;
-      width: 125px; 
+      width: 125px;
       display: inline-block;
       vertical-align: top;
     }
-    
+
   }
-  
+
 }
-
-
-
