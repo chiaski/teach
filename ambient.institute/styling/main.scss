@@ -231,7 +231,7 @@ section .wrapper {
       display: inline;
       letter-spacing: .5px;
       font-family: "Director";
-      font-size: $font-details;
+      font-size: $font-body;
       text-transform: uppercase;
       color: $gray-darker;
     }
@@ -286,7 +286,7 @@ section .wrapper {
   width: 100%;
   min-height: 32px;
   font-family: "Times Now";
-  padding: 1em 1.5em;
+  padding: 1em;
   box-sizing: border-box;
   background: linear-gradient(180deg, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
   z-index: 9;
@@ -301,13 +301,13 @@ section .wrapper {
   a[title] {
     position: absolute;
     //    background: red;
-    width: 140px;
+    width: 180px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
     font-family: "Director";
     text-transform: uppercase;
-    font-size: $font-details;
+    font-size: $font-body;
   }
 
 
@@ -347,18 +347,16 @@ section .wrapper {
   a.link span::before {
     content: "(";
     opacity: 0;
-    color: $gray;
   }
 
   a.link span::after {
     content: ")";
     opacity: 0;
-    color: $gray;
   }
 
   a:hover span::after,
   a:hover span::before {
-    opacity: 1;
+    opacity: 0.5;
   }
 
   a:hover span[hidden] {
@@ -614,6 +612,23 @@ section .wrapper {
     text-align: center;
   }
 
+}
+
+#map.popup-all{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 0.4) 100%);
+  top: 0; 
+  left: 0;
+  display: none;
+  
+  .wrapper{
+    height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  }
 }
 
 

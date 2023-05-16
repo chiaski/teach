@@ -18,9 +18,23 @@ function pick(arr) {
 
 
 
-
 $("a[map]").click(function(){
-  $("#map.popup-small").fadeToggle();
+  $("#map.popup-all").fadeToggle();
+  
+if( $("#map.popup-all").is("[active]") ){
+  
+  $("#map.popup-all").removeAttr("active");
+  $("a[map][title] span[location]")
+    .html( document.title );
+  
+} else{
+  let n = $("a[map] span[location]").text();
+  $("#map.popup-all").attr("active", "");
+  $("a[map][title] span[location]")
+    .attr("name", n)
+    .html("Close Map");
+}
+  
 });
 
 

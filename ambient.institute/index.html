@@ -15,7 +15,7 @@
 <body>
   <main>
 
-<!--    <div class="screenwipe"></div>-->
+    <div class="screenwipe"></div>
     <div id="bg">
     <video loop muted autoplay>
   <source src="opening/min-altcloud.mp4" type="video/mp4">
@@ -26,25 +26,26 @@
     
     <section id="navi" class="block">
       <div class="wrapper">
-
-        <a class="link" map>
-          <span location> </span>
-          <span hidden>Navigate</span>
-        </a>
+ <div class="-left">   
+<!--      <a class="link" href="index.html" home><span location>Atelier</span><span hidden>Ambient Institute</span></a>-->
+      
+<!--        <span weather>Sunny</span>-->
+<!--        <span date>Sunny</span>-->
+   ✿
+      </div>
         
-        <a class="link" href="index.html" home title><span location>Welcome</span><span hidden>Ambient Institute</span></a>
+        <a class="link" href="index.html" home title><span location>Summer 2023</span><span hidden>Ambient Institute</span></a>
 
-        <a class="link" map>
-          <span location> </span>
-          <span hidden>Navigate</span>
-        </a>
+        <div class="-right">
+        ✿
+        </div>
       </div>
     </section>
     
     
     <section id="caption" class="block">
       <div class="wrapper">
-        <a class="link" href="theater.html" title="To the Theater">&LongLeftArrow;</a>
+        <a class="link" href="theater.html" title="To the Theater"> ✿</a>
         
         <div class="central">
           <div id="captions">
@@ -63,7 +64,7 @@
           </div>
         </div>
         
-        <a class="link" href="observatory.html" title="To the Observatory">&LongRightArrow;</a>
+        <a class="link" href="observatory.html" title="To the Observatory">✿</a>
         
       </div>
     </section>
@@ -71,6 +72,7 @@
     <!--    MAIN   -->
     
     
+<!--
     <div id="news">
       <div class="w">
         <div class="--news">Testing testing testing something <a href="#">another link</a>
@@ -81,6 +83,7 @@
         </div>
       </div>
     </div>
+-->
     
     <div id="enter">
     
@@ -90,15 +93,14 @@
       
     </div>
 
+<!--
         
     <section id="map" class="block">
       <div class="wrapper">
-        
-<!--      <p desc>-->
-<!--        The halls are filled with soft voices and small histories. The wind chimes. It is as if everything is where it was meant to be.</p>-->
       <div class="wrapper-map"></div>
         </div>
     </section>
+-->
     
     
 
@@ -123,6 +125,20 @@
       fadeOut: true,
       cursorChar: ' '
     });
+        
+        var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+today = mm + '.' + dd + '.' + yyyy;
+        
+        $("span[date]").html(today);
+        
+        $(document).click(function(){
+          $("#caption-text").html("<span>Ready to enter the ambeint institute?</span>");
+//          alert("...");
+        });
         
         </script>
   

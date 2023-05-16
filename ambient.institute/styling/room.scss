@@ -1,29 +1,12 @@
-// FONT SIZES
-
-$font-heading: 1.15rem;
-$font-body: .8rem;
-$font-details: .65rem;
-$font-small: .5rem;
-
-// COLORS
-
-$gray-light: rgba(188, 188, 188, 0.15);
-$gray-dark: rgba(70, 70, 70, 0.45);
-$gray-darker: rgba(70, 70, 70, 1);
-$gray: #cccccc;
-
-$pink: #eb80ff;
-$pink-lighter: rgba(235, 128, 255, 0.2);
-$white: #ffffff;
-
-
+@import "foundation";
+  
 // GENERAL
 
 
 main[area]{
-  border: 1px solid #ccc;
   margin-top: 35px;
-  height: calc(100vh - 80px);
+//  border: 1px solid #ccc;
+//  height: calc(100vh - 80px);
   overflow-y: scroll;
   padding: 1em;
 }
@@ -359,7 +342,7 @@ cursor: pointer;
     display: block;
     
     text-transform: uppercase;
-    top: -40px;
+    top: -50px;
     font-size: $font-body;
   }
 
@@ -424,7 +407,7 @@ cursor: pointer;
     object-fit: contain;
     width: 100%;
     height: 100%;
-    display: none;
+//    display: none;
   }
 
   // film strip

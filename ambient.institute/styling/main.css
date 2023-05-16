@@ -179,7 +179,7 @@ section .wrapper {
   display: inline;
   letter-spacing: 0.5px;
   font-family: "Director";
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   color: #464646;
 }
@@ -224,7 +224,7 @@ section .wrapper {
   width: 100%;
   min-height: 32px;
   font-family: "Times Now";
-  padding: 1em 1.5em;
+  padding: 1em;
   box-sizing: border-box;
   background: linear-gradient(180deg, white 25%, rgba(255, 255, 255, 0) 100%);
   z-index: 9;
@@ -236,13 +236,13 @@ section .wrapper {
 }
 #navi a[title] {
   position: absolute;
-  width: 140px;
+  width: 180px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   font-family: "Director";
   text-transform: uppercase;
-  font-size: 0.65rem;
+  font-size: 0.8rem;
 }
 #navi .wrapper {
   flex-direction: row;
@@ -272,16 +272,14 @@ section .wrapper {
 #navi a.link span::before {
   content: "(";
   opacity: 0;
-  color: #cccccc;
 }
 #navi a.link span::after {
   content: ")";
   opacity: 0;
-  color: #cccccc;
 }
 #navi a:hover span::after,
 #navi a:hover span::before {
-  opacity: 1;
+  opacity: 0.5;
 }
 #navi a:hover span[hidden] {
   display: inline;
@@ -461,6 +459,22 @@ section .wrapper {
   display: flex;
   flex-direction: column;
   text-align: center;
+}
+
+#map.popup-all {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, white 20%, white 80%, rgba(255, 255, 255, 0.4) 100%);
+  top: 0;
+  left: 0;
+  display: none;
+}
+#map.popup-all .wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #map.popup-small {

@@ -1,3 +1,7 @@
+body, main{
+  cursor: pointer !important;
+}
+
 #bg {
   position: fixed;
   z-index: -9;
@@ -6,8 +10,18 @@
   left: 0;
   top: 0;
   object-fit: cover;
-  transform: scaleX(-1);
+  pointer-events: none;
   
+  video{
+    margin: -1em;
+  filter: blur(8px);
+  }
+  
+}
+
+#navi, #caption{
+  color:#fff;
+  a{ color:#fff; }
 }
 
 .screenwipe {
@@ -49,6 +63,10 @@
 $stroke: #a8c0e0;
 
 #captions {
+  position: fixed;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%, -50%);
   height: 10vh;
   min-height: 100px;
   line-height: 120%;
@@ -65,7 +83,7 @@ $stroke: #a8c0e0;
 //      0 1.25px 4px $stroke,
 //      -1.25px 1.25px 4px $stroke,
 //      -1.25px 0 4px $stroke;
-    font-size: calc(12px + 1vw);
+    font-size: calc(16px + 1.5vw);
   }
 
 
