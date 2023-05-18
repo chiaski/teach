@@ -4,17 +4,20 @@ body, main {
 
 #bg {
   position: fixed;
-  z-index: -9;
+  z-index: 0;
   width: 100vw;
   height: 100vh;
   left: 0;
   top: 0;
   object-fit: cover;
   pointer-events: none;
+  opacity: 1;
 }
 #bg video {
   margin: -1em;
-  filter: blur(8px);
+  transform: translateX(-100px);
+  filter: blur(2px);
+  opacity: 1;
 }
 
 #navi, #caption {
@@ -60,14 +63,15 @@ body, main {
   position: fixed;
   top: 50%;
   width: 100%;
-  transform: translateY(-50%, -50%);
+  transform: translate(-50%, -50%);
   height: 10vh;
   min-height: 100px;
   line-height: 120%;
+  color: #fff;
 }
 #captions #caption-wrapper {
   color: #f2f6f8;
-  font-size: calc(16px + 1.5vw);
+  font-size: calc(12px + 1vw);
 }
 
 .typed-cursor {

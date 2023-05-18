@@ -1,7 +1,11 @@
 $(document).ready(function () {
   
+  $("#caption").hide();
+  
   setTimeout(function(){
     $(".screenwipe").css("animation", "none").hide();
+    
+    $("#caption").fadeIn(2500);
     
   $(document).click(function(){
     console.log("Clicked!");
@@ -10,7 +14,7 @@ $(document).ready(function () {
     
     
   setTimeout(function(){
-    // navigate out
+    window.location.href = "foyer.html"; // navigate out
   }, 1500);
     
   });

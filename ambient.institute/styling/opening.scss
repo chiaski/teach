@@ -4,17 +4,20 @@ body, main{
 
 #bg {
   position: fixed;
-  z-index: -9;
+  z-index: 0;
   width: 100vw;
   height: 100vh;
   left: 0;
   top: 0;
   object-fit: cover;
   pointer-events: none;
+  opacity: 1;
   
   video{
     margin: -1em;
-  filter: blur(8px);
+    transform: translateX(-100px);
+    filter: blur(2px);
+    opacity: 1;
   }
   
 }
@@ -66,10 +69,11 @@ $stroke: #a8c0e0;
   position: fixed;
   top: 50%;
   width: 100%;
-  transform: translateY(-50%, -50%);
+  transform: translate(-50%, -50%);
   height: 10vh;
   min-height: 100px;
   line-height: 120%;
+  color:#fff;
 
 
   #caption-wrapper {
@@ -83,7 +87,7 @@ $stroke: #a8c0e0;
 //      0 1.25px 4px $stroke,
 //      -1.25px 1.25px 4px $stroke,
 //      -1.25px 0 4px $stroke;
-    font-size: calc(16px + 1.5vw);
+    font-size: calc(12px + 1vw);
   }
 
 
