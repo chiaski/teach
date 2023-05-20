@@ -198,7 +198,6 @@ let sounds = [
 
 $(document).ready(function () {
   
-
   sounds.forEach(function (s) {
     console.log(s);
     
@@ -219,6 +218,8 @@ $(document).ready(function () {
       $(".sound[name='" + s.sound + "'] audio")[0].volume = localStorage.getItem(s.sound + ".volume");
       sounds[s.i].volume = localStorage.getItem(s.sound + ".volume");
      $(".sound[name='" + s.sound + "'] span[text]").css("opacity",sounds[s.i].volume / 2);
+    } else{
+      $(".sound[name='" + s.sound + "'] audio")[0].volume = 0.5; // default
     }
     
     if ( (s.sound + ".rate") in localStorage){
@@ -241,32 +242,41 @@ $(document).ready(function () {
     
 
   });
-
-  
 });
 
           
+// PLAY/PAUSE
 
 $("#sounds").on("click", ".sound span[text]", function(){
     
-    let n = $(this).parent().parent().attr("name");
-    let i = $(this).parent().parent().attr("i");
+  let sound = $(this).parent().parent().attr("name");
+  let i = $(this).parent().parent().attr("i");
     
-    if( $(".sound[name='" + n + "']").is("[playing]") ){
-      $(".sound[name='" + n + "'] audio")[0].pause();
-      $(".sound[name='" + n + "']").removeAttr("playing");
-      $(".sound[name='" + n + "'] span[text]").html( sounds[i].text );
-      sounds[i].active = false;
-    }else{
-      $(".sound[name='" + n + "']").attr("playing", "");
-      $(".sound[name='" + n + "'] audio")[0].play();
-      $(".sound[name='" + n + "'] span[text]").html( sounds[i].playing );
-      sounds[i].active = true;
-    }
-    
-  localStorage.setItem( (n + ".active"), sounds[i].active);
+  sounds[i].active = sounds[i].active ? false : true;
+  
+  localStorage.setItem( (sound + ".active"), sounds[i].active);
+  toggleSound(n, i, sounds[i].active);
+  socket.emit('toggleSound', sound, i, sounds[i].active);
   
 });
+
+socket.on('toggleSound', function(sound, i) { toggleSound(sound, i) });
+
+function toggleSound(sound, i, state){
+  
+  if(state){
+    $(".sound[name='" + sound + "'] audio")[0].play();
+    $(".sound[name='" + sound + "']").attr("playing", "");
+    $(".sound[name='" + sound + "'] span[text]").html( sounds[i].playing );
+      sounds[i].active = true;
+  } else{ 
+    $(".sound[name='" + sound + "'] audio")[0].pause();
+    $(".sound[name='" + sound + "']").removeAttr("playing");
+    $(".sound[name='" + sound + "'] span[text]").html( sounds[i].text );
+  }
+  
+}
+
 $("#sounds").on("click", ".sound button[playback]", function(){
   
   let n = $(this).parent().parent().attr("name");
@@ -276,49 +286,98 @@ $("#sounds").on("click", ".sound button[playback]", function(){
   
   console.log(n, rate);
   
-  if( $(this).attr("control") == "slow" ){
-    $(".sound[name='" + n + "'] audio")[0].playbackRate = (rate - 0.08);
-     $(".sound[name='" + n + "'] span[text]").css("opacity", (rate - 0.08)/ 2);
-    
-  } else{
-    $(".sound[name='" + n + "'] audio")[0].playbackRate = (rate + 0.08);
-     $(".sound[name='" + n + "'] span[text]").css("opacity", (rate + 0.08)/ 2);
-
-  }
+  adjustPlayback(n, i, rate);
   
-    sounds[i].rate = $(".sound[name='" + n + "'] audio")[0].playbackRate;
-  localStorage.setItem( (n + ".rate"), sounds[i].rate);
+//  if( $(this).attr("control") == "slow" ){
+//    $(".sound[name='" + n + "'] audio")[0].playbackRate = (rate - 0.08);
+//     $(".sound[name='" + n + "'] span[text]").css("opacity", (rate - 0.08)/ 2);
+//    
+//  } else{
+//    $(".sound[name='" + n + "'] audio")[0].playbackRate = (rate + 0.08);
+//     $(".sound[name='" + n + "'] span[text]").css("opacity", (rate + 0.08)/ 2);
+//  }
+//  
+//  sounds[i].rate = $(".sound[name='" + n + "'] audio")[0].playbackRate;
+//  localStorage.setItem( (n + ".rate"), sounds[i].rate);
   
 });
+
+function adjustPlayback(sound, i, rate){
+
+  if( $("#sounds .sound[name='" + sound + "'] button[playback]").attr("control") == "slow" ){
+    $(".sound[name='" + sound + "'] audio")[0].playbackRate = (rate - 0.08);
+     $(".sound[name='" + sound + "'] span[text]").css("opacity", (rate - 0.08)/ 2);
+    
+  } else{
+    $(".sound[name='" + sound + "'] audio")[0].playbackRate = (rate + 0.08);
+     $(".sound[name='" + sound + "'] span[text]").css("opacity", (rate + 0.08)/ 2);
+  }
+  
+  sounds[i].rate = $(".sound[name='" + n + "'] audio")[0].playbackRate;
+  localStorage.setItem( (sound + ".rate"), sounds[i].rate);
+  
+}
 
 $("#sounds").on("click", ".sound button[volume]", function(){
   
   let n = $(this).parent().parent().attr("name");
   let i = $(this).parent().parent().attr("i");
-  
-//  let rate = $(".sound[name='" + n + "'] audio")[0].volume;
   let rate = sounds[i].volume;
   
   console.log(n, rate);
   
-  if( $(this).attr("control") == "soft" ){
-    $(".sound[name='" + n + "'] audio")[0].volume = (rate - 0.08);
+  adjustVolume(n, i, rate);
+//  
+//  if( $(this).attr("control") == "soft" ){
+//    $(".sound[name='" + n + "'] audio")[0].volume = (rate - 0.08);
+//  } else{
+//    $(".sound[name='" + n + "'] audio")[0].volume = (rate + 0.08);
+//  }
+//  
+//  sounds[i].volume = $(".sound[name='" + n + "'] audio")[0].volume;
+//  localStorage.setItem(n + ".volume", sounds[i].volume);
+});
+
+function adjustVolume(sound, i, rate){
+
+  if( $("#sounds .sound[name='" + sound + "'] button[volume]").attr("control") == "soft" ){
+    $(".sound[name='" + sound + "'] audio")[0].volume = (rate - 0.08);
   } else{
-    $(".sound[name='" + n + "'] audio")[0].volume = (rate + 0.08);
+    $(".sound[name='" + sound + "'] audio")[0].volume = (rate + 0.08);
   }
   
-  sounds[i].volume = $(".sound[name='" + n + "'] audio")[0].volume;
-  localStorage.setItem(n + ".volume", sounds[i].volume);
-  
-});
+  sounds[i].volume = $(".sound[name='" + sound + "'] audio")[0].volume;
+  localStorage.setItem(sound + ".volume", sounds[i].volume);
+}
 
 $("#sounds").on("click", ".sound button[pitch]", function(){
   
   let n = $(this).parent().parent().attr("name");
   let i = $(this).parent().parent().attr("i");
   
-  if( $(this).is("[off]")){
-     $(".sound[name='" + n + "'] audio")[0].preservesPitch = true;
+  socket.emit('adjustPitch', i);
+  adjustPitch(n, i);
+  
+//  if( $(this).is("[off]")){
+//     $(".sound[name='" + n + "'] audio")[0].preservesPitch = true;
+//     $(this).removeAttr("off");
+//    sounds[i].pitchControl = true;
+//    
+//  } else{
+//     $(".sound[name='" + n + "'] audio")[0].preservesPitch = false;
+//     $(this).attr("off", "");
+//    sounds[i].pitchControl = false;
+//  }
+//  
+//  localStorage.setItem(n + ".pitchControl", sounds[i].pitchControl);
+//  
+  
+});
+
+
+function adjustPitch(sound, i){
+  if( $("#sounds .sound[name='" + sound + "'] button[pitch]").is("[off]")){
+     $(".sound[name='" + sound + "'] audio")[0].preservesPitch = true;
      $(this).removeAttr("off");
     sounds[i].pitchControl = true;
     
@@ -328,7 +387,8 @@ $("#sounds").on("click", ".sound button[pitch]", function(){
     sounds[i].pitchControl = false;
   }
   
-  localStorage.setItem(n + ".pitchControl", sounds[i].pitchControl);
-  
-  
-});
+  localStorage.setItem(sound + ".pitchControl", sounds[i].pitchControl);
+}
+
+
+
