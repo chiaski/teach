@@ -29,7 +29,7 @@
 
         <div class="room" style="width: 20px;  height: 70px; border-top-left-radius: 20px;  border-bottom-left-radius: 20px;"></div>
 
-        <a href="foyer.html"><div name="foyer" class="room" style="width: 90px; height: 70px;">
+        <a href="foyer.html" link><div name="foyer" class="room" style="width: 90px; height: 70px;">
           <div class="room-content">
             <span title>Foyer</span>
             <span desc>Welcome to the lobby of Ambient Institute.</span>
@@ -69,7 +69,7 @@
           </div>
         </div>
 
-        <div name="sound" class="room" style="width: 75px;height: 70px;">
+        <div name="soundroom" class="room" style="width: 75px;height: 70px;">
           <div class="room-content">
             <span title>Sound Room</span>
             <span desc>Listening zone</span>
@@ -87,7 +87,7 @@
           <a name="observatory"><span class="number">5</span> <span title>Observatory</span></a>
           <a name="atelier"><span class="number">6</span> <span title>Atelier</span></a>
           <a name="bar"><span class="number">7</span> <span title>Bar</span></a>
-          <a name="sound"><span class="number">8</span> <span title>Sound Room</span></a>
+          <a name="soundroom"><span class="number">8</span> <span title>Sound Room</span></a>
           <a name="gift"><span class="number">9</span> <span title>Gift Shop</span></a>
         </div>
       </div>
@@ -118,18 +118,24 @@ $(".institute-index").on("mouseover", "a", function(){
 });
   
   
-$(".institute-index").on("click", "a", function(){
+  
+$("#map .wrapper").on("click", "a", function(){
   if( !$(this).is("[name]") ) return;
+  if( $(this).find("span[title]").text() == "???" ) return;
+  
+
   let n = $(this).attr("name");
   window.location.href = n + ".html";
 });
   
-$(".institute-map").on("click", ".room", function(){
+$("#map .institute-map").on("click", ".room", function(){
   if( !$(this).is("[name]") ) return;
+  if( $(this).find("span[title]").text() == "???" ) return;
+  
   let n = $(this).attr("name");
   window.location.href = n + ".html";
 });
-  
+
   
 $(document).ready(function () {
   
@@ -141,7 +147,7 @@ $(document).ready(function () {
   if(localStorage.getItem("visited.bar") === null) $("*[name='bar'] span[title]").html("???");
   if(localStorage.getItem("visited.atelier") === null) $("*[name='atelier'] span[title]").html("???");
   if(localStorage.getItem("visited.theater") === null) $("*[name='theater'] span[title]").html("???");
-  if(localStorage.getItem("visited.sound") === null) $("*[name='sound'] span[title]").html("???");
+  if(localStorage.getItem("visited.sound") === null) $("*[name='soundroom'] span[title]").html("???");
   if(localStorage.getItem("visited.gift") === null) $("*[name='gift'] span[title]").html("???");
   
 });

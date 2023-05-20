@@ -74,7 +74,6 @@ $(document).ready(function () {
     $("#player")
       .css("opacity", 0);
 
-
   }).on("mouseout", function () {
 
     $("#player")

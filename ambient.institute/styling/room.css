@@ -574,4 +574,159 @@ body[lights=off] {
   }
 }
 
+#sounds {
+  text-align: center;
+  min-height: 100vh;
+  padding: 5vh 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#sounds .sound {
+  position: relative;
+  width: 420px;
+  height: 150px;
+  font-size: 2rem;
+  font-family: "Director";
+  text-transform: uppercase;
+  margin: 0.25em auto;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+@media only screen and (max-width: 700px) {
+  #sounds .sound {
+    width: 160px;
+    height: 100px;
+    font-size: 1.1rem;
+  }
+}
+#sounds .sound .wrapper {
+  position: relative;
+  width: 100%;
+}
+#sounds .sound span {
+  letter-spacing: 120%;
+}
+#sounds .sound span[text] {
+  opacity: 0.5;
+  margin: 0;
+  display: inline-block;
+  width: 85%;
+}
+#sounds .sound button {
+  cursor: pointer;
+}
+#sounds .sound button[pitch] {
+  position: absolute;
+  top: -28px;
+  border: 0;
+  border-radius: 100%;
+  left: 50%;
+  margin-left: -8px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  line-height: 8px;
+}
+#sounds .sound button[off] {
+  filter: brightness(1.5);
+}
+#sounds .sound button[playback] {
+  position: absolute !important;
+  top: 20px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  line-height: 5px;
+  transform: translateY(-7px);
+  border: none;
+  padding: 0.25em;
+  border-radius: 100%;
+}
+#sounds .sound button[volume] {
+  position: absolute !important;
+  top: -10px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  line-height: 5px;
+  border: none;
+  padding: 0.25em;
+  border-radius: 100%;
+}
+#sounds .sound button[playback][control=slow] {
+  left: 0.25em;
+  cursor: w-resize;
+}
+#sounds .sound button[playback][control=speed] {
+  right: 0.25em !important;
+  cursor: e-resize;
+}
+#sounds .sound button[volume][control=soft] {
+  left: 0.25em;
+  cursor: w-resize;
+}
+#sounds .sound button[volume][control=loud] {
+  right: 0.25em !important;
+  cursor: e-resize;
+}
+#sounds .sound:not([playing]) span[text] {
+  color: #9a9a9a;
+}
+#sounds .sound:not([playing]) button {
+  opacity: 0;
+}
+#sounds .sound:hover span[text] {
+  color: #555555;
+}
+
+.screenwipe {
+  z-index: 9999;
+  position: absolute;
+  top: -10%;
+  height: 120%;
+  width: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(10px);
+  background: #fff;
+  animation: wipe 2.5s ease-in-out 0.2s forwards reverse;
+}
+
+@keyframes wipe {
+  0% {
+    width: 0px;
+  }
+  5% {
+    width: 0px;
+  }
+  15% {
+    width: 80px;
+  }
+  100% {
+    width: 120%;
+  }
+}
+#bg {
+  position: fixed;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  pointer-events: none;
+  opacity: 1;
+}
+#bg video {
+  object-fit: cover;
+  width: 120%;
+  height: 120%;
+  filter: blur(2px);
+  opacity: 1;
+}
+
 /*# sourceMappingURL=room.css.map */

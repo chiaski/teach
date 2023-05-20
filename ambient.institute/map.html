@@ -90,19 +90,27 @@ $("#map .wrapper").on("mouseover", "a", function(){
   $(".institute-map .room[name='" + n +"']").attr("active", "");
   
 });
-  
-  
-$("#map .wrapper").on("click", "a", function(){
-  if( !$(this).is("[name]") ) return;
-  let n = $(this).attr("name");
-  window.location.href = n + ".html";
-});
-  
-$("#map .institute-map").on("click", ".room", function(){
-  if( !$(this).is("[name]") ) return;
-  let n = $(this).attr("name");
-  window.location.href = n + ".html";
-});
+//  
+//  
+//$("#map .wrapper").on("click", "a", function(){
+//  if( !$(this).is("[name]") ) return;
+//  if( $(this).find("span[title]").text() == "???" ) return;
+//  
+//  console.log()
+//  let n = $(this).attr("name");
+//  window.location.href = n + ".html";
+//});
+//  
+//$("#map .institute-map").on("click", ".room", function(){
+//  if( !$(this).is("[name]") ) return;
+//  if( $(this).find("span[title]").text() == "???" ) return;
+//  
+//  console.log($(this).find("span[title]").text());
+//  return;
+//  
+//  let n = $(this).attr("name");
+//  window.location.href = n + ".html";
+//});
 
   
 </script>

@@ -13,6 +13,9 @@
 </head>
 
 <body>
+  <div class="screenwipe"></div>
+  
+  
   <main>
 
     <!--   BARS    -->
@@ -36,13 +39,11 @@
       <div class="wrapper">
 
         <a class="link">
-          <span location>Map</span>
-          <span hidden>Navigate</span>
+          <span location>Summer</span>
+          <span hidden>Year 2023</span>
         </a>
         
-<!--        <a class="link" href="index.html" home title><span location>Foyer</span><span hidden>Ambient Institute</span></a>-->
         <a class="link" map home title><span location="foyer">Foyer</span><span hidden>Ambient Institute</span></a>
-
         
         <a class="link" map>
           <span location>Map</span>
@@ -145,7 +146,6 @@
       <div class="wrapper-map"></div>
         </div>
     </section>
-    <br><br>
     
     
 
@@ -172,6 +172,31 @@
       backDelay: 2300,
       fadeOut: true
     });
+        
+        $(document).ready(function () {
+  
+  $("#caption").hide();
+  
+  setTimeout(function(){
+    $(".screenwipe").css("animation", "none").hide();
+    
+    $("#caption").fadeIn(2500);
+    
+  $(".door").click(function(){
+     $(".screenwipe").fadeIn().css("width", "0px");
+    $(".screenwipe").css("animation", "wipe 1.25s ease-in-out .1s forwards normal");
+    
+    
+  setTimeout(function(){
+    window.location.href = "library.html"; // navigate out
+  }, 1500);
+    
+  });
+  }, 2700);
+
+  
+  
+});
         
         </script>
   
