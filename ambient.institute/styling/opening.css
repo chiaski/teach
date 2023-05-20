@@ -14,10 +14,12 @@ body, main {
   opacity: 1;
 }
 #bg video {
-  margin: -1em;
-  transform: translateX(-100px);
   filter: blur(2px);
+  margin: -1em;
   opacity: 1;
+  height: 110vh;
+  width: 110vw;
+  object-fit: cover;
 }
 
 #navi, #caption {

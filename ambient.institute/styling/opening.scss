@@ -14,10 +14,12 @@ body, main{
   opacity: 1;
   
   video{
-    margin: -1em;
-    transform: translateX(-100px);
     filter: blur(2px);
+    margin: -1em;
     opacity: 1;
+    height: 110vh;
+    width: 110vw;
+    object-fit: cover;
   }
   
 }
@@ -89,8 +91,10 @@ $stroke: #a8c0e0;
 //      -1.25px 0 4px $stroke;
     font-size: calc(12px + 1vw);
   }
+}
 
-
+#caption span{
+  
 }
 
 .typed-cursor {
