@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .library {
   width: 100%;
   overflow-x: scroll;
@@ -59,7 +60,7 @@
   flex-direction: column;
   padding: 0;
   margin: 0 auto;
-  max-width: 1100px;
+  max-width: 1400px;
 }
 #index .row {
   padding: 0;
@@ -71,6 +72,10 @@
   display: flex;
   justify-content: space-between;
 }
+#index a[loved] span[name]::before {
+  content: " ♡ ";
+  color: #eb80ff;
+}
 #index a {
   text-decoration: none;
 }
@@ -81,10 +86,11 @@
   color: #eb80ff;
 }
 #index span[name] {
-  width: 300px;
+  width: 400px;
+  line-height: 120%;
   display: inline-block;
-  font-family: "Times Now";
-  font-size: 1.1rem;
+  letter-spacing: -0.4px;
+  font-size: 0.8rem;
   color: #464646;
   vertical-align: top;
 }
@@ -94,24 +100,38 @@
 #index span[keywords] {
   font-size: 0.65rem;
   letter-spacing: -0.5px;
-  text-transform: uppercase;
   width: 140px;
+  display: none;
+}
+#index span[institution] {
+  display: inline-block;
+  width: 140px;
+  font-size: 0.65rem;
 }
 #index span[type] {
   display: inline-block;
   width: 80px;
-  text-transform: uppercase;
   font-size: 0.65rem;
+  text-transform: capitalize;
 }
 #index span[by] {
   display: inline-block;
   width: 140px;
-  text-transform: uppercase;
   font-size: 0.65rem;
 }
 #index span[year] {
   font-size: 0.65rem;
   float: right;
+  text-transform: uppercase;
+}
+#index div[header] {
+  margin-bottom: 0.25em;
+  cursor: s-resize;
+}
+#index div[header] span {
+  color: #464646;
+  text-transform: uppercase;
+  font-size: 0.7rem;
 }
 @media only screen and (max-width: 800px) {
   #index span[keywords] {
@@ -127,15 +147,14 @@
     padding: 0.15em 0;
   }
   #index span[desc] {
-    display: block;
     font-family: "Times Now";
   }
   #index span[name] {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
   #index span[name],
 #index span[keywords],
-#index span[type] {
+#index span[type], #index span[institution] {
     width: auto;
     max-width: 90%;
   }
