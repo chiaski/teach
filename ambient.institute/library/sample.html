@@ -17,23 +17,6 @@
 <body>
   <main>
 
-    <section id="caption" class="block">
-      <div class="wrapper">
-        <a></a>
-        <div class="filter-wrapper">
-          <a type="all">All,</a>
-          <a type="loved">&hearts;,</a>
-          <a type="talk">Talk, </a>
-          <a type="workshop">Workshop, </a>
-          <a type="performance">Performance, </a>
-          <a type="text">Text, </a>
-          <a type="archive">Archive</a>
-
-        </div>
-        <a></a>
-        
-      </div>
-    </section>
     
     
     <section id="navi" class="block">
@@ -59,30 +42,19 @@
     </section>
     
     
-
-    <section id="heading" class="block">
-
-      <p desc>The walls are lined with memories made and unmade.<br>An index of talks, workshops, performances, and resources from <a href="https://chia.design" target="_blank">Chia Amisola</a>—practicing as the Ambient Institute.<br>(<a href="mailto:chiamisola@gmail.com">email</a>, <a href="https://are.na/chia" target="_blank">are.na, </a><a href="https://instagram.com/hotemogf" target="_blank">instagram, </a><a href="https://twitter.com/hotemogf" target="_blank">twitter</a>)<br>
-        
-      </p>
-    </section>
-    
-<!--
-    
-    <section id="index" class="block" library>
+    <section id="caption" class="block piece">
+      <div class="wrapper">
       
-      <div class="library">
-        <div class="w">
-      </div>
+      <a href="index.html">&ShortLeftArrow; Back</a>
+      <a href="index.html">&ShortUpArrow;</a>
+      <a href="index.html">Next &ShortRightArrow;</a>
       </div>
     </section>
--->
-    <div id="img"></div>
 
 
     <section id="index" class="block" library>
       
-        <div header>
+          <div header>
           <div class="row">
           <span type f="type">Type</span>
           <span name f="name">Title</span>
@@ -94,38 +66,41 @@
           <span year f="year">Year</span>
             </div>
         </div>
-      <div class="wrapper">
-
+      
+      <a link="">
+        <div class="row">
+          <span type="" sort="type">talk</span>
+          <span name="" sort="name">Guest Lecture</span>
+          <span desc="" sort="desc"> </span>
+          <span institution="" sort="institution">Software for People, Yale University</span>
+          <span thankyou="" sort="thankyou">Invited by Rosa McElheny</span>
+          <span location="" sort="location">New Haven, CT</span>
+          <span keywords="" sort="keywords">websites</span>
+          <span year="" sort="year">2023</span>
+        </div>
+        </a>
+      
+      <br>
+      
+      <div id="piece">
+      <h1 name>Guest Lecture</h1>
+      <h2 institution>Software for People, Yale University</h2>
+      
+      <p desc></p>
+      
+      <a class="big" href="https://software-for-people.net/">Visit</a>
+      
+      <div class="details">
+      <span type>Talk</span>
+      <span location>New Haven, CT</span>
+      <span year>New Haven, CT</span>
+      <span thankyou>Invited by Rosa McElheny</span>
+      <span keywords>websites</span>
+      </div>       
       </div>
+      
     </section>
     
-<!--
-
-    <section id="heading" class="block">
-
-      <h1 name>References</h1>
-
-      <p desc>A rundown book contains a list of influences loved, lingering, and lost.</p>
-
-    </section>
-
-  
-    <section id="index" class="block" references>
-      <div class="wrapper">
-      
-        
-        <br>
-
-      </div>
-    </section>
--->
-    
-
-    <section class="block reg">
-      <p desc>This index is inspired by <a href="http://designforthe.net/" target="_blank">Mindy Seu</a>, <a href="https://presentations.laurel.world/" target="_blank">Laurel Schwulst</a>, and <a href="https://theportal.place/projects/" target="_blank">Cori Olinghouse</a>.
-      </p>
-      
-    </section>
     
 <br>
     
@@ -145,17 +120,6 @@
 
   <script src="../jquery-3.6.0.min.js" type="text/javascript"></script>
   <script src="../institute.js" type="text/javascript"></script>
-  <script src="library.js" type="text/javascript"></script>
-  
-      <script type="text/javascript">
-  localStorage.setItem("visited.library", true);
-                
-        
-    $('#map .wrapper-map').load('../map-src.html');
-
-        
-        
-        </script>
 </body>
 
 </html>

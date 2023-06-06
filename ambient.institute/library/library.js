@@ -60,7 +60,7 @@ $(document).ready(function () {
       
       console.log(row);
       
-      let _loved, _soon, _img, _link = " ";
+      let _loved = _desc = _soon = _img = _link = _thankyou = " ";
       
       if(row.loved == "TRUE"){
         _loved = "loved";
@@ -70,20 +70,24 @@ $(document).ready(function () {
         _soon = "soon";
       }
       
-      if(row.img){
+      if(row.img && row.img.length > 0){
         _img = "img='" + row.img +"'";
       }
       
-      if(row.link){
-        _link = "href='" + row.link +"' target='_blank'";
+      if(row.link && row.link.length > 0){
+        _link = `href='` + row.link + `' target='_blank' `;
       }
       
-      $(`<a ` + _link +`" link ` + _loved + ` ` + _soon + ` ` + _img + `>
+      if(row.thankyou && row.thankyou.length > 0){ _thankyou = row.thankyou; }
+      if(row.desc && row.desc.length > 0){ _desc = row.desc; }
+      
+      $(`<a ` + _link + ` link ` + _loved + ` ` + _soon + ` ` + _img + `>
         <div class="row">
           <span type  sort='type'>` + row.type +`</span>
           <span name  sort='name'>` + row.name +`</span>
-          <span desc  sort='desc'>` + row.desc +`</span>
+          <span desc  sort='desc'>` + _desc +`</span>
           <span institution  sort='institution'>` + row.for +`</span>
+          <span thankyou  sort='thankyou'>` + _thankyou +`</span>
           <span location  sort='location'>` + row.location +`</span>
           <span keywords  sort='keywords'>` + row.keywords +`</span>
           <span year  sort='year'>` + row.year +`</span>

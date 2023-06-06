@@ -128,7 +128,6 @@ z-index: 99;
     flex-direction: column;
     padding: 0;
     margin: 0 auto;
-    max-width: 1400px;
   }
 
   //  .wrapper:hover > a:not(:hover){
@@ -146,20 +145,23 @@ z-index: 99;
 //    letter-spacing: -.5px;
     display: flex;
     justify-content: space-between;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   }
   
   a[soon]{
     opacity: 0.5;
   }
   
-  a[loved] span[name]::before{
+  a[loved] span[name]::after{
     content: " ♡ ";
     color: $pink;
   }
 
   a {
     text-decoration: none;
-    cursor: auto;
+    cursor: default;
   }
   
   a[href]{
@@ -170,8 +172,9 @@ z-index: 99;
     opacity: 0.3;
   }
 
-  a:hover .row span[name] {
-    color: $pink;
+  a:hover .row span {
+//    color: $pink;
+    text-shadow: 0 0 10px $pink;
   }
 
   
@@ -198,8 +201,8 @@ z-index: 99;
 
   span[institution] {
     display: inline-block;
-    width: 160px;
-    padding: 0 .5rem;
+    width: 170px;
+    padding: 0 .25rem;
   }
 
   span[location] {
@@ -226,6 +229,13 @@ z-index: 99;
     text-transform: capitalize;
   }
   
+
+  span[thankyou] {
+    display: none;
+    width: 180px;
+    text-transform: capitalize;
+  }
+  
   div[header]{
     margin: 0;
     cursor: s-resize;
@@ -242,6 +252,13 @@ z-index: 99;
       content: " ↓";
     }
     
+  }
+  @media only screen and (min-width: 1300px) {
+    
+  span[thankyou] {
+    display: inline-block;
+    }
+  
   }
 
   @media only screen and (max-width: 840px) {
@@ -279,4 +296,48 @@ z-index: 99;
     }
 
   }
+}
+
+
+
+#piece{
+  
+  display: block;
+  font-family: "Times Now";
+  width: 100%;
+  
+  
+  h1{
+  font-family: "Times Now";
+    text-align: left;
+    text-transform: capitalize;
+    font-size: 2rem;
+    margin: .25rem 0;
+  }
+  
+  a.big{
+    color: $pink;
+    text-shadow: 0 0 15px $pink;
+    font-size: 1.5rem;
+  }
+  
+  .details{
+    margin: .5rem 0;
+    display: flex;
+    flex-direction: column;
+    color: $gray-darker;
+  }
+  
+  .details{
+    span{
+      padding: .25rem 0;
+      width: 100%;
+      font-family: "Director";
+      font-size: .8rem;
+    }
+    
+    span[type]::before{ content: "Type: " }
+    span[location]::before{ content: "Location: " }
+  }
+  
 }

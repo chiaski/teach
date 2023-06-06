@@ -89,7 +89,6 @@
   flex-direction: column;
   padding: 0;
   margin: 0 auto;
-  max-width: 1400px;
 }
 #index .row {
   padding: 0;
@@ -101,17 +100,20 @@
   line-height: 120%;
   display: flex;
   justify-content: space-between;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 #index a[soon] {
   opacity: 0.5;
 }
-#index a[loved] span[name]::before {
+#index a[loved] span[name]::after {
   content: " ♡ ";
   color: #eb80ff;
 }
 #index a {
   text-decoration: none;
-  cursor: auto;
+  cursor: default;
 }
 #index a[href] {
   cursor: pointer;
@@ -119,8 +121,8 @@
 #index a[hide] {
   opacity: 0.3;
 }
-#index a:hover .row span[name] {
-  color: #eb80ff;
+#index a:hover .row span {
+  text-shadow: 0 0 10px #eb80ff;
 }
 #index span[name] {
   width: 320px;
@@ -140,8 +142,8 @@
 }
 #index span[institution] {
   display: inline-block;
-  width: 160px;
-  padding: 0 0.5rem;
+  width: 170px;
+  padding: 0 0.25rem;
 }
 #index span[location] {
   display: inline-block;
@@ -163,6 +165,11 @@
   width: 50px;
   text-transform: capitalize;
 }
+#index span[thankyou] {
+  display: none;
+  width: 180px;
+  text-transform: capitalize;
+}
 #index div[header] {
   margin: 0;
   cursor: s-resize;
@@ -176,6 +183,11 @@
 }
 #index div[header] span:hover::after {
   content: " ↓";
+}
+@media only screen and (min-width: 1300px) {
+  #index span[thankyou] {
+    display: inline-block;
+  }
 }
 @media only screen and (max-width: 840px) {
   #index span[keywords], #index span[year], #index span[location] {
@@ -199,6 +211,42 @@
   #index span[type], #index span[name] {
     display: block;
   }
+}
+
+#piece {
+  display: block;
+  font-family: "Times Now";
+  width: 100%;
+}
+#piece h1 {
+  font-family: "Times Now";
+  text-align: left;
+  text-transform: capitalize;
+  font-size: 2rem;
+  margin: 0.25rem 0;
+}
+#piece a.big {
+  color: #eb80ff;
+  text-shadow: 0 0 15px #eb80ff;
+  font-size: 1.5rem;
+}
+#piece .details {
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  color: #464646;
+}
+#piece .details span {
+  padding: 0.25rem 0;
+  width: 100%;
+  font-family: "Director";
+  font-size: 0.8rem;
+}
+#piece .details span[type]::before {
+  content: "Type: ";
+}
+#piece .details span[location]::before {
+  content: "Location: ";
 }
 
 /*# sourceMappingURL=library.css.map */
