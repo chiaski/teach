@@ -8,6 +8,9 @@ $(document).ready(function () {
   
     let n = $(this).attr("type");
     
+    $(".filter-wrapper a").css("opacity", 0.4);
+    $(this).css("opacity", 1);
+    
     $(".filter-wrapper a").attr("hide", "");
     $(this).removeAttr("hide");
     
@@ -39,6 +42,17 @@ $(document).ready(function () {
 //    $("#index span[type]").html();
     
   });
+  
+  $("#index .wrapper").on("mouseover", "a", function(){
+    if( $(this).attr("img") ){
+      $("#img").attr("custom", "");
+      $("#img").css("background-image", "url('i/" + $(this).attr("img") +"')");
+      
+    } else{
+      $("#img").removeAttr("custom");
+      $("#img").css("background-image", "url('../assets/transparency.png')")
+    }
+  });
 
   $.getJSON("https://opensheet.elk.sh/1duW1V3VfMU92-zHApZnCZvpSNy9wyM79kFk95zrxJ18/Library", function (data) {
 
@@ -46,19 +60,32 @@ $(document).ready(function () {
       
       console.log(row);
       
-      let _loved = " ";
+      let _loved, _soon, _img, _link = " ";
       
       if(row.loved == "TRUE"){
         _loved = "loved";
       }
       
-      $(`<a href="` + row.link +`" target="_blank" link ` + _loved + `>
+      if(row.year == "Soon"){
+        _soon = "soon";
+      }
+      
+      if(row.img){
+        _img = "img='" + row.img +"'";
+      }
+      
+      if(row.link){
+        _link = "href='" + row.link +"' target='_blank'";
+      }
+      
+      $(`<a ` + _link +`" link ` + _loved + ` ` + _soon + ` ` + _img + `>
         <div class="row">
+          <span type  sort='type'>` + row.type +`</span>
           <span name  sort='name'>` + row.name +`</span>
           <span desc  sort='desc'>` + row.desc +`</span>
           <span institution  sort='institution'>` + row.for +`</span>
+          <span location  sort='location'>` + row.location +`</span>
           <span keywords  sort='keywords'>` + row.keywords +`</span>
-          <span type  sort='type'>` + row.type +`</span>
           <span year  sort='year'>` + row.year +`</span>
         </div>
         </a>`)

@@ -40,20 +40,49 @@
   background: rgba(204, 204, 204, 0.14);
 }
 
-#index {
-  display: flex;
-  flex-direction: column;
+#caption {
+  z-index: 9;
+  pointer-events: auto;
 }
-#index .filter-wrapper {
-  margin: 0 0 1em 0;
+#caption .filter-wrapper {
+  z-index: 99;
+  margin: 0;
+  margin-bottom: -0.5rem;
   text-align: center;
 }
-#index .filter-wrapper a {
-  font-size: 1.25rem;
-  font-family: "Times Now";
+#caption .filter-wrapper a {
+  font-size: 0.65rem;
+  font-family: "Director";
   letter-spacing: -0.5px;
   color: #464646;
   cursor: pointer;
+}
+
+#img {
+  position: fixed;
+  z-index: -9;
+  width: 420px;
+  height: 300px;
+  max-width: 80%;
+  max-height: 40%;
+  padding: 1em;
+  background-image: url(../assets/transparency.png);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.6;
+  display: none;
+}
+
+#img[custom] {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#index {
+  display: flex;
+  flex-direction: column;
 }
 #index .wrapper {
   display: flex;
@@ -67,10 +96,14 @@
   margin: 0.5em 0;
   width: 100%;
   font-family: "Director";
-  font-size: 0.8rem;
-  margin-bottom: 1em;
+  margin-bottom: 0.5rem;
+  font-size: 0.6rem;
+  line-height: 120%;
   display: flex;
   justify-content: space-between;
+}
+#index a[soon] {
+  opacity: 0.5;
 }
 #index a[loved] span[name]::before {
   content: " ♡ ";
@@ -78,6 +111,10 @@
 }
 #index a {
   text-decoration: none;
+  cursor: auto;
+}
+#index a[href] {
+  cursor: pointer;
 }
 #index a[hide] {
   opacity: 0.3;
@@ -86,11 +123,10 @@
   color: #eb80ff;
 }
 #index span[name] {
-  width: 400px;
+  width: 320px;
   line-height: 120%;
   display: inline-block;
   letter-spacing: -0.4px;
-  font-size: 0.8rem;
   color: #464646;
   vertical-align: top;
 }
@@ -98,65 +134,70 @@
   display: none;
 }
 #index span[keywords] {
-  font-size: 0.65rem;
   letter-spacing: -0.5px;
   width: 140px;
   display: none;
 }
 #index span[institution] {
   display: inline-block;
-  width: 140px;
-  font-size: 0.65rem;
+  width: 160px;
+  padding: 0 0.5rem;
+}
+#index span[location] {
+  display: inline-block;
+  width: 130px;
+  padding: 0 0.25rem;
 }
 #index span[type] {
   display: inline-block;
-  width: 80px;
-  font-size: 0.65rem;
+  width: 70px;
   text-transform: capitalize;
+  padding: 0 0.5rem;
 }
 #index span[by] {
   display: inline-block;
   width: 140px;
-  font-size: 0.65rem;
 }
 #index span[year] {
-  font-size: 0.65rem;
   float: right;
-  text-transform: uppercase;
+  width: 50px;
+  text-transform: capitalize;
 }
 #index div[header] {
-  margin-bottom: 0.25em;
+  margin: 0;
   cursor: s-resize;
 }
 #index div[header] span {
   color: #464646;
-  text-transform: uppercase;
-  font-size: 0.7rem;
 }
-@media only screen and (max-width: 800px) {
-  #index span[keywords] {
+#index div[header] span::after {
+  content: "   ";
+  display: inline-block;
+}
+#index div[header] span:hover::after {
+  content: " ↓";
+}
+@media only screen and (max-width: 840px) {
+  #index span[keywords], #index span[year], #index span[location] {
     display: none;
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 670px) {
   #index .row {
     display: flex;
-    flex-direction: column;
   }
-  #index span {
+  #index .row span {
     padding: 0.15em 0;
+    display: none;
   }
-  #index span[desc] {
-    font-family: "Times Now";
+  #index span[type] {
+    font-size: 0.6rem;
   }
   #index span[name] {
-    font-size: 0.9rem;
+    width: calc(100% - 100px);
   }
-  #index span[name],
-#index span[keywords],
-#index span[type], #index span[institution] {
-    width: auto;
-    max-width: 90%;
+  #index span[type], #index span[name] {
+    display: block;
   }
 }
 

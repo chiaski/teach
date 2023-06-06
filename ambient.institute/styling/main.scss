@@ -92,7 +92,7 @@ main {
   box-sizing: border-box;
   width: calc(100% - 2em);
   margin: 1em;
-  padding-top: 2em;
+  padding: .5rem 0;
   //  background: rgba(255, 255, 0, 0.13);
 }
 
@@ -285,14 +285,14 @@ section .wrapper {
   left: 0;
   width: 100%;
   min-height: 32px;
-  font-family: "Times Now";
+  font-family: 'Director';
   padding: 1em;
   box-sizing: border-box;
   background: linear-gradient(180deg, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
   z-index: 9;
 
   color: $gray-darker;
-  font-size: $font-body;
+  font-size: .6rem;
 
   a {
     color: $gray-darker;
@@ -307,7 +307,7 @@ section .wrapper {
     text-align: center;
     font-family: "Director";
     text-transform: uppercase;
-    font-size: $font-body;
+  font-size: .6rem;
   }
 
 
@@ -375,6 +375,9 @@ section .wrapper {
 
   p {
     text-align: center;
+    width: 100%;
+    max-width: none;
+    padding: .5em;
   }
 
   @media only screen and (max-width: 600px) {

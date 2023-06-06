@@ -69,22 +69,19 @@ $white: #ffffff;
 }
 
 
-
-
-#index {
-
-  // FILTER
-  display: flex;
-  flex-direction: column;
-
+#caption{
+  z-index: 9;
+  pointer-events: auto;
+  
   .filter-wrapper {
-
-    margin: 0 0 1em 0;
+z-index: 99;
+    margin: 0;
+    margin-bottom: -.5rem;
     text-align: center;
 
     a {
-      font-size: 1.25rem;
-      font-family: "Times Now";
+      font-size: $font-details;
+      font-family: "Director";
       letter-spacing: -.5px;
       color: $gray-darker;
 
@@ -92,6 +89,36 @@ $white: #ffffff;
     }
 
   }
+}
+
+#img{
+  position: fixed;
+  z-index: -9;
+  width: 420px;
+  height: 300px;
+  max-width: 80%;
+  max-height: 40%;
+  padding: 1em;
+  background-image: url(../assets/transparency.png);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.6;
+  display: none;
+  
+}
+
+#img[custom]{
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#index {
+
+  // FILTER
+  display: flex;
+  flex-direction: column;
 
 
   // MAIN
@@ -113,11 +140,16 @@ $white: #ffffff;
     margin: .5em 0;
     width: 100%;
     font-family: 'Director';
-    font-size: $font-body;
-    margin-bottom: 1em;
-
+    margin-bottom: .5rem;
+    font-size: .6rem;
+    line-height: 120%;
+//    letter-spacing: -.5px;
     display: flex;
     justify-content: space-between;
+  }
+  
+  a[soon]{
+    opacity: 0.5;
   }
   
   a[loved] span[name]::before{
@@ -127,6 +159,11 @@ $white: #ffffff;
 
   a {
     text-decoration: none;
+    cursor: auto;
+  }
+  
+  a[href]{
+    cursor: pointer;
   }
   
   a[hide]{
@@ -139,12 +176,12 @@ $white: #ffffff;
 
   
   span[name] {
-    width: 400px;
+    width: 320px;
     line-height: 120%;
     display: inline-block;
     letter-spacing: -.4px;
 //    font-family: "Times Now";
-    font-size: .8rem;
+//    font-size: .8rem;
     color: $gray-darker;
     vertical-align: top;
   }
@@ -154,7 +191,6 @@ $white: #ffffff;
   }
 
   span[keywords] {
-    font-size: $font-details;
     letter-spacing: -.5px;
     width: 140px;
     display: none;
@@ -162,73 +198,84 @@ $white: #ffffff;
 
   span[institution] {
     display: inline-block;
-    width: 140px;
-    font-size: $font-details;
+    width: 160px;
+    padding: 0 .5rem;
+  }
+
+  span[location] {
+    display: inline-block;
+    width: 130px;
+    padding: 0 .25rem;
   }
 
   span[type] {
     display: inline-block;
-    width: 80px;
-    font-size: $font-details;
-//    font-size: .8rem;
+    width: 70px;
     text-transform: capitalize;
+    padding: 0 .5rem;
   }
 
   span[by] {
     display: inline-block;
     width: 140px;
-//    text-transform: uppercase;
-    font-size: $font-details;
   }
 
   span[year] {
-    font-size: $font-details;
     float: right;
-    text-transform: uppercase;
+    width: 50px;
+    text-transform: capitalize;
   }
   
   div[header]{
-    margin-bottom: .25em;
+    margin: 0;
     cursor: s-resize;
     span{
     color: $gray-darker;
-      text-transform: uppercase;
-      font-size: .7rem;
+    }
+    
+    span::after{
+      content: " \00a0\00a0";
+      display: inline-block;
+    }
+    
+    span:hover::after{
+      content: " ↓";
     }
     
   }
 
-  @media only screen and (max-width: 800px) {
-    span[keywords] {
+  @media only screen and (max-width: 840px) {
+    span[keywords], span[year], span[location] {
       display: none;
     }
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 670px) {
 
     .row {
       display: flex;
-      flex-direction: column;
-    }
+//      flex-direction: column;
+      
 
     span {
       padding: .15em 0;
+      display: none;
     }
 
-    span[desc] {
-//      display: block;
-      font-family: "Times Now";
+    }
+    
+    span[type]{
+      font-size: .6rem;
     }
 
     span[name] {
-      font-size: .9rem;
+//      font-size: .9rem;
+      width: calc(100% - 100px);
     }
 
-    span[name],
-    span[keywords],
-    span[type], span[institution] {
-      width: auto;
-      max-width: 90%;
+    
+    span[type], span[name]{
+      display: block;
     }
 
   }

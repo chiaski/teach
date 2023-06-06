@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>:artist - :stitle Ambient.Institute </title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+
+  <meta name="description" content=":artist - :stitle (:year) released by :label | Chia Amisola's teaching portal.">
+
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://philippinecassettearchive.com/tapes/:cid">
+  <meta property="og:title" content=":artist - :stitle (:year) | Philippine Cassette Archive">
+  <meta property="og:description" content=":artist - :stitle (:year) released by :label | Chia Amisola's teaching portal">
+  <meta property="og:image" content="https://philippine.design/tapes/preview.png">
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+  
+  <link rel="stylesheet" href="../assets/tape.css">
+  <link rel="stylesheet" href="../assets/image-zoom.css">
+
+</head>
+
+<body>
+
+  <div id="loader">
+    <div class="_loading">
+      <img src="../philippine-cassette-archive.svg">
+    </div>
+  </div>
+
+
+  <div class="top-wrapper">
+    <div id="title-about">
+      <a href="../">
+        <h1 title="Go back to archive">
+          <span><span class="_artist">:artist</span><br>
+            <span class="_stitle">:stitle</span> </span>
+        </h1>
+      </a>
+    </div>
+
+    <div class="info">
+      <button data-what="info" title="Learn about the project">About</button>
+      <button data-what="fb" title="Visit Philippine Cassette Archive on Facebook">FB</button>
+      <button data-what="ig" title="@philippinecassettes on Instagram">IG</button>
+      <button></button>
+    </div>
+  </div>
+  <div id="about">
+    <h1>About the Philippine Cassette Archive</h1>
+    <p>The Philippine Cassette Archive is a digital collection of cassette tapes, a glimpse into Pinoy tape culture. philippinecassettearchive.com<br><br>Launched in August 2022 under the <a href="https://philippine.design" target="_blank">philippine.design</a> project, the collection currently focuses on graphic design, packaging, and visuals. Materials on launch are largely taken from Discogs. We later hope to expand on collecting cassettes from small labels, locally-produced bootlegs, and in collecting newer (post-2010s) artifacts by contemporary Filipino musicians & artist collectives.</p>
+
+
+    <h1>Submit a tape</h1>
+    <p>If you have scans and/or digital versions of your cassette tapes or have metadata to contribute to any entries, please feel free to submit them to us at admin@philippine.design or via Facebook Messenger or Instagram DM.</p>
+
+    <h1>Support the Archive</h1>
+    <p>If you are interested in donating to the archive or to philippine.design in general (feel free to specify where your donation would like to go), contact Chia at <a href="mailto:admin@philippine.design">admin@philippine.design</a>. We are grateful to receive donations in any amount to fund our research and archival requests, particularly in compensation for scanning & digitization efforts.</p>
+
+      <h1>Find us</h1>
+      <div class="links">
+        <a href="https://developh.org" target="_blank">Developh</a>
+        <a href="https://www.instagram.com/philippineinternetarchive" target="_blank">@PhilippineInternetArchive on Instagram</a>
+      </div>
+      <br>
+      <h1>People</h1>
+      <p>The Philippine Cassette Archive and the Philippine Internet Archive  is founded, developed, and maintained by <a href="https://chias.website">Chia Amisola</a>. <a href="https://twitter.com/hotemogf" target="_blank">(Twitter: hotemogf)</a>   <a href="https://instagram.com/hotemogf" target="_blank">(Instagram: hotemogf)</a>  </p>
+  </div>
+
+  <main>
+
+    <section id="cover">
+      :images_cover
+    </section>
+
+    <section id="content">
+      <div class="_metadata">
+        <div class="__year" title="The year the tape was released, presumably">:year</div>
+        <div class="__genre">:genre</div>
+        <div class="__label" title="Company or creator who distributed the tape">:label</div>
+        <a class="__discogs" href=":discogs" title="Find information on Discogs">↗</a>
+        <a class="__streaming" href=":stream" title="Stream online on Spotify/Youtube">Stream</a>
+      </div>
+
+
+      <div class="images">
+        :images_html
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <script src="tape.js" type="text/javascript"></script>
+  <script src="../assets/image-zoom.js"></script>
+
+</body>
+
+</html>

@@ -69,7 +69,7 @@ main {
   box-sizing: border-box;
   width: calc(100% - 2em);
   margin: 1em;
-  padding-top: 2em;
+  padding: 0.5rem 0;
 }
 
 section.block {
@@ -223,13 +223,13 @@ section .wrapper {
   left: 0;
   width: 100%;
   min-height: 32px;
-  font-family: "Times Now";
+  font-family: "Director";
   padding: 1em;
   box-sizing: border-box;
   background: linear-gradient(180deg, white 25%, rgba(255, 255, 255, 0) 100%);
   z-index: 9;
   color: #464646;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
 }
 #navi a {
   color: #464646;
@@ -242,7 +242,7 @@ section .wrapper {
   text-align: center;
   font-family: "Director";
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
 }
 #navi .wrapper {
   flex-direction: row;
@@ -291,6 +291,9 @@ section .wrapper {
 #heading p,
 .reg p {
   text-align: center;
+  width: 100%;
+  max-width: none;
+  padding: 0.5em;
 }
 #location {
   position: fixed;
