@@ -44,12 +44,18 @@ $(document).ready(function () {
   });
   
   $("#index .wrapper").on("mouseover", "a", function(){
+    if( $(this).attr("emote") ){
+      $("#emote").html( $(this).attr("emote") );
+    }else{
+      $("#emote").html("");
+    }
+    
     if( $(this).attr("img") ){
       $("#img").attr("custom", "");
       $("#img").css("background-image", "url('i/" + $(this).attr("img") +"')");
       
     } else{
-      $("#img").removeAttr("custom");
+     $("#img").removeAttr("custom");
       $("#img").css("background-image", "url('../assets/transparency.png')")
     }
   });
@@ -60,7 +66,7 @@ $(document).ready(function () {
       
       console.log(row);
       
-      let _loved = _desc = _soon = _img = _link = _thankyou = " ";
+      let _loved = _desc = _soon = _img = _unicode = _link = _thankyou = " ";
       
       if(row.loved == "TRUE"){
         _loved = "loved";
@@ -74,6 +80,10 @@ $(document).ready(function () {
         _img = "img='" + row.img +"'";
       }
       
+      if(row.unicode && row.unicode.length > 0){
+        _unicode = `emote="` + row.unicode + `"`;
+      }
+      
       if(row.link && row.link.length > 0){
         _link = `href='` + row.link + `' target='_blank' `;
       }
@@ -81,7 +91,7 @@ $(document).ready(function () {
       if(row.thankyou && row.thankyou.length > 0){ _thankyou = row.thankyou; }
       if(row.desc && row.desc.length > 0){ _desc = row.desc; }
       
-      $(`<a ` + _link + ` link ` + _loved + ` ` + _soon + ` ` + _img + `>
+      $(`<a ` + _link + ` link ` + _loved + ` ` + _soon + ` ` + _img + _unicode + `>
         <div class="row">
           <span type  sort='type'>` + row.type +`</span>
           <span name  sort='name'>` + row.name +`</span>

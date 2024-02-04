@@ -91,6 +91,22 @@ z-index: 99;
   }
 }
 
+#emote{
+  position: fixed;
+  left: 0;
+  top: 50%;
+  z-index: -9;
+  width: 100%;
+  text-align: center;
+  height: 300px;
+  max-height: 40%;
+  font-size: 4rem;
+  color: $pink;
+  text-shadow: 0 0 15px $pink;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
 #img{
   position: fixed;
   z-index: -9;

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>An Idea Generator (For a Website)</title>
+  <meta property="og:image" content="ideas.jpg">
+  <link rel="stylesheet" href="./assets/style.css" type="text/css" />
+</head>
+
+<body>
+  <main>
+    <section id="one" style="max-width:400px;">
+
+      <div id="welcome" style="max-height: 325px;">
+        <h3></h3>
+        <h1 style="font-size:3em;">An Idea generator</h1>
+        <h3></h3>
+      </div>
+      <button onclick="getIdea()">I want an idea for a website, please!</button>
+<hr>
+      <div class="notes" style="text-align: center; fon-sizet: .6em;">
+        <a href="index.html">Go back to the Class page</a>
+      </div>
+      <hr>
+      <div class="notes"  style="text-align: center; font-size: .8em;">
+        Copy the code for this idea generator by viewing the source!
+      </div>
+
+
+
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <section id="two">
+      <style type="text/css">
+        button {
+          background: #F4F3F0;
+          font-size: 1.25em;
+          font-family: "Director";
+          letter-spacing: -1px;
+          padding: .5em;
+          margin: .5em;
+          margin-bottom: 2em;
+          border: 1px solid skyblue;
+          color: deepskyblue;
+          border-radius: 30px;
+          box-shadow: 0 0 25px skyblue,0 0 25px skyblue,0 0 25px skyblue,0 0 25px skyblue;
+        }
+
+        button:hover {
+          background: deepskyblue;
+          color: white;
+          cursor: pointer;
+        }
+
+        #ideas {
+          padding: .5em;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+
+        #ideas .idea {
+          display: inline-block;
+          border: 1px dashed deepskyblue;
+          padding: .5em .75em;
+          margin: .5em .25em;
+          flex-grow: 1;
+          font-size: .7em;
+          letter-spacing: -1px;
+          border-radius: 20px;
+        }
+        
+        #two{
+          padding: 0;
+        }
+      </style>
+      
+      <script type="text/javascript">
+        function getIdea() {
+
+          var numElements = $('.idea').length;
+          var randomNum = Math.floor(Math.random() * numElements);
+          $("button").prop("disabled", true);
+
+          var t = 0;
+          var repeat = setInterval(function() {
+            randomNum = Math.floor(Math.random() * numElements);
+            $('.idea').css("background", "none");
+            $('.idea:nth-child(' + randomNum + ')').css("background", "skyblue");
+            t += 1;
+
+            if (t == 5) {
+              clearInterval(repeat)
+              $("button").prop("disabled", false);
+            }
+          }, 300);
+
+          console.log("!");
+        }
+      </script>
+
+
+      <div id="ideas">
+        <div class="idea">A website where you can make a wish</div>
+        <div class="idea">A website that you can rewrite</div>
+        <div class="idea">A website that feels analog</div>
+        <div class="idea">A website where you perform a ritual</div>
+        <div class="idea">A website that is a single image</div>
+        <div class="idea">A website with no concept</div>
+        <div class="idea">A website that feels illegal</div>
+        <div class="idea">A website that hosts banned materials</div>
+        <div class="idea">A website playing you music from a boombox</div>
+        <div class="idea">A website that's only a concept</div>
+        <div class="idea">A website that feels like a B movie</div>
+        <div class="idea">A website that keeps growing</div>
+        <div class="idea">A website that keeps freezing</div>
+        <div class="idea">A website with a timer</div>
+        <div class="idea">A website that's running out of time</div>
+        <div class="idea">A website with a traffic jam</div>
+        <div class="idea">A website that feels like a walkable city</div>
+        <div class="idea">A website that other people are walking over</div>
+        <div class="idea">A website that loops</div>
+        <div class="idea">A website that forgets you</div>
+        <div class="idea">A website about your last dream</div>
+        <div class="idea">A website wishlist</div>
+        <div class="idea">A website with links to other websites</div>
+        <div class="idea">A website to distract you for three minutes</div>
+        <div class="idea">A website with your personal announcements</div>
+        <div class="idea">A website that you need to make smaller</div>
+        <div class="idea">A website wikipedia</div>
+        <div class="idea">A website that's a platformer</div>
+        <div class="idea">A website that you need to highlight to read</div>
+        <div class="idea">A website that feels like a campfire</div>
+        <div class="idea">A website that you can adjust the temperature of</div>
+        <div class="idea">A website where you can smell the zaza</div>
+        <div class="idea">A website that's a screensaver</div>
+        <div class="idea">A website that you can swim in</div>
+        <div class="idea">A website default</div>
+        <div class="idea">A website where you can meet up with a friend</div>
+        <div class="idea">A website you can only visit once</div>
+        <div class="idea">A website with no touching</div>
+        <div class="idea">A website made for just one friend</div>
+        <div class="idea">A website that's a conversation</div>
+        <div class="idea">A website that doesn't know what you're doing</div>
+        <div class="idea">A website with a short story from your childhood</div>
+        <div class="idea">A website that is a mirror</div>
+        <div class="idea">A website that is a fire you need to put out</div>
+        <div class="idea">A website with a cart, where you don't buy anything</div>
+        <div class="idea">A website to help you forget</div>
+        <div class="idea">A website rave</div>
+        <div class="idea">A website in a non-English language</div>
+        <div class="idea">A website that is an event</div>
+        <div class="idea">A website that is the territory</div>
+        <div class="idea">A website that is handwritten</div>
+        <div class="idea">A website that is a party</div>
+        <div class="idea">A website that is your ideal shelf</div>
+        <div class="idea">A website that doesn't feel like a website</div>
+        <div class="idea">A website that's just ASCII characters</div>
+        <div class="idea">A website that feels like an infinite room</div>
+        <div class="idea">A website warning you</div>
+        <div class="idea">A website that's a prayer</div>
+        <div class="idea">A website that erases itself</div>
+        <div class="idea">A website that repeats after you</div>
+        <div class="idea">A website that doesn't do what you want to do</div>
+        <div class="idea">A website only for people who don't know you</div>
+        <div class="idea">A website that sings you a lullaby</div>
+        <div class="idea">A website that builds itself</div>
+        <div class="idea">A website that plays you a song</div>
+        <div class="idea">A website that you can only visit during certain hours</div>
+        <div class="idea">A website that has a closing time</div>
+        <div class="idea">A website that you can't see</div>
+        <div class="idea">A website that you have to wake up</div>
+        <div class="idea">A website without fear</div>
+        <div class="idea">A website that changes itself</div>
+        <div class="idea">A website with lots of nests</div>
+        <div class="idea">A website that keeps a promise</div>
+        <div class="idea">A website closing in on you</div>
+        <div class="idea">A website that needs to be recharged</div>
+        <div class="idea">A website that feels like an imaginary friend</div>
+        <div class="idea">A website that feels like a magnet</div>
+        <div class="idea">A website that holds other websites</div>
+        <div class="idea">A website about your weirdest dream</div>
+        <div class="idea">A website that hosts a hurricane</div>
+        <div class="idea">A website where you never have to apologize</div>
+        <div class="idea">A website that's really difficult to explain</div>
+        <div class="idea">A website that you can only visit once a month</div>
+        <div class="idea">A website with a pet</div>
+        <div class="idea">A website fidget spinner</div>
+        <div class="idea">A website that is ambient</div>
+        <div class="idea">A website that feels like the YouTube comments section</div>
+        <div class="idea">A website that you keep scrolling through</div>
+        <div class="idea">A website where you can download something new</div>
+        <div class="idea">A website that's an interview</div>
+        <div class="idea">A website that only makes use of sound</div>
+        <div class="idea">A website that keeps a secret</div>
+        <div class="idea">A website that you have to knock on</div>
+        <div class="idea">A website that never loads</div>
+        <div class="idea">A website that feels like a book</div>
+        <div class="idea">A website that you can scroll through forever</div>
+        <div class="idea">A website that acts as your personal notebook</div>
+        <div class="idea">A website with at least 10 pages</div>
+        <div class="idea">A website that you read by its &lt;title></div>
+        <div class="idea">A website that you need to shake</div>
+      </div>
+
+
+    </section>
+  </main>
+
+
+</body></html>

@@ -1,0 +1,365 @@
+@font-face {
+  font-family: "Times Now";
+  src: url("./fonts/TimesNow-Light.woff2") format("woff2"), url("./fonts/TimesNow-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Times Now";
+  src: url("./fonts/TimesNow-LightItalic.woff2") format("woff2"), url("./fonts/TimesNow-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Times Now";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 40px;
+}
+
+#details {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 50px;
+  opacity: 0.6;
+}
+#details h1 {
+  font-weight: normal;
+  text-align: center;
+  letter-spacing: -1px;
+  padding: 0 1em;
+  margin: 0;
+  text-wrap: balance;
+}
+#details p {
+  margin: 0 auto;
+  max-width: 80vw;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+#click {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  overflow: hidden;
+  letter-spacing: 5px;
+  pointer-events: none;
+  opacity: 0.9;
+  font-size: 1.25em;
+  z-index: 2;
+}
+#click .cloud-wrapper {
+  position: relative;
+  width: 250vw;
+  height: 100vh;
+  min-height: 500px;
+  padding-top: 50px;
+  padding-bottom: 10vh;
+}
+#click .cloud-wrapper a {
+  position: absolute;
+  transition: all linear 1s;
+  cursor: pointer;
+  color: #000;
+}
+@media only screen and (max-width: 600px) {
+  #click .cloud-wrapper {
+    animation: marquee-click 90s linear infinite;
+  }
+}
+#click .cloud {
+  display: inline-block;
+  color: #000;
+  letter-spacing: 0;
+  text-align: center;
+  z-index: 9;
+  pointer-events: all;
+  transition: all linear 1s;
+}
+#click .cloud span {
+  font-size: 1.25em;
+  white-space: pre-wrap;
+  word-break: break-word;
+  display: inline-block;
+  letter-spacing: 1.5px;
+}
+#click .cloud strong {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: normal;
+  font-family: "Times New Roman";
+  line-height: 100%;
+  max-width: 140px;
+  margin: 0 auto;
+  letter-spacing: -0.1px;
+}
+@media only screen and (max-width: 600px) {
+  #click {
+    font-size: 1.2em;
+  }
+}
+
+#clouds {
+  position: fixed;
+  top: 20px;
+  width: 100vw;
+  overflow: hidden;
+  letter-spacing: 5px;
+  pointer-events: none;
+  opacity: 0.5;
+  font-size: 1.5em;
+  letter-spacing: 1.5px;
+  transition: opacity 5s linear;
+  z-index: -2;
+}
+#clouds .cloud-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  min-width: 300vw;
+  height: 350px;
+  transition: opacity 5s linear;
+  animation: marquee 400s linear infinite;
+  padding-bottom: 10vh;
+}
+@media only screen and (max-width: 600px) {
+  #clouds .cloud-wrapper {
+    animation: marquee 300s infinite;
+  }
+}
+#clouds .cloud {
+  margin: 1em;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+}
+#clouds .cloud span {
+  white-space: pre-wrap;
+  word-break: break-word;
+  display: inline-block;
+}
+@media only screen and (max-width: 600px) {
+  #clouds {
+    font-size: 1.15em;
+  }
+}
+
+#clouds.two {
+  opacity: 0.4;
+  top: 300px;
+  padding-bottom: 10vh;
+}
+#clouds.two .cloud-wrapper {
+  animation: marquee 310s infinite;
+}
+@media only screen and (max-width: 600px) {
+  #clouds.two .cloud-wrapper {
+    animation: marquee 260s infinite;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #clouds.two {
+    top: 230px;
+  }
+}
+
+#rainbow {
+  position: fixed;
+  mix-blend-mode: screen;
+  opacity: 0.3;
+  right: 0;
+  top: 0;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  pointer-events: none;
+}
+#rainbow img {
+  min-width: 400px;
+  width: 60vw;
+}
+@media only screen and (max-width: 600px) {
+  #rainbow {
+    mix-blend-mode: normal;
+    left: 0;
+  }
+}
+
+#click:hover a:not(:hover) {
+  opacity: 0.3;
+  color: rgba(0, 0, 0, 0.4);
+}
+#click:hover a:not(:hover) .cloud {
+  opacity: 0.5;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+#navi,
+#top {
+  position: fixed;
+  box-sizing: border-box;
+  width: 100vw;
+  padding: 0.5rem 1rem;
+  left: 0;
+  z-index: 9;
+  display: flex;
+  justify-content: space-between;
+}
+#navi a,
+#top a {
+  text-align: center;
+  width: 80px;
+  color: #000;
+  margin: 0 0.5em;
+  padding: 0.5em;
+  font-size: 0.8rem;
+  cursor: pointer;
+  opacity: 0.6;
+}
+#navi a:hover,
+#top a:hover {
+  opacity: 1;
+}
+#navi a.center,
+#top a.center {
+  width: 120px;
+  text-align: center;
+}
+@media only screen and (max-width: 600px) {
+  #navi,
+#top {
+    padding: 1em 0;
+  }
+  #navi a,
+#top a {
+    letter-spacing: -0.25px;
+  }
+}
+
+#navi a:first-of-type {
+  text-align: left;
+}
+#navi a:last-of-type {
+  text-align: right;
+}
+
+#top a {
+  width: 110px;
+}
+
+#top a:last-of-type {
+  text-align: right;
+}
+
+#top {
+  background: linear-gradient(180deg, white 40%, rgba(255, 255, 255, 0) 100%);
+  top: 0;
+}
+
+#navi {
+  bottom: 0;
+  background: linear-gradient(0deg, white 40%, rgba(255, 255, 255, 0) 100%);
+}
+
+a {
+  opacity: 1;
+  text-decoration: none;
+  color: #eb80ff;
+  transition: color 0.8s cubic-bezier(0.1, 0.7, 1, 0.1);
+}
+
+@keyframes marquee-alt {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  2% {
+    opacity: 0.8;
+  }
+  30% {
+    opacity: 0.95;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-4500px);
+  }
+}
+@keyframes marquee-click {
+  0% {
+    transform: translateX(10vw);
+    opacity: 0;
+  }
+  2% {
+    opacity: 0.8;
+  }
+  30% {
+    opacity: 0.95;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-250vw);
+  }
+}
+@keyframes rainbow {
+  100%, 0% {
+    color: #f091b9;
+  }
+  12.5% {
+    color: #e67d7d;
+  }
+  25% {
+    color: #e5c87c;
+  }
+  37.5% {
+    color: #a0d48e;
+  }
+  50% {
+    color: #89c9c7;
+  }
+  75% {
+    color: #78a7db;
+  }
+  87.5% {
+    color: #aa8fe2;
+  }
+}
+
+/*# sourceMappingURL=cloudwatch.css.map */
